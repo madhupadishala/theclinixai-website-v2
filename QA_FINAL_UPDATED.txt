@@ -1,0 +1,3 @@
+Pages checked: 10
+Errors: 0
+Warnings: 0

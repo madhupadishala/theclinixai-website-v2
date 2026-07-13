@@ -1,0 +1,12 @@
+[
+  {
+    "title": "Beyond Automation: The Next Generation of PV Literature Intelligence",
+    "description": "An in-depth look at combining AI with regulatory knowledge, scientific reasoning, and human oversight to safely track reportable safety metrics.",
+    "link": "assets/beyond-automation.pdf"
+  },
+  {
+    "title": "From Search to Safety: Engineering Trustworthy AI for PV Literature Monitoring",
+    "description": "An architectural perspective on building reliable decision-support systems that preserve transparency, auditability, and regulatory confidence.",
+    "link": "assets/from-search-to-safety.pdf"
+  }
+]

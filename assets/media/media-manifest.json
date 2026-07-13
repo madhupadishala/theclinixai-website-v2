@@ -1,0 +1,49 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-07-12",
+  "rules": {
+    "formats": [
+      "webp",
+      "png",
+      "svg",
+      "mp4"
+    ],
+    "maxRasterWidth": 3840,
+    "naming": "lowercase-kebab-case"
+  },
+  "assets": [
+    {
+      "id": "ui-literature-dashboard",
+      "path": "assets/media/product-ui/ui-literature-dashboard.png",
+      "width": 2560,
+      "height": 1600,
+      "usage": [
+        "home",
+        "literature-product",
+        "presentations"
+      ]
+    },
+    {
+      "id": "ui-pv-nexus-dashboard",
+      "path": "assets/media/product-ui/ui-pv-nexus-dashboard.png",
+      "width": 2560,
+      "height": 1600,
+      "usage": [
+        "products",
+        "pv-nexus-product",
+        "presentations"
+      ]
+    },
+    {
+      "id": "ui-ai-nexus-console",
+      "path": "assets/media/product-ui/ui-ai-nexus-console.png",
+      "width": 2560,
+      "height": 1600,
+      "usage": [
+        "platform",
+        "ai-nexus-product",
+        "presentations"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Nexus Intake Engine | ClinixAI Research Paper 003</title>
+<meta name="description" content="Architectural Blueprint for Scalable Clinical Ingestion and Verification">
+<link rel="icon" href="icon-32.png"><link rel="stylesheet" href="style.css">
+</head>
+<body class="research-reader" data-copy-protected>
+<a class="skip" href="#main">Skip to content</a><div id="site-header"></div>
+<div class="reader-progress" aria-hidden="true"><span></span></div>
+<main id="main">
+<header class="research-masthead">
+ <div class="shell research-masthead-grid">
+  <div><p class="research-series">CLINIXAI RESEARCH SERIES · PAPER 003</p><h1>AI Nexus Intake Engine</h1><p class="research-subtitle">Architectural Blueprint for Scalable Clinical Ingestion and Verification</p></div>
+  <dl class="research-meta"><div><dt>Version</dt><dd>2.0</dd></div><div><dt>Published</dt><dd>July 2026</dd></div><div><dt>Read time</dt><dd>10 min</dd></div><div><dt>Lead author</dt><dd>ClinixAI Research</dd></div></dl>
+ </div>
+</header>
+<section class="reader-shell shell">
+ <aside class="reader-rail"><span>Research Paper 003</span><span>Clinical Intake · Verification · Safety Gates · Engineering</span><button class="button button-secondary" type="button" data-modal-open="download-modal" data-paper="Research Paper 003: AI Nexus Intake Engine">Request PDF</button></aside>
+ <article class="research-article no-copy">
+  <div class="research-watermark" aria-hidden="true">CLINIXAI RESEARCH · 003</div>
+  <aside class="research-note"><strong>Editorial note.</strong> Quantitative values in this paper are engineering targets and design bounds, not audited production-performance claims.</aside>
+<p>E N G I N E E R I N G W H I T E PA P E R V 2 . 0</p>
+<h2>Executive Summary &amp; Operational Bounds</h2>
+<p>The AI Nexus Intake Engine acts as the definitive data translation boundary of our clinic infrastructure. Its primary directive is safely normalizing erratic patient reporting into predictable, secure formats. To achieve infrastructural stability within this phase, the ingestion parameters are strictly bounded to maintain highly performant computing loops.</p>
+<p>Ingested Baseline Records: 20K+                  Maximum Daily Updates: &lt; 10,000 Historical Units                                 Scheduled Requests</p>
+<p>Active Journals Indexed: 140K+ Medical           Global Target Jurisdictions: 20+ Cross- Profiles                                         Border Regions</p>
+<h2>Algorithmic Quality &amp; Statistical Verification</h2>
+<p>Deploying large language model engines within a live clinical workflow demands rigorous guardrails to combat clinical omissions. The core ingestion framework targets optimization parameters across an evaluation baseline of 10,000 verified PubMed citations, prioritizing the mitigation of false negatives.</p>
+<h2>Statistical Validation Targets</h2>
+<ul>
+<li>False Negative Rate (FNR): &lt; 5% — The critical safety threshold. Missed indications of</li>
+</ul>
+<p>critical findings are strictly mitigated to avoid diagnostic delays.</p>
+<ul>
+<li>False Positive Rate (FPR): &lt; 10% — Calibrated carefully to protect medical staff from</li>
+</ul>
+<p>systemic alert fatigue, preventing routine complaints from triggering critical queues.</p>
+<p>AI Nexus Intake Engine • Engineering White Paper                                     Page 1 of 3</p>
+<ul>
+<li>Screening Time Optimization: Up to 80% Reduction — Streamlining patient</li>
+</ul>
+<p>background analysis by immediately parsing complaints into structured EHR payloads.</p>
+<p>Validation Method: The False Negative Rate is actively audited against programmatic benchmarks using:</p>
+<p><code>FNR = FN / (TP + FN) &lt; 0.05</code></p>
+<p>Where TP indicates True Positives correctly captured by the intake pipeline, and FN denotes clinical indicators that bypassed model extraction.</p>
+<h2>Scalable Ingestion Control &amp; Rate Limiting</h2>
+<p>To strictly enforce the operational mandate of fewer than 10,000 daily transaction updates, the intake API infrastructure utilizes a token-bucket strategy implemented directly at the gateway layer.</p>
+<p>The system computes a uniform transaction flow rate across a rolling 24-hour window, yielding a baseline allowance of roughly 416 updates per hour. Payloads exceeding this threshold are systematically moved into an asynchronous Redis-backed staging queue, shielding downstream databases from performance spikes and preserving query execution speeds.</p>
+<h2>Multi-Layer Execution Pipeline</h2>
+<p>The intake infrastructure implements a decoupled three-stage operational cycle:</p>
+<h2>Conversational Interface Layer: Captures unstructured patient transcripts or text</h2>
+<p>inputs cleanly via responsive front-end forms.</p>
+<h2>Heuristic Extraction Layer (NER): Maps variable clinical syntax to rigorous medical</h2>
+<p>database entities, assigning explicit SNOMED-CT findings and matching ICD-10 diagnostic entries.</p>
+<p>AI Nexus Intake Engine • Engineering White Paper                                   Page 2 of 3</p>
+<h2>Deterministic Safety Gate: A non-heuristic code path evaluating inputs for emergency</h2>
+<p>indicators. High-priority terms instantly bypass clinical AI queues to trigger urgent care pathways.</p>
+<h2>Critical Safety Override: The safety gate relies on explicit keyword matrices and</h2>
+<p>strict deterministic pattern matches. If an immediate acute symptom is recognized, the pipeline drops the standard multi-turn intake sequence and immediately defaults to the urgent triaging state.</p>
+<p>AI Nexus Intake Engine • Engineering White Paper                                      Page 3 of 3</p>
+  <section class="research-author"><p class="research-series">AUTHOR</p><h2>ClinixAI Research</h2><p>Engineering Research, ClinixAI</p></section>
+  <nav class="related-research" aria-label="Related research"><h2>Continue reading</h2><a href="resources.html#white-papers">Return to ClinixAI Research →</a></nav>
+ </article>
+</section>
+<div class="modal" id="download-modal" role="dialog" aria-modal="true" aria-labelledby="download-title"><div class="modal-card"><div class="modal-head"><div><h2 id="download-title">Request the PDF</h2><p>The downloadable copy will be sent to your contact email.</p></div><button class="modal-close" type="button" data-modal-close aria-label="Close">×</button></div><form class="form-grid" action="/api/whitepaper-request" method="post"><input type="hidden" name="paper" value="Research Paper 003: AI Nexus Intake Engine"><div class="field"><label>Full name *</label><input name="name" required></div><div class="field"><label>Work email *</label><input name="email" type="email" required></div><div class="field"><label>Mobile number *</label><input name="phone" type="tel" required></div><div class="field"><label>Company</label><input name="company"></div><div class="field full"><label><input type="checkbox" name="updates"> Send future ClinixAI research updates.</label></div><div class="field full"><button class="button button-primary" type="submit">Request PDF</button></div></form></div></div>
+</main><div id="site-footer"></div><script src="site.js"></script><script src="research-reader.js"></script>
+</body></html>
