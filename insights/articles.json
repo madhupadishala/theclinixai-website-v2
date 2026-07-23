@@ -1,0 +1,322 @@
+[
+  {
+    "title": "SAE Reporting in Clinical Trials: Investigator and Sponsor Responsibilities",
+    "slug": "sae-reporting-clinical-trials",
+    "topic": "Clinical Trial Safety",
+    "mother": false,
+    "words": 708,
+    "source": "ClinixAI_Batch10_Clinical_Trial_Safety/B10_Child1_SAE_Reporting_Investigator_Sponsor_Responsibilities.docx"
+  },
+  {
+    "title": "SUSAR Assessment and Reporting: Seriousness, Causality, Expectedness and 7-/15-Day Timelines",
+    "slug": "susar-assessment-reporting-timelines",
+    "topic": "Clinical Trial Safety",
+    "mother": false,
+    "words": 643,
+    "source": "ClinixAI_Batch10_Clinical_Trial_Safety/B10_Child2_SUSAR_Assessment_7_15_Day_Reporting.docx"
+  },
+  {
+    "title": "Development Safety Update Report: A Complete DSUR Preparation Guide",
+    "slug": "development-safety-update-report-dsur",
+    "topic": "Clinical Trial Safety",
+    "mother": false,
+    "words": 767,
+    "source": "ClinixAI_Batch10_Clinical_Trial_Safety/B10_Child3_Development_Safety_Update_Report_DSUR.docx"
+  },
+  {
+    "title": "Clinical Trial Safety and Pharmacovigilance: From Adverse Event Collection to DSUR",
+    "slug": "clinical-trial-safety-pharmacovigilance",
+    "topic": "Clinical Trial Safety",
+    "mother": true,
+    "words": 1163,
+    "source": "ClinixAI_Batch10_Clinical_Trial_Safety/B10_Mother_Clinical_Trial_Safety_Pharmacovigilance.docx"
+  },
+  {
+    "title": "How to Build a Risk-Based Pharmacovigilance Audit Programme",
+    "slug": "risk-based-pharmacovigilance-audit-programme",
+    "topic": "PV Audits & CAPA",
+    "mother": false,
+    "words": 643,
+    "source": "ClinixAI_Batch11_PV_Audits_CAPA/B11_Child1_Risk_Based_PV_Audit_Programme.docx"
+  },
+  {
+    "title": "Root Cause Analysis and CAPA in Pharmacovigilance",
+    "slug": "root-cause-analysis-capa-pharmacovigilance",
+    "topic": "PV Audits & CAPA",
+    "mother": false,
+    "words": 697,
+    "source": "ClinixAI_Batch11_PV_Audits_CAPA/B11_Child2_Root_Cause_Analysis_CAPA.docx"
+  },
+  {
+    "title": "CAPA Effectiveness Checks in Pharmacovigilance: Preventing Recurring Deviations",
+    "slug": "capa-effectiveness-check-pharmacovigilance",
+    "topic": "PV Audits & CAPA",
+    "mother": false,
+    "words": 687,
+    "source": "ClinixAI_Batch11_PV_Audits_CAPA/B11_Child3_CAPA_Effectiveness_Recurring_Deviations.docx"
+  },
+  {
+    "title": "Pharmacovigilance Audits and CAPA: From Finding to Sustainable Compliance",
+    "slug": "pharmacovigilance-audits-capa",
+    "topic": "PV Audits & CAPA",
+    "mother": true,
+    "words": 1155,
+    "source": "ClinixAI_Batch11_PV_Audits_CAPA/B11_Mother_Pharmacovigilance_Audits_CAPA.docx"
+  },
+  {
+    "title": "Post-Authorisation Safety Studies: A Complete PASS Design and Compliance Guide",
+    "slug": "post-authorisation-safety-study-pass",
+    "topic": "Pharmacoepidemiology & Real-World Evidence",
+    "mother": false,
+    "words": 686,
+    "source": "ClinixAI_Batch12_Pharmacoepidemiology_RWE/B12_Child1_Post_Authorisation_Safety_Studies_PASS.docx"
+  },
+  {
+    "title": "Real-World Data and Real-World Evidence in Pharmacovigilance",
+    "slug": "real-world-data-evidence-pharmacovigilance",
+    "topic": "Pharmacoepidemiology & Real-World Evidence",
+    "mother": false,
+    "words": 586,
+    "source": "ClinixAI_Batch12_Pharmacoepidemiology_RWE/B12_Child2_Real_World_Data_Evidence_PV.docx"
+  },
+  {
+    "title": "Pharmacoepidemiology Study Designs: Cohort, Case-Control and Self-Controlled Methods",
+    "slug": "pharmacoepidemiology-study-designs",
+    "topic": "Pharmacoepidemiology & Real-World Evidence",
+    "mother": false,
+    "words": 699,
+    "source": "ClinixAI_Batch12_Pharmacoepidemiology_RWE/B12_Child3_Pharmacoepidemiology_Study_Designs.docx"
+  },
+  {
+    "title": "Pharmacoepidemiology in Pharmacovigilance: Turning Real-World Data into Safety Evidence",
+    "slug": "pharmacoepidemiology-in-pharmacovigilance",
+    "topic": "Pharmacoepidemiology & Real-World Evidence",
+    "mother": true,
+    "words": 1058,
+    "source": "ClinixAI_Batch12_Pharmacoepidemiology_RWE/B12_Mother_Pharmacoepidemiology_in_Pharmacovigilance.docx"
+  },
+  {
+    "title": "Pharmacovigilance System Master File: PSMF Structure, Maintenance and Inspection Readiness",
+    "slug": "pharmacovigilance-system-master-file-psmf",
+    "topic": "PV Quality Management System",
+    "mother": false,
+    "words": 831,
+    "source": "ClinixAI_Batch7_PV_QMS/B7_Child1_PSMF_Structure_Maintenance.docx"
+  },
+  {
+    "title": "Pharmacovigilance Inspection Readiness: Documents, Evidence and Common Failures",
+    "slug": "pharmacovigilance-inspection-readiness",
+    "topic": "PV Quality Management System",
+    "mother": false,
+    "words": 699,
+    "source": "ClinixAI_Batch7_PV_QMS/B7_Child2_Pharmacovigilance_Inspection_Readiness.docx"
+  },
+  {
+    "title": "Pharmacovigilance KPIs and Compliance Metrics: What Safety Leaders Should Measure",
+    "slug": "pharmacovigilance-kpis-compliance-metrics",
+    "topic": "PV Quality Management System",
+    "mother": false,
+    "words": 699,
+    "source": "ClinixAI_Batch7_PV_QMS/B7_Child3_Pharmacovigilance_KPIs_Compliance_Metrics.docx"
+  },
+  {
+    "title": "Pharmacovigilance Quality Management System: Compliance, Governance and Inspection Readiness",
+    "slug": "pharmacovigilance-quality-management-system",
+    "topic": "PV Quality Management System",
+    "mother": true,
+    "words": 1192,
+    "source": "ClinixAI_Batch7_PV_QMS/B7_Mother_Pharmacovigilance_Quality_Management_System.docx"
+  },
+  {
+    "title": "Safety Data Exchange Agreement: Essential Clauses, Timelines and Responsibilities",
+    "slug": "safety-data-exchange-agreement-sdea",
+    "topic": "PV Agreements & Partner Governance",
+    "mother": false,
+    "words": 629,
+    "source": "ClinixAI_Batch8_PV_Agreements/B8_Child1_Safety_Data_Exchange_Agreement.docx"
+  },
+  {
+    "title": "Pharmacovigilance Reconciliation: Cases, Submissions, Literature and Partner Records",
+    "slug": "pharmacovigilance-reconciliation",
+    "topic": "PV Agreements & Partner Governance",
+    "mother": false,
+    "words": 609,
+    "source": "ClinixAI_Batch8_PV_Agreements/B8_Child2_Pharmacovigilance_Reconciliation.docx"
+  },
+  {
+    "title": "MAH, Manufacturer, Distributor and Licensing-Partner Pharmacovigilance Responsibilities",
+    "slug": "mah-manufacturer-distributor-pharmacovigilance-responsibilities",
+    "topic": "PV Agreements & Partner Governance",
+    "mother": false,
+    "words": 714,
+    "source": "ClinixAI_Batch8_PV_Agreements/B8_Child3_MAH_Manufacturer_Distributor_PV_Responsibilities.docx"
+  },
+  {
+    "title": "Pharmacovigilance Agreements and Partner Governance: A Complete Compliance Guide",
+    "slug": "pharmacovigilance-agreements-partner-governance",
+    "topic": "PV Agreements & Partner Governance",
+    "mother": true,
+    "words": 1074,
+    "source": "ClinixAI_Batch8_PV_Agreements/B8_Mother_Pharmacovigilance_Agreements_Partner_Governance.docx"
+  },
+  {
+    "title": "Pregnancy and Breastfeeding Exposure in Pharmacovigilance: Collection, Follow-up and Reporting",
+    "slug": "pregnancy-breastfeeding-exposure-pharmacovigilance",
+    "topic": "Special Situations",
+    "mother": false,
+    "words": 670,
+    "source": "ClinixAI_Batch9_Special_Situations/B9_Child1_Pregnancy_Breastfeeding_Exposure.docx"
+  },
+  {
+    "title": "Medication Errors, Overdose, Misuse and Abuse in Pharmacovigilance",
+    "slug": "medication-errors-overdose-misuse-abuse-pharmacovigilance",
+    "topic": "Special Situations",
+    "mother": false,
+    "words": 589,
+    "source": "ClinixAI_Batch9_Special_Situations/B9_Child2_Medication_Error_Overdose_Misuse_Abuse.docx"
+  },
+  {
+    "title": "Lack of Efficacy, Off-Label Use and Occupational Exposure in Pharmacovigilance",
+    "slug": "lack-efficacy-off-label-occupational-exposure-pv",
+    "topic": "Special Situations",
+    "mother": false,
+    "words": 640,
+    "source": "ClinixAI_Batch9_Special_Situations/B9_Child3_Lack_Efficacy_Off_Label_Occupational_Exposure.docx"
+  },
+  {
+    "title": "Special Situations in Pharmacovigilance: A Complete Guide to Collection, Assessment and Reporting",
+    "slug": "special-situations-in-pharmacovigilance",
+    "topic": "Special Situations",
+    "mother": true,
+    "words": 1157,
+    "source": "ClinixAI_Batch9_Special_Situations/B9_Mother_Special_Situations_in_Pharmacovigilance.docx"
+  },
+  {
+    "title": "Signal Detection in Pharmacovigilance: Data Sources, Methods and Emerging Safety Patterns",
+    "slug": "pharmacovigilance-signal-detection",
+    "topic": "Signal Management",
+    "mother": false,
+    "words": 873,
+    "source": "ClinixAI_Blogs_Topics_4_to_6/T4_Child1_Signal_Detection_Data_Sources_Methods.docx"
+  },
+  {
+    "title": "Signal Validation and Prioritisation in Pharmacovigilance",
+    "slug": "signal-validation-prioritisation-pharmacovigilance",
+    "topic": "Signal Management",
+    "mother": false,
+    "words": 838,
+    "source": "ClinixAI_Blogs_Topics_4_to_6/T4_Child2_Signal_Validation_and_Prioritisation.docx"
+  },
+  {
+    "title": "Disproportionality Analysis in Pharmacovigilance: PRR, ROR and IC Explained",
+    "slug": "disproportionality-analysis-pharmacovigilance",
+    "topic": "Signal Management",
+    "mother": false,
+    "words": 850,
+    "source": "ClinixAI_Blogs_Topics_4_to_6/T4_Child3_Disproportionality_PRR_ROR_IC.docx"
+  },
+  {
+    "title": "Signal Management in Pharmacovigilance: From Detection to Regulatory Action",
+    "slug": "signal-management-in-pharmacovigilance",
+    "topic": "Signal Management",
+    "mother": true,
+    "words": 1413,
+    "source": "ClinixAI_Blogs_Topics_4_to_6/T4_Mother_Signal_Management_in_Pharmacovigilance.docx"
+  },
+  {
+    "title": "PBRER and PSUR Preparation: From Data Lock to Benefit–Risk Conclusion",
+    "slug": "pbrer-psur-preparation",
+    "topic": "Aggregate Safety Reporting",
+    "mother": false,
+    "words": 754,
+    "source": "ClinixAI_Blogs_Topics_4_to_6/T5_Child1_PBRER_PSUR_Preparation.docx"
+  },
+  {
+    "title": "DSUR Preparation in Pharmacovigilance: Development Safety Update Report Explained",
+    "slug": "dsur-preparation-pharmacovigilance",
+    "topic": "Aggregate Safety Reporting",
+    "mother": false,
+    "words": 725,
+    "source": "ClinixAI_Blogs_Topics_4_to_6/T5_Child2_DSUR_Development_Safety_Update_Report.docx"
+  },
+  {
+    "title": "Aggregate Report Data Lock, Reconciliation and Quality Control",
+    "slug": "aggregate-report-data-lock-quality-control",
+    "topic": "Aggregate Safety Reporting",
+    "mother": false,
+    "words": 682,
+    "source": "ClinixAI_Blogs_Topics_4_to_6/T5_Child3_Aggregate_Report_Data_Lock_QC.docx"
+  },
+  {
+    "title": "Aggregate Safety Reporting in Pharmacovigilance: PBRER, PSUR and DSUR",
+    "slug": "aggregate-safety-reporting-pharmacovigilance",
+    "topic": "Aggregate Safety Reporting",
+    "mother": true,
+    "words": 1150,
+    "source": "ClinixAI_Blogs_Topics_4_to_6/T5_Mother_Aggregate_Safety_Reporting.docx"
+  },
+  {
+    "title": "Risk Management Plan Preparation: Safety Specification and Pharmacovigilance Plan",
+    "slug": "risk-management-plan-preparation",
+    "topic": "Risk Management & Benefit–Risk",
+    "mother": false,
+    "words": 688,
+    "source": "ClinixAI_Blogs_Topics_4_to_6/T6_Child1_RMP_Preparation_Safety_Specification.docx"
+  },
+  {
+    "title": "Risk Minimisation Measures in Pharmacovigilance: Design and Effectiveness",
+    "slug": "risk-minimisation-measures-effectiveness",
+    "topic": "Risk Management & Benefit–Risk",
+    "mother": false,
+    "words": 639,
+    "source": "ClinixAI_Blogs_Topics_4_to_6/T6_Child2_Risk_Minimisation_Effectiveness.docx"
+  },
+  {
+    "title": "Benefit–Risk Evaluation in Pharmacovigilance: A Structured Decision Framework",
+    "slug": "benefit-risk-evaluation-pharmacovigilance",
+    "topic": "Risk Management & Benefit–Risk",
+    "mother": false,
+    "words": 705,
+    "source": "ClinixAI_Blogs_Topics_4_to_6/T6_Child3_Benefit_Risk_Evaluation_Framework.docx"
+  },
+  {
+    "title": "Risk Management and Benefit–Risk Evaluation in Pharmacovigilance",
+    "slug": "risk-management-benefit-risk-pharmacovigilance",
+    "topic": "Risk Management & Benefit–Risk",
+    "mother": true,
+    "words": 993,
+    "source": "ClinixAI_Blogs_Topics_4_to_6/T6_Mother_Risk_Management_Benefit_Risk.docx"
+  },
+  {
+    "title": "Quality Control and Medical Review in Pharmacovigilance: Ensuring ICSR Scientific Integrity Before Submission",
+    "slug": "quality-control-medical-review-pharmacovigilance",
+    "topic": "ICSR Quality, Medical Review & Submission",
+    "mother": true,
+    "words": 3475,
+    "source": "ClinixAI_Mother_Topic_3_QC_Medical_Review.docx"
+  },
+  {
+    "title": "ICSR Quality Control in Pharmacovigilance: A Complete Case-QC Checklist",
+    "slug": "icsr-quality-control-pharmacovigilance",
+    "topic": "ICSR Quality, Medical Review & Submission",
+    "mother": false,
+    "words": 1363,
+    "source": "ClinixAI_Topic3_Child1_ICSR_Quality_Control.docx"
+  },
+  {
+    "title": "Medical Review of ICSRs: Seriousness, Causality, Expectedness and Clinical Coherence",
+    "slug": "icsr-medical-review-pharmacovigilance",
+    "topic": "ICSR Quality, Medical Review & Submission",
+    "mother": false,
+    "words": 1287,
+    "source": "ClinixAI_Topic3_Child2_ICSR_Medical_Review.docx"
+  },
+  {
+    "title": "ICSR Regulatory Submission: E2B(R3), Gateway Acknowledgements and Compliance Management",
+    "slug": "icsr-regulatory-submission-e2b-r3",
+    "topic": "ICSR Quality, Medical Review & Submission",
+    "mother": false,
+    "words": 1454,
+    "source": "ClinixAI_Topic3_Child3_ICSR_Regulatory_Submission.docx"
+  }
+]

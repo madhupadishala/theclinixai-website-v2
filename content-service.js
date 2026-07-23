@@ -61,6 +61,31 @@
     </article>`;
   }
 
+  function renderLocalCard(article) {
+    const title = escapeHtml(article.title || 'ClinixAI pharmacovigilance guide');
+    const topic = escapeHtml(article.topic || 'Pharmacovigilance');
+    const link = `/insights/${encodeURIComponent(article.slug || '')}`;
+    const kind = article.mother ? 'Complete guide' : 'Specialist guide';
+    return `<article class="wp-card">
+      <div class="wp-card__body">
+        <span class="wp-card__meta">${topic} · ${kind}</span>
+        <h3>${title}</h3>
+        <p>${Number(article.words || 0).toLocaleString('en-IN')} words of scientific, operational and regulatory guidance.</p>
+        <a class="btn btn-link" href="${link}">Read complete guide →</a>
+      </div>
+    </article>`;
+  }
+
+  async function requestLocalArticles(limit) {
+    const response = await fetch('/insights/articles.json', { headers: { Accept: 'application/json' } });
+    if (!response.ok) throw new Error(`Local insight index ${response.status}`);
+    const articles = await response.json();
+    if (!Array.isArray(articles)) throw new Error('Invalid local insight index');
+    return articles
+      .sort((a, b) => Number(b.mother) - Number(a.mother) || String(a.topic).localeCompare(String(b.topic)))
+      .slice(0, limit);
+  }
+
   async function requestPosts(limit, category) {
     const controller = new AbortController();
     const timer = window.setTimeout(() => controller.abort(), REQUEST_TIMEOUT);
@@ -87,6 +112,11 @@
     let posts = readCache(key);
 
     try {
+      const localArticles = await requestLocalArticles(limit);
+      if (localArticles.length) {
+        host.innerHTML = localArticles.map(renderLocalCard).join('');
+        return;
+      }
       if (!posts) {
         posts = await requestPosts(limit, category);
         saveCache(key, posts);
@@ -96,7 +126,7 @@
         : '<article class="wp-card"><div class="wp-card__body"><span class="wp-card__meta">PUBLICATION</span><h3>Publishing starts soon.</h3><p>New ClinixAI articles will appear here automatically.</p></div></article>';
     } catch (error) {
       console.warn('ClinixAI content feed unavailable', error);
-      host.innerHTML = `<article class="wp-card"><div class="wp-card__body"><span class="wp-card__meta">CLINIXAI PUBLICATION</span><h3>The embedded feed is temporarily unavailable.</h3><p>Continue directly to the publication for the latest articles.</p><a class="btn btn-link" href="${BLOG_URL}" target="_blank" rel="noopener noreferrer">Open the blog →</a></div></article>`;
+      host.innerHTML = `<article class="wp-card"><div class="wp-card__body"><span class="wp-card__meta">CLINIXAI PUBLICATION</span><h3>The insight feed is temporarily unavailable.</h3><p>Continue to the knowledge centre for the complete article library.</p><a class="btn btn-link" href="/insights">Open Insights →</a></div></article>`;
     }
   }
 

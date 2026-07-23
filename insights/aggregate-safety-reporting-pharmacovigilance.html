@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Aggregate Safety Reporting in Pharmacovigilance: PBRER, PSUR and DSUR | TheClinixAI</title>
+  <meta name="description" content="A complete guide to aggregate safety reporting, including PBRER, PSUR, DSUR, data lock, signal integration and benefit–risk evaluation.">
+  <meta name="author" content="TheClinixAI">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://www.theclinixai.com/insights/aggregate-safety-reporting-pharmacovigilance">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Aggregate Safety Reporting in Pharmacovigilance: PBRER, PSUR and DSUR">
+  <meta property="og:description" content="A complete guide to aggregate safety reporting, including PBRER, PSUR, DSUR, data lock, signal integration and benefit–risk evaluation.">
+  <meta property="og:url" content="https://www.theclinixai.com/insights/aggregate-safety-reporting-pharmacovigilance">
+  <meta property="og:site_name" content="TheClinixAI">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/icon-32.png">
+  <link rel="stylesheet" href="/style.css">
+  <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "Aggregate Safety Reporting in Pharmacovigilance: PBRER, PSUR and DSUR", "description": "A complete guide to aggregate safety reporting, including PBRER, PSUR, DSUR, data lock, signal integration and benefit–risk evaluation.", "datePublished": "2026-07-23", "dateModified": "2026-07-23", "mainEntityOfPage": "https://www.theclinixai.com/insights/aggregate-safety-reporting-pharmacovigilance", "author": {"@type": "Organization", "name": "TheClinixAI"}, "publisher": {"@type": "Organization", "name": "TheClinixAI", "url": "https://www.theclinixai.com"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.theclinixai.com"}, {"@type": "ListItem", "position": 2, "name": "Insights", "item": "https://www.theclinixai.com/insights"}, {"@type": "ListItem", "position": 3, "name": "Aggregate Safety Reporting in Pharmacovigilance: PBRER, PSUR and DSUR", "item": "https://www.theclinixai.com/insights/aggregate-safety-reporting-pharmacovigilance"}]}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is aggregate safety reporting?", "acceptedAnswer": {"@type": "Answer", "text": "It is periodic cumulative evaluation of safety, exposure, benefits, signals and regulatory information for a medicinal product."}}, {"@type": "Question", "name": "What is the difference between PBRER and DSUR?", "acceptedAnswer": {"@type": "Answer", "text": "PBRER focuses on marketed-product benefit–risk evaluation; DSUR focuses on investigational-product safety during development."}}, {"@type": "Question", "name": "Is a PSUR only a case-count report?", "acceptedAnswer": {"@type": "Answer", "text": "No. It requires integrated scientific evaluation, not merely listings and summary tabulations."}}, {"@type": "Question", "name": "Can AI author an aggregate report?", "acceptedAnswer": {"@type": "Answer", "text": "It can assist with governed synthesis and consistency, but accountable experts must own interpretation and conclusions."}}]}]</script>
+</head>
+<body class="article-page">
+  <a class="skip" href="#article">Skip to article</a>
+  <div id="site-header"></div>
+  <main id="article">
+    <header class="article-hero">
+      <div class="article-shell">
+        <nav class="article-breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a><span>›</span><a href="/insights">Insights</a><span>›</span>
+          <span>Aggregate Safety Reporting</span>
+        </nav>
+        <p class="article-kicker">Aggregate Safety Reporting</p>
+        <h1>Aggregate Safety Reporting in Pharmacovigilance: PBRER, PSUR and DSUR</h1>
+        <p class="article-deck">A complete guide to aggregate safety reporting, including PBRER, PSUR, DSUR, data lock, signal integration and benefit–risk evaluation.</p>
+        <div class="article-meta">
+          <span>TheClinixAI PV Science &amp; Operations</span>
+          <span>2026-07-23</span><span>5 min read</span>
+        </div>
+      </div>
+    </header>
+    <div class="article-layout article-shell">
+      <article class="article-content">
+        <p>An individual case asks, “What happened to this patient?” An aggregate report asks a harder question: “What does everything we now know mean for all patients exposed to this medicine?”</p>
+<p>That question cannot be answered by compiling tables, copying the previous report or listing signals without interpreting them.</p>
+<p><strong>Aggregate reporting is not a periodic document-production exercise. It is the scheduled scientific reassessment of whether the medicine’s benefits continue to outweigh its risks.</strong></p>
+<p>Regulatory foundation: <a href="https://database.ich.org/sites/default/files/E2C_R2_Guideline.pdf" target="_blank" rel="noopener noreferrer">ICH E2C(R2)</a>; <a href="https://database.ich.org/sites/default/files/E2CR2_Q%26As_Q%26As.pdf" target="_blank" rel="noopener noreferrer">ICH E2C Q&amp;A</a>; <a href="https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-good-pharmacovigilance-practices-gvp-module-vii-periodic-safety-update-report-rev-1_en.pdf" target="_blank" rel="noopener noreferrer">GVP VII</a></p>
+<h2 id="what-aggregate-safety-reporting-covers">What aggregate safety reporting covers</h2>
+<p>Aggregate reports integrate cumulative and interval safety information across cases, studies, literature, signals, regulatory actions, exposure and important efficacy developments. The report type depends on product lifecycle and jurisdiction.</p>
+<p>PBRER and PSUR terminology is often used in marketed-product contexts; DSUR addresses investigational products in development. Their data locks, content and regulatory obligations are not interchangeable.</p>
+<h2 id="the-evidence-architecture">The evidence architecture</h2>
+<p>A defensible report requires governed datasets and traceability from source to table to conclusion. Case counts alone are insufficient without exposure, reporting context, duplicates, coding strategy and medically meaningful grouping.</p>
+<ul><li>Worldwide marketing-authorisation status and regulatory actions</li><li>Estimated exposure and limitations</li><li>Interval and cumulative case data</li><li>Study and literature findings</li><li>Signal evaluations and risk-management actions</li><li>Benefit information and therapeutic context</li><li>Integrated benefit–risk analysis</li></ul>
+<h2 id="pbrer-psur-scientific-logic">PBRER/PSUR scientific logic</h2>
+<p>ICH E2C(R2) places benefit–risk evaluation at the centre. Sections should not function as isolated summaries. New safety information must be interpreted in light of cumulative knowledge, exposure, indication, population and available alternatives.</p>
+<h2 id="dsur-scientific-logic">DSUR scientific logic</h2>
+<p>The DSUR focuses on the ongoing safety of subjects exposed during development. It integrates serious adverse reactions, important risks, study changes, non-clinical information, regulatory actions and the sponsor’s assessment of whether trials can continue safely.</p>
+<h2 id="data-lock-authoring-and-governance">Data lock, authoring and governance</h2>
+<p>Planning should begin before the data lock point. Responsibilities, source owners, query specifications, reconciliation, signal cut-offs, review cycles and approval must be defined. Late discovery of data inconsistency is a governance failure, not an authoring inconvenience.</p>
+<h2 id="benefit-risk-evaluation">Benefit–risk evaluation</h2>
+<p>The conclusion should identify key benefits, key risks, uncertainties, important changes and whether additional pharmacovigilance or risk minimisation is required. A favourable conclusion must be reasoned—not inherited from the previous reporting period.</p>
+<h2 id="automation-and-ai">Automation and AI</h2>
+<p>Automation can generate validated listings, exposure tables, literature inventories and consistency checks. AI can support evidence synthesis and draft comparisons, but cannot autonomously decide benefit–risk balance.</p>
+<p>Every generated statement should trace to governed evidence, effective data cuts and accountable scientific review.</p>
+<h2 id="the-scientific-questions-every-aggregate-team-must-answer">The scientific questions every aggregate team must answer</h2>
+<p>The reporting period should be interrogated, not merely described. What changed in exposure? Which events increased or changed clinically? Did new studies alter understanding of a risk or benefit? Did a signal assessment change the safety specification? Did regulatory action in one country create implications elsewhere? Did risk-minimisation data show that an intervention worked—or failed?</p>
+<p>A useful report distinguishes new information from new interpretation. Sometimes no new event is identified, yet cumulative evidence changes severity, frequency, susceptible population, preventability or clinical management. That change can be as important as discovery of a new reaction.</p>
+<ul><li>Explain important interval changes against cumulative context.</li><li>State limitations of exposure and case ascertainment.</li><li>Reconcile signal conclusions with RMP and product information.</li><li>Identify concrete actions arising from the evaluation.</li></ul>
+<h2 id="authoring-governance-and-cross-functional-accountability">Authoring governance and cross-functional accountability</h2>
+<p>Aggregate reports are assembled across safety operations, medical review, biostatistics, epidemiology, clinical development, regulatory affairs, labelling and risk management. The author should not be forced to discover at final review that these functions used different data cuts or product scopes.</p>
+<p>A controlled source matrix should define each input, system of record, owner, cut-off, format, reconciliation requirement and approval. Review comments should be resolved with documented rationale, especially when they change risk classification or benefit–risk conclusions.</p>
+<ul><li>Freeze governed datasets before final medical interpretation.</li><li>Use one controlled source for repeated numbers.</li><li>Record material judgement changes between drafts.</li><li>Link conclusions to follow-up actions and accountable owners.</li></ul>
+<h2 id="a-practical-decision-scenario">A practical decision scenario</h2>
+<p>Consider a reporting period in which spontaneous case counts for a known risk rise by 60%. The increase appears alarming until exposure data show a major market expansion and a communication campaign that stimulated reporting. At the same time, the proportion of cases involving hospitalisation has increased in one vulnerable population. A strong aggregate report does not choose between &#x27;more reports&#x27; and &#x27;no change.&#x27; It separates reporting volume from clinical pattern, evaluates population-specific severity and determines whether targeted risk action is required.</p>
+<p>The governance lesson extends beyond the example. A decision should never depend on one isolated metric, one source or one reviewer’s unrecorded intuition. The complete evidence chain—from detection or data extraction through medical interpretation, cross-functional challenge, approval and action—must remain visible. This is how a pharmacovigilance system becomes both scientifically credible and inspection-ready.</p>
+<p>TheClinixAI position is deliberately firm: automation should accelerate retrieval, reconciliation and consistency; it should not erase uncertainty or manufacture consensus. When evidence conflicts, the system must show the conflict. When a human overrides an automated recommendation, the rationale must remain attributable. Patient-safety intelligence becomes trustworthy only when speed and traceability improve together.</p>
+<h2 id="what-enterprise-grade-execution-adds">What enterprise-grade execution adds</h2>
+<p>The aggregate strategy must also recognise regional schedules and formats. A global core evaluation may support several submissions, but local requirements, reporting frequencies, product scopes and appendices can differ. Reuse is valuable only when regional obligations remain visible and controlled.</p>
+<p>Medical writing quality depends on decision architecture. Reviewers should know which sections are descriptive, which are analytical and which carry conclusions that can change labelling, studies, pharmacovigilance plans or risk minimisation. Review effort should follow scientific consequence, not distribute equally across every page.</p>
+<h2 id="inspection-ready-checklist">Inspection-ready checklist</h2>
+<ul><li>Correct report type and data lock are confirmed.</li><li>Sources and owners are predefined.</li><li>Interval and cumulative datasets reconcile.</li><li>Exposure assumptions are explicit.</li><li>Signals and regulatory actions are current.</li><li>Benefits and risks are evaluated together.</li><li>Conclusions identify uncertainty and action.</li><li>Submission and acknowledgement evidence is retained.</li></ul>
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+<h3 id="what-is-aggregate-safety-reporting">What is aggregate safety reporting?</h3>
+<p>It is periodic cumulative evaluation of safety, exposure, benefits, signals and regulatory information for a medicinal product.</p>
+<h3 id="what-is-the-difference-between-pbrer-and-dsur">What is the difference between PBRER and DSUR?</h3>
+<p>PBRER focuses on marketed-product benefit–risk evaluation; DSUR focuses on investigational-product safety during development.</p>
+<h3 id="is-a-psur-only-a-case-count-report">Is a PSUR only a case-count report?</h3>
+<p>No. It requires integrated scientific evaluation, not merely listings and summary tabulations.</p>
+<h3 id="can-ai-author-an-aggregate-report">Can AI author an aggregate report?</h3>
+<p>It can assist with governed synthesis and consistency, but accountable experts must own interpretation and conclusions.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>A strong aggregate report does not hide uncertainty behind volume. It shows what changed, why it matters and what action follows.</p>
+<p>If the conclusion could have been written before the data were reviewed, the report is not performing its scientific purpose.</p>
+<p><strong>Periodic reporting is valuable only when each data lock forces the organisation to reconsider—not merely repeat—its benefit–risk position.</strong></p>
+<h2 id="authoritative-references">Authoritative references</h2>
+<ul><li><a href="https://database.ich.org/sites/default/files/E2C_R2_Guideline.pdf" target="_blank" rel="noopener noreferrer">ICH E2C(R2)</a></li><li><a href="https://database.ich.org/sites/default/files/E2CR2_Q%26As_Q%26As.pdf" target="_blank" rel="noopener noreferrer">ICH E2C Q&amp;A</a></li><li><a href="https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-good-pharmacovigilance-practices-gvp-module-vii-periodic-safety-update-report-rev-1_en.pdf" target="_blank" rel="noopener noreferrer">GVP VII</a></li><li><a href="https://database.ich.org/sites/default/files/E2F_Guideline.pdf" target="_blank" rel="noopener noreferrer">ICH E2F</a></li><li><a href="https://database.ich.org/sites/default/files/M4E_R2__Guideline.pdf" target="_blank" rel="noopener noreferrer">ICH M4E(R2)</a></li><li><a href="https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-good-pharmacovigilance-practices-gvp-module-ix-signal-management-rev-1_en.pdf" target="_blank" rel="noopener noreferrer">GVP IX</a></li></ul>
+        <aside class="article-disclaimer"><strong>Professional scope:</strong> This article provides scientific and operational pharmacovigilance guidance. Applicable legislation, current regional requirements, company procedures and product-specific obligations must be assessed before regulatory action.</aside>
+      </article>
+      <aside class="article-sidebar">
+        <div class="article-sidebar-card">
+          <span>Primary subject</span>
+          <strong>aggregate safety reporting in pharmacovigilance</strong>
+          <a href="/contact">Discuss your PV workflow →</a>
+        </div>
+      </aside>
+    </div>
+    <section class="related-section">
+      <div class="article-shell">
+        <p class="article-kicker">CONTINUE THE CLUSTER</p>
+        <h2>Related pharmacovigilance guidance</h2>
+        <div class="related-grid"><a class="related-article" href="/insights/pbrer-psur-preparation"><span>Aggregate Safety Reporting</span><strong>PBRER and PSUR Preparation: From Data Lock to Benefit–Risk Conclusion</strong></a><a class="related-article" href="/insights/dsur-preparation-pharmacovigilance"><span>Aggregate Safety Reporting</span><strong>DSUR Preparation in Pharmacovigilance: Development Safety Update Report Explained</strong></a><a class="related-article" href="/insights/aggregate-report-data-lock-quality-control"><span>Aggregate Safety Reporting</span><strong>Aggregate Report Data Lock, Reconciliation and Quality Control</strong></a><a class="related-article" href="/insights/sae-reporting-clinical-trials"><span>Clinical Trial Safety</span><strong>SAE Reporting in Clinical Trials: Investigator and Sponsor Responsibilities</strong></a></div>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="/site.js"></script>
+</body>
+</html>
