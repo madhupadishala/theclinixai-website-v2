@@ -432,6 +432,80 @@ def hub_template(articles: list[Article]) -> str:
 <div class="shell insight-clusters">{''.join(sections)}</div></main><div id="site-footer"></div><script src="/site.js?v=20260723c"></script></body></html>"""
 
 
+def resource_showcase_markup(articles: list[Article]) -> tuple[str, str]:
+    artwork_by_topic = {
+        "Clinical Trial Safety": "clinical-trial-safety",
+        "PV Audits & CAPA": "pv-audits-capa",
+        "Pharmacoepidemiology & Real-World Evidence": "pharmacoepidemiology-rwe",
+        "PV Quality Management System": "pv-qms",
+        "PV Agreements & Partner Governance": "pv-agreements",
+        "Special Situations": "special-situations",
+        "Signal Management": "signal-management",
+        "Aggregate Safety Reporting": "aggregate-reporting",
+        "Risk Management & Benefit–Risk": "risk-benefit",
+        "ICSR Quality, Medical Review & Submission": "icsr-quality",
+    }
+    tones = ["blue", "cyan", "violet", "teal", "indigo"]
+    groups: dict[str, list[Article]] = {}
+    for article in articles:
+        groups.setdefault(article.topic, []).append(article)
+
+    slides: list[str] = []
+    dots: list[str] = []
+    for cluster_index, (topic, items) in enumerate(groups.items()):
+        mother = next((item for item in items if item.is_mother), items[0])
+        children = [item for item in items if item.slug != mother.slug][:3]
+        artwork = artwork_by_topic.get(topic, "signal-management")
+        tone = tones[cluster_index % len(tones)]
+        child_cards = "".join(
+            f'<a class="cluster-child-card cluster-tone-{tone}" href="/insights/{child.slug}">'
+            f'<div class="cluster-card-visual"><img src="/assets/media/insights/{artwork}-child-{index + 1}.webp" alt="" loading="lazy" decoding="async"><span>0{index + 1}</span></div>'
+            f'<div class="cluster-child-copy"><span class="cluster-card-label">SPECIALIST GUIDE · {child.word_count:,} WORDS</span>'
+            f'<h4>{html.escape(child.title)}</h4><p>{html.escape(child.description)}</p>'
+            f'<strong>Read specialist guide <b>→</b></strong></div></a>'
+            for index, child in enumerate(children)
+        )
+        hidden = " hidden" if cluster_index else ""
+        slides.append(
+            f'<section class="cluster-slide cluster-tone-{tone}" data-cluster-slide aria-label="{html.escape(topic)} topic cluster"{hidden}>'
+            f'<a class="cluster-mother-card" href="/insights/{mother.slug}">'
+            f'<img class="cluster-mother-image" src="/assets/media/insights/{artwork}-mother.webp" alt="" decoding="async">'
+            f'<div class="cluster-mother-overlay"><span class="cluster-card-label">MOTHER GUIDE · TOPIC CLUSTER {cluster_index + 1:02d}</span>'
+            f'<h3>{html.escape(mother.title)}</h3><div><small>{mother.word_count:,} words</small>'
+            f'<strong>Read complete guide <b>→</b></strong></div></div></a>'
+            f'<div class="cluster-children">{child_cards}</div></section>'
+        )
+        current = "true" if cluster_index == 0 else "false"
+        dots.append(
+            f'<button type="button" data-cluster-dot="{cluster_index}" '
+            f'aria-label="Show {html.escape(topic)}" aria-current="{current}"><span></span></button>'
+        )
+    return "".join(slides), "".join(dots)
+
+
+def update_resources_showcase(articles: list[Article]) -> None:
+    path = SITE / "resources.html"
+    text = path.read_text(encoding="utf-8")
+    slides, dots = resource_showcase_markup(articles)
+    text, stage_count = re.subn(
+        r'(<div class="cluster-showcase-stage" data-cluster-stage aria-live="polite">).*?(</div><div class="cluster-showcase-nav">)',
+        lambda match: match.group(1) + slides + match.group(2),
+        text,
+        count=1,
+        flags=re.DOTALL,
+    )
+    text, dot_count = re.subn(
+        r'(<div class="cluster-progress" data-cluster-progress>).*?(</div><div class="cluster-buttons">)',
+        lambda match: match.group(1) + dots + match.group(2),
+        text,
+        count=1,
+        flags=re.DOTALL,
+    )
+    if stage_count != 1 or dot_count != 1:
+        raise RuntimeError("Resources cluster showcase markers were not found")
+    path.write_text(text, encoding="utf-8")
+
+
 def discover_docx() -> list[Path]:
     roots = [
         ROOT,
@@ -534,6 +608,7 @@ def main() -> int:
         + ";",
         encoding="utf-8",
     )
+    update_resources_showcase(articles)
     print(f"Generated {len(articles)} articles across {len(set(a.topic for a in articles))} clusters")
     print(f"Total article words: {sum(a.word_count for a in articles):,}")
     return 0

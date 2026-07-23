@@ -128,15 +128,17 @@
     const stage = host.querySelector('[data-cluster-stage]');
     const progress = host.querySelector('[data-cluster-progress]');
     if (!stage || !progress) return;
-    const grouped = articles.reduce((result, article) => {
-      (result[article.topic] ||= []).push(article);
-      return result;
-    }, {});
-    const clusters = Object.entries(grouped).filter(([, items]) => items.length);
-    stage.innerHTML = clusters.map(([topic, items], index) => renderClusterSlide(topic, items, index)).join('');
-    progress.innerHTML = clusters.map(([topic], index) =>
-      `<button type="button" data-cluster-dot="${index}" aria-label="Show ${escapeHtml(topic)}" aria-current="${index === 0 ? 'true' : 'false'}"><span></span></button>`
-    ).join('');
+    if (!stage.querySelector('[data-cluster-slide]')) {
+      const grouped = articles.reduce((result, article) => {
+        (result[article.topic] ||= []).push(article);
+        return result;
+      }, {});
+      const clusters = Object.entries(grouped).filter(([, items]) => items.length);
+      stage.innerHTML = clusters.map(([topic, items], index) => renderClusterSlide(topic, items, index)).join('');
+      progress.innerHTML = clusters.map(([topic], index) =>
+        `<button type="button" data-cluster-dot="${index}" aria-label="Show ${escapeHtml(topic)}" aria-current="${index === 0 ? 'true' : 'false'}"><span></span></button>`
+      ).join('');
+    }
     const slides = [...stage.querySelectorAll('[data-cluster-slide]')];
     const dots = [...progress.querySelectorAll('[data-cluster-dot]')];
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -222,6 +224,10 @@
 
   async function loadClusterShowcase(host) {
     try {
+      if (host.querySelector('[data-cluster-slide]')) {
+        initialiseClusterShowcase(host, []);
+        return;
+      }
       let articles = window.CLINIXAI_ARTICLES;
       if (!Array.isArray(articles) || !articles.length) {
         const response = await fetch('/insights/articles.json?v=20260723c', { headers: { Accept: 'application/json' }, cache: 'no-store' });
@@ -233,7 +239,7 @@
     } catch (error) {
       console.warn('ClinixAI cluster showcase unavailable', error);
       const stage = host.querySelector('[data-cluster-stage]');
-      if (stage) stage.innerHTML = '<article class="cluster-loading"><span>THECLINIXAI INSIGHTS</span><h3>The knowledge centre is temporarily unavailable.</h3><a href="/insights">Open all insights →</a></article>';
+      if (stage && !stage.querySelector('[data-cluster-slide]')) stage.innerHTML = '<article class="cluster-loading"><span>THECLINIXAI INSIGHTS</span><h3>The knowledge centre is temporarily unavailable.</h3><a href="/insights">Open all insights →</a></article>';
     }
   }
 
