@@ -76,6 +76,86 @@
     </article>`;
   }
 
+  const topicTone = (topic = '') => {
+    const tones = ['blue', 'cyan', 'violet', 'teal', 'indigo'];
+    let score = 0;
+    for (const character of topic) score += character.charCodeAt(0);
+    return tones[score % tones.length];
+  };
+
+  function renderClusterSlide(topic, articles, index) {
+    const mother = articles.find((article) => article.mother) || articles[0];
+    const children = articles.filter((article) => article !== mother).slice(0, 3);
+    const tone = topicTone(topic);
+    const childCards = children.map((child, childIndex) => `
+      <a class="cluster-child-card cluster-tone-${tone}" href="/insights/${encodeURIComponent(child.slug || '')}">
+        <div class="cluster-card-visual" aria-hidden="true"><span>0${childIndex + 1}</span><i></i><i></i><i></i></div>
+        <div class="cluster-child-copy">
+          <span class="cluster-card-label">SPECIALIST GUIDE · ${Number(child.words || 0).toLocaleString('en-IN')} WORDS</span>
+          <h4>${escapeHtml(child.title || '')}</h4>
+          <strong>Read specialist guide <b>→</b></strong>
+        </div>
+      </a>`).join('');
+    return `<section class="cluster-slide cluster-tone-${tone}" data-cluster-slide aria-label="${escapeHtml(topic)} topic cluster" ${index ? 'hidden' : ''}>
+      <a class="cluster-mother-card" href="/insights/${encodeURIComponent(mother.slug || '')}">
+        <div class="cluster-mother-copy">
+          <span class="cluster-card-label">MOTHER GUIDE · TOPIC CLUSTER ${String(index + 1).padStart(2, '0')}</span>
+          <h3>${escapeHtml(mother.title || '')}</h3>
+          <p>${Number(mother.words || 0).toLocaleString('en-IN')} words of scientific, operational and regulatory guidance.</p>
+          <strong>Enter the complete guide <b>→</b></strong>
+        </div>
+        <div class="cluster-mother-visual" aria-hidden="true">
+          <span>${String(index + 1).padStart(2, '0')}</span>
+          <div><i></i><i></i><i></i><i></i><i></i></div>
+          <small>${escapeHtml(topic)}</small>
+        </div>
+      </a>
+      <div class="cluster-children">${childCards}</div>
+    </section>`;
+  }
+
+  function initialiseClusterShowcase(host, articles) {
+    const stage = host.querySelector('[data-cluster-stage]');
+    const progress = host.querySelector('[data-cluster-progress]');
+    if (!stage || !progress) return;
+    const grouped = articles.reduce((result, article) => {
+      (result[article.topic] ||= []).push(article);
+      return result;
+    }, {});
+    const clusters = Object.entries(grouped).filter(([, items]) => items.length);
+    stage.innerHTML = clusters.map(([topic, items], index) => renderClusterSlide(topic, items, index)).join('');
+    progress.innerHTML = clusters.map(([topic], index) =>
+      `<button type="button" data-cluster-dot="${index}" aria-label="Show ${escapeHtml(topic)}" aria-current="${index === 0 ? 'true' : 'false'}"><span></span></button>`
+    ).join('');
+    const slides = [...stage.querySelectorAll('[data-cluster-slide]')];
+    const dots = [...progress.querySelectorAll('[data-cluster-dot]')];
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let active = 0;
+    let timer = null;
+    const interval = Math.max(2200, Number(host.dataset.interval || 2600));
+    const show = (next) => {
+      active = (next + slides.length) % slides.length;
+      slides.forEach((slide, index) => { slide.hidden = index !== active; });
+      dots.forEach((dot, index) => dot.setAttribute('aria-current', String(index === active)));
+    };
+    const stop = () => { if (timer) window.clearInterval(timer); timer = null; };
+    const start = () => {
+      stop();
+      if (!reducedMotion && slides.length > 1) timer = window.setInterval(() => show(active + 1), interval);
+    };
+    host.querySelector('[data-cluster-prev]')?.addEventListener('click', () => { show(active - 1); start(); });
+    host.querySelector('[data-cluster-next]')?.addEventListener('click', () => { show(active + 1); start(); });
+    dots.forEach((dot, index) => dot.addEventListener('click', () => { show(index); start(); }));
+    host.addEventListener('mouseenter', stop);
+    host.addEventListener('mouseleave', start);
+    host.addEventListener('focusin', stop);
+    host.addEventListener('focusout', start);
+    host.addEventListener('pointerdown', stop);
+    host.addEventListener('pointerup', start);
+    document.addEventListener('visibilitychange', () => document.hidden ? stop() : start());
+    start();
+  }
+
   async function requestLocalArticles(limit) {
     const response = await fetch('/insights/articles.json', { headers: { Accept: 'application/json' } });
     if (!response.ok) throw new Error(`Local insight index ${response.status}`);
@@ -130,7 +210,24 @@
     }
   }
 
-  const initialise = () => document.querySelectorAll('[data-wp-posts]').forEach(loadFeed);
+  async function loadClusterShowcase(host) {
+    try {
+      const response = await fetch('/insights/articles.json', { headers: { Accept: 'application/json' } });
+      if (!response.ok) throw new Error(`Local insight index ${response.status}`);
+      const articles = await response.json();
+      if (!Array.isArray(articles) || !articles.length) throw new Error('Empty insight index');
+      initialiseClusterShowcase(host, articles);
+    } catch (error) {
+      console.warn('ClinixAI cluster showcase unavailable', error);
+      const stage = host.querySelector('[data-cluster-stage]');
+      if (stage) stage.innerHTML = '<article class="cluster-loading"><span>THECLINIXAI INSIGHTS</span><h3>The knowledge centre is temporarily unavailable.</h3><a href="/insights">Open all insights →</a></article>';
+    }
+  }
+
+  const initialise = () => {
+    document.querySelectorAll('[data-wp-posts]').forEach(loadFeed);
+    document.querySelectorAll('[data-cluster-showcase]').forEach(loadClusterShowcase);
+  };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initialise, { once: true });
   else initialise();
 })();

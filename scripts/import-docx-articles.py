@@ -380,18 +380,29 @@ def hub_template(articles: list[Article]) -> str:
     for article in articles:
         groups.setdefault(article.topic, []).append(article)
     sections = []
-    for topic, items in groups.items():
-        cards = "".join(
-            f'<article class="insight-index-card">'
-            f'<span>{"Mother guide" if item.is_mother else "Specialist guide"} · {item.word_count:,} words</span>'
-            f"<h2>{html.escape(item.title)}</h2><p>{html.escape(item.description)}</p>"
-            f'<a href="/insights/{item.slug}">Read the complete guide →</a></article>'
-            for item in sorted(items, key=lambda x: (not x.is_mother, x.title))
+    tones = ["blue", "cyan", "violet", "teal", "indigo"]
+    for cluster_index, (topic, items) in enumerate(groups.items()):
+        ordered = sorted(items, key=lambda x: (not x.is_mother, x.title))
+        mother = next((item for item in ordered if item.is_mother), ordered[0])
+        children = [item for item in ordered if item.slug != mother.slug]
+        tone = tones[cluster_index % len(tones)]
+        child_cards = "".join(
+            f'<a class="cluster-child-card cluster-tone-{tone}" href="/insights/{item.slug}">'
+            f'<div class="cluster-card-visual" aria-hidden="true"><span>0{index + 1}</span><i></i><i></i><i></i></div>'
+            f'<div class="cluster-child-copy"><span class="cluster-card-label">SPECIALIST GUIDE · {item.word_count:,} WORDS</span>'
+            f"<h3>{html.escape(item.title)}</h3><strong>Read specialist guide <b>→</b></strong></div></a>"
+            for index, item in enumerate(children[:3])
         )
         sections.append(
-            f'<section class="insight-cluster"><div class="section-heading">'
-            f"<div><p class=\"article-kicker\">TOPIC CLUSTER</p><h2>{html.escape(topic)}</h2></div>"
-            f"<span>{len(items)} articles</span></div><div class=\"insight-index-grid\">{cards}</div></section>"
+            f'<section class="insight-cluster cluster-tone-{tone}"><div class="section-heading">'
+            f"<div><p class=\"article-kicker\">TOPIC CLUSTER {cluster_index + 1:02d}</p><h2>{html.escape(topic)}</h2></div>"
+            f"<span>{len(items)} articles</span></div>"
+            f'<a class="cluster-mother-card" href="/insights/{mother.slug}"><div class="cluster-mother-copy">'
+            f'<span class="cluster-card-label">MOTHER GUIDE · {mother.word_count:,} WORDS</span><h3>{html.escape(mother.title)}</h3>'
+            f"<p>{html.escape(mother.description)}</p><strong>Enter the complete guide <b>→</b></strong></div>"
+            f'<div class="cluster-mother-visual" aria-hidden="true"><span>{cluster_index + 1:02d}</span>'
+            f"<div><i></i><i></i><i></i><i></i><i></i></div><small>{html.escape(topic)}</small></div></a>"
+            f'<div class="cluster-children">{child_cards}</div></section>'
         )
     return f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
