@@ -22,7 +22,7 @@ for page in html_files:
     for img in parser.images:
         if 'alt' not in img: errors.append(f'{page.name}: image missing alt')
         src=img.get('src','')
-        if src and not src.startswith(('http:','https:','data:')) and not (ROOT/src).exists(): errors.append(f'{page.name}: missing image {src}')
+        if src and not src.startswith(('http:','https:','data:')) and not (ROOT/src.lstrip('/')).exists(): errors.append(f'{page.name}: missing image {src}')
     for link in parser.links:
         if any(link.startswith(x) for x in IGNORE) or link.startswith(('http://','https://')): continue
         target=link.split('#')[0]

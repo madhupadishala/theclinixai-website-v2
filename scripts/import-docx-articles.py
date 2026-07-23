@@ -325,7 +325,7 @@ def article_template(article: Article, related: list[Article]) -> str:
   <meta property="og:site_name" content="TheClinixAI">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/icon-32.png">
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/style.css?v=20260723c">
   <script type="application/ld+json">{json.dumps(json_ld, ensure_ascii=False)}</script>
 </head>
 <body class="article-page">
@@ -369,7 +369,7 @@ def article_template(article: Article, related: list[Article]) -> str:
     </section>
   </main>
   <div id="site-footer"></div>
-  <script src="/site.js"></script>
+  <script src="/site.js?v=20260723c"></script>
 </body>
 </html>
 """
@@ -381,27 +381,41 @@ def hub_template(articles: list[Article]) -> str:
         groups.setdefault(article.topic, []).append(article)
     sections = []
     tones = ["blue", "cyan", "violet", "teal", "indigo"]
+    artwork_by_topic = {
+        "Clinical Trial Safety": "clinical-trial-safety",
+        "PV Audits & CAPA": "pv-audits-capa",
+        "Pharmacoepidemiology & Real-World Evidence": "pharmacoepidemiology-rwe",
+        "PV Quality Management System": "pv-qms",
+        "PV Agreements & Partner Governance": "pv-agreements",
+        "Special Situations": "special-situations",
+        "Signal Management": "signal-management",
+        "Aggregate Safety Reporting": "aggregate-reporting",
+        "Risk Management & Benefit–Risk": "risk-benefit",
+        "ICSR Quality, Medical Review & Submission": "icsr-quality",
+    }
     for cluster_index, (topic, items) in enumerate(groups.items()):
         ordered = sorted(items, key=lambda x: (not x.is_mother, x.title))
         mother = next((item for item in ordered if item.is_mother), ordered[0])
         children = [item for item in ordered if item.slug != mother.slug]
         tone = tones[cluster_index % len(tones)]
+        artwork = artwork_by_topic.get(topic, "signal-management")
         child_cards = "".join(
             f'<a class="cluster-child-card cluster-tone-{tone}" href="/insights/{item.slug}">'
-            f'<div class="cluster-card-visual" aria-hidden="true"><span>0{index + 1}</span><i></i><i></i><i></i></div>'
+            f'<div class="cluster-card-visual"><img src="/assets/media/insights/{artwork}-child-{index + 1}.webp" alt="" loading="lazy" decoding="async"><span>0{index + 1}</span></div>'
             f'<div class="cluster-child-copy"><span class="cluster-card-label">SPECIALIST GUIDE · {item.word_count:,} WORDS</span>'
-            f"<h3>{html.escape(item.title)}</h3><strong>Read specialist guide <b>→</b></strong></div></a>"
+            f"<h3>{html.escape(item.title)}</h3><p>{html.escape(item.description)}</p>"
+            f"<strong>Read specialist guide <b>→</b></strong></div></a>"
             for index, item in enumerate(children[:3])
         )
         sections.append(
             f'<section class="insight-cluster cluster-tone-{tone}"><div class="section-heading">'
             f"<div><p class=\"article-kicker\">TOPIC CLUSTER {cluster_index + 1:02d}</p><h2>{html.escape(topic)}</h2></div>"
             f"<span>{len(items)} articles</span></div>"
-            f'<a class="cluster-mother-card" href="/insights/{mother.slug}"><div class="cluster-mother-copy">'
-            f'<span class="cluster-card-label">MOTHER GUIDE · {mother.word_count:,} WORDS</span><h3>{html.escape(mother.title)}</h3>'
-            f"<p>{html.escape(mother.description)}</p><strong>Enter the complete guide <b>→</b></strong></div>"
-            f'<div class="cluster-mother-visual" aria-hidden="true"><span>{cluster_index + 1:02d}</span>'
-            f"<div><i></i><i></i><i></i><i></i><i></i></div><small>{html.escape(topic)}</small></div></a>"
+            f'<a class="cluster-mother-card" href="/insights/{mother.slug}">'
+            f'<img class="cluster-mother-image" src="/assets/media/insights/{artwork}-mother.webp" alt="" loading="lazy" decoding="async">'
+            f'<div class="cluster-mother-overlay"><span class="cluster-card-label">MOTHER GUIDE · {mother.word_count:,} WORDS</span>'
+            f'<h3>{html.escape(mother.title)}</h3><div><small>{html.escape(topic)}</small>'
+            f"<strong>Read complete guide <b>→</b></strong></div></div></a>"
             f'<div class="cluster-children">{child_cards}</div></section>'
         )
     return f"""<!doctype html>
@@ -409,13 +423,13 @@ def hub_template(articles: list[Article]) -> str:
 <title>Pharmacovigilance Insights & Regulatory Guides | TheClinixAI</title>
 <meta name="description" content="Scientific, operational and regulatory pharmacovigilance guidance from TheClinixAI across ICSR processing, signal management, risk management, quality systems, clinical safety and real-world evidence.">
 <meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="{SITE_URL}/insights">
-<link rel="icon" href="/icon-32.png"><link rel="stylesheet" href="/style.css"></head>
+<link rel="icon" href="/icon-32.png"><link rel="stylesheet" href="/style.css?v=20260723c"></head>
 <body class="insights-index-page"><a class="skip" href="#main">Skip to content</a><div id="site-header"></div>
 <main id="main"><header class="insights-index-hero"><div class="shell"><p class="article-kicker">THECLINIXAI PV KNOWLEDGE CENTRE</p>
 <h1>Pharmacovigilance decisions must survive scientific and regulatory scrutiny.</h1>
 <p>Evidence-led guides written for professionals who must explain not only what was decided—but why.</p>
 <div class="article-meta"><span>{len(articles)} published guides</span><span>{len(groups)} topic clusters</span></div></div></header>
-<div class="shell insight-clusters">{''.join(sections)}</div></main><div id="site-footer"></div><script src="/site.js"></script></body></html>"""
+<div class="shell insight-clusters">{''.join(sections)}</div></main><div id="site-footer"></div><script src="/site.js?v=20260723c"></script></body></html>"""
 
 
 def discover_docx() -> list[Path]:
@@ -506,12 +520,19 @@ def main() -> int:
             "topic": item.topic,
             "mother": item.is_mother,
             "words": item.word_count,
+            "description": item.description,
             "source": str(item.source.relative_to(ROOT)),
         }
         for item in articles
     ]
     (OUTPUT / "articles.json").write_text(
         json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8"
+    )
+    (OUTPUT / "articles.js").write_text(
+        "window.CLINIXAI_ARTICLES="
+        + json.dumps(manifest, separators=(",", ":"), ensure_ascii=False)
+        + ";",
+        encoding="utf-8",
     )
     print(f"Generated {len(articles)} articles across {len(set(a.topic for a in articles))} clusters")
     print(f"Total article words: {sum(a.word_count for a in articles):,}")

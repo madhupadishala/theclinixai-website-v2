@@ -5,6 +5,7 @@
     "topic": "Clinical Trial Safety",
     "mother": false,
     "words": 708,
+    "description": "Learn SAE criteria, investigator reporting, sponsor assessment, awareness dates, follow-up, endpoint exceptions and clinical-safety reconciliation.",
     "source": "ClinixAI_Batch10_Clinical_Trial_Safety/B10_Child1_SAE_Reporting_Investigator_Sponsor_Responsibilities.docx"
   },
   {
@@ -13,6 +14,7 @@
     "topic": "Clinical Trial Safety",
     "mother": false,
     "words": 643,
+    "description": "Understand SUSAR criteria, seriousness, causality, RSI expectedness, unblinding and 7-/15-day expedited reporting in clinical trials.",
     "source": "ClinixAI_Batch10_Clinical_Trial_Safety/B10_Child2_SUSAR_Assessment_7_15_Day_Reporting.docx"
   },
   {
@@ -21,6 +23,7 @@
     "topic": "Clinical Trial Safety",
     "mother": false,
     "words": 767,
+    "description": "A complete DSUR guide covering DIBD, annual planning, exposure, case tabulations, safety assessment, benefit–risk conclusions and QC.",
     "source": "ClinixAI_Batch10_Clinical_Trial_Safety/B10_Child3_Development_Safety_Update_Report_DSUR.docx"
   },
   {
@@ -29,6 +32,7 @@
     "topic": "Clinical Trial Safety",
     "mother": true,
     "words": 1163,
+    "description": "A complete guide to clinical-trial AEs, SAEs, sponsor and investigator duties, SUSAR assessment, expedited reporting, RSI governance and DSUR.",
     "source": "ClinixAI_Batch10_Clinical_Trial_Safety/B10_Mother_Clinical_Trial_Safety_Pharmacovigilance.docx"
   },
   {
@@ -37,6 +41,7 @@
     "topic": "PV Audits & CAPA",
     "mother": false,
     "words": 643,
+    "description": "Learn how to map the PV audit universe, score risk, select audit types, set frequencies, govern deferrals and build a GVP-aligned audit plan.",
     "source": "ClinixAI_Batch11_PV_Audits_CAPA/B11_Child1_Risk_Based_PV_Audit_Programme.docx"
   },
   {
@@ -45,6 +50,7 @@
     "topic": "PV Audits & CAPA",
     "mother": false,
     "words": 697,
+    "description": "A practical guide to PV problem statements, containment, impact assessment, root-cause methods, CAPA design and inspection-ready closure.",
     "source": "ClinixAI_Batch11_PV_Audits_CAPA/B11_Child2_Root_Cause_Analysis_CAPA.docx"
   },
   {
@@ -53,6 +59,7 @@
     "topic": "PV Audits & CAPA",
     "mother": false,
     "words": 687,
+    "description": "Learn how to define PV CAPA effectiveness criteria, select evidence, set samples and monitoring periods, detect recurrence and respond to failure.",
     "source": "ClinixAI_Batch11_PV_Audits_CAPA/B11_Child3_CAPA_Effectiveness_Recurring_Deviations.docx"
   },
   {
@@ -61,6 +68,7 @@
     "topic": "PV Audits & CAPA",
     "mother": true,
     "words": 1155,
+    "description": "A complete guide to risk-based PV audits, findings, impact assessment, root-cause analysis, CAPA design, effectiveness checks and inspection readiness.",
     "source": "ClinixAI_Batch11_PV_Audits_CAPA/B11_Mother_Pharmacovigilance_Audits_CAPA.docx"
   },
   {
@@ -69,6 +77,7 @@
     "topic": "Pharmacoepidemiology & Real-World Evidence",
     "mother": false,
     "words": 686,
+    "description": "Learn PASS objectives, classification, protocol design, GVP Module VIII requirements, registration, safety reporting and regulatory use.",
     "source": "ClinixAI_Batch12_Pharmacoepidemiology_RWE/B12_Child1_Post_Authorisation_Safety_Studies_PASS.docx"
   },
   {
@@ -77,6 +86,7 @@
     "topic": "Pharmacoepidemiology & Real-World Evidence",
     "mother": false,
     "words": 586,
+    "description": "Learn RWD and RWE fundamentals, fit-for-use assessment, exposure and outcome measurement, confounding, linkage and reproducibility in PV.",
     "source": "ClinixAI_Batch12_Pharmacoepidemiology_RWE/B12_Child2_Real_World_Data_Evidence_PV.docx"
   },
   {
@@ -85,6 +95,7 @@
     "topic": "Pharmacoepidemiology & Real-World Evidence",
     "mother": false,
     "words": 699,
+    "description": "Compare cohort, case-control, self-controlled, cross-sectional, registry and drug-utilisation designs for medicine-safety research.",
     "source": "ClinixAI_Batch12_Pharmacoepidemiology_RWE/B12_Child3_Pharmacoepidemiology_Study_Designs.docx"
   },
   {
@@ -93,6 +104,7 @@
     "topic": "Pharmacoepidemiology & Real-World Evidence",
     "mother": true,
     "words": 1058,
+    "description": "A complete guide to pharmacoepidemiology, RWD, RWE, study designs, bias, confounding, PASS and population-level medicine safety evidence.",
     "source": "ClinixAI_Batch12_Pharmacoepidemiology_RWE/B12_Mother_Pharmacoepidemiology_in_Pharmacovigilance.docx"
   },
   {
@@ -101,6 +113,7 @@
     "topic": "PV Quality Management System",
     "mother": false,
     "words": 831,
+    "description": "Learn PSMF structure, QPPV oversight, annexes, vendor mapping, system descriptions, maintenance and inspection readiness.",
     "source": "ClinixAI_Batch7_PV_QMS/B7_Child1_PSMF_Structure_Maintenance.docx"
   },
   {
@@ -109,6 +122,7 @@
     "topic": "PV Quality Management System",
     "mother": false,
     "words": 699,
+    "description": "A practical guide to PV inspection scope, evidence chains, PSMF, document rooms, SME preparation, mock inspections and common findings.",
     "source": "ClinixAI_Batch7_PV_QMS/B7_Child2_Pharmacovigilance_Inspection_Readiness.docx"
   },
   {
@@ -117,6 +131,7 @@
     "topic": "PV Quality Management System",
     "mother": false,
     "words": 699,
+    "description": "Learn how to design PV KPIs for cases, submissions, signals, aggregate reports, CAPA, vendors and inspection-ready oversight.",
     "source": "ClinixAI_Batch7_PV_QMS/B7_Child3_Pharmacovigilance_KPIs_Compliance_Metrics.docx"
   },
   {
@@ -125,6 +140,7 @@
     "topic": "PV Quality Management System",
     "mother": true,
     "words": 1192,
+    "description": "A complete guide to PV quality systems, QPPV governance, SOPs, training, vendors, CAPA, metrics, audits and inspection readiness.",
     "source": "ClinixAI_Batch7_PV_QMS/B7_Mother_Pharmacovigilance_Quality_Management_System.docx"
   },
   {
@@ -133,6 +149,7 @@
     "topic": "PV Agreements & Partner Governance",
     "mother": false,
     "words": 629,
+    "description": "Learn essential SDEA clauses for scope, day zero, case transfer, submissions, literature, reconciliation, audit and termination.",
     "source": "ClinixAI_Batch8_PV_Agreements/B8_Child1_Safety_Data_Exchange_Agreement.docx"
   },
   {
@@ -141,6 +158,7 @@
     "topic": "PV Agreements & Partner Governance",
     "mother": false,
     "words": 609,
+    "description": "Learn PV reconciliation for cases, follow-ups, submissions, literature, partners, discrepancies and automated matching.",
     "source": "ClinixAI_Batch8_PV_Agreements/B8_Child2_Pharmacovigilance_Reconciliation.docx"
   },
   {
@@ -149,6 +167,7 @@
     "topic": "PV Agreements & Partner Governance",
     "mother": false,
     "words": 714,
+    "description": "Understand MAH, manufacturer, distributor, affiliate, licensor, licensee and vendor responsibilities for pharmacovigilance.",
     "source": "ClinixAI_Batch8_PV_Agreements/B8_Child3_MAH_Manufacturer_Distributor_PV_Responsibilities.docx"
   },
   {
@@ -157,6 +176,7 @@
     "topic": "PV Agreements & Partner Governance",
     "mother": true,
     "words": 1074,
+    "description": "A complete guide to PV agreements, SDEAs, partner responsibilities, case exchange, reconciliation, vendor oversight and MAH accountability.",
     "source": "ClinixAI_Batch8_PV_Agreements/B8_Mother_Pharmacovigilance_Agreements_Partner_Governance.docx"
   },
   {
@@ -165,6 +185,7 @@
     "topic": "Special Situations",
     "mother": false,
     "words": 670,
+    "description": "Learn pregnancy and breastfeeding exposure collection, prospective follow-up, outcomes, ICSR validity, registries and cumulative safety evaluation.",
     "source": "ClinixAI_Batch9_Special_Situations/B9_Child1_Pregnancy_Breastfeeding_Exposure.docx"
   },
   {
@@ -173,6 +194,7 @@
     "topic": "Special Situations",
     "mother": false,
     "words": 589,
+    "description": "Understand medication error, overdose, misuse and abuse definitions, PV assessment, ICSR reporting, trending and risk minimisation.",
     "source": "ClinixAI_Batch9_Special_Situations/B9_Child2_Medication_Error_Overdose_Misuse_Abuse.docx"
   },
   {
@@ -181,6 +203,7 @@
     "topic": "Special Situations",
     "mother": false,
     "words": 640,
+    "description": "A practical PV guide to lack of efficacy, off-label use and occupational exposure assessment, reporting, follow-up and signal evaluation.",
     "source": "ClinixAI_Batch9_Special_Situations/B9_Child3_Lack_Efficacy_Off_Label_Occupational_Exposure.docx"
   },
   {
@@ -189,6 +212,7 @@
     "topic": "Special Situations",
     "mother": true,
     "words": 1157,
+    "description": "A complete guide to pregnancy, medication errors, overdose, misuse, abuse, off-label use, lack of efficacy and occupational exposure in PV.",
     "source": "ClinixAI_Batch9_Special_Situations/B9_Mother_Special_Situations_in_Pharmacovigilance.docx"
   },
   {
@@ -197,6 +221,7 @@
     "topic": "Signal Management",
     "mother": false,
     "words": 873,
+    "description": "Learn qualitative and quantitative signal-detection methods, data sources, biases and AI controls in pharmacovigilance.",
     "source": "ClinixAI_Blogs_Topics_4_to_6/T4_Child1_Signal_Detection_Data_Sources_Methods.docx"
   },
   {
@@ -205,6 +230,7 @@
     "topic": "Signal Management",
     "mother": false,
     "words": 838,
+    "description": "A practical guide to validating, confirming, prioritising and documenting pharmacovigilance safety signals.",
     "source": "ClinixAI_Blogs_Topics_4_to_6/T4_Child2_Signal_Validation_and_Prioritisation.docx"
   },
   {
@@ -213,6 +239,7 @@
     "topic": "Signal Management",
     "mother": false,
     "words": 850,
+    "description": "Understand PRR, ROR, IC, spontaneous-reporting bias and the correct use of disproportionality analysis in pharmacovigilance.",
     "source": "ClinixAI_Blogs_Topics_4_to_6/T4_Child3_Disproportionality_PRR_ROR_IC.docx"
   },
   {
@@ -221,6 +248,7 @@
     "topic": "Signal Management",
     "mother": true,
     "words": 1413,
+    "description": "A complete guide to pharmacovigilance signal detection, validation, prioritisation, assessment, regulatory action and AI governance.",
     "source": "ClinixAI_Blogs_Topics_4_to_6/T4_Mother_Signal_Management_in_Pharmacovigilance.docx"
   },
   {
@@ -229,6 +257,7 @@
     "topic": "Aggregate Safety Reporting",
     "mother": false,
     "words": 754,
+    "description": "Learn PBRER and PSUR planning, data lock, cumulative analysis, signal integration, QC and benefit–risk conclusion writing.",
     "source": "ClinixAI_Blogs_Topics_4_to_6/T5_Child1_PBRER_PSUR_Preparation.docx"
   },
   {
@@ -237,6 +266,7 @@
     "topic": "Aggregate Safety Reporting",
     "mother": false,
     "words": 725,
+    "description": "A complete guide to DSUR preparation, DIBD, annual safety data, SUSAR analysis, trial risk and ICH E2F compliance.",
     "source": "ClinixAI_Blogs_Topics_4_to_6/T5_Child2_DSUR_Development_Safety_Update_Report.docx"
   },
   {
@@ -245,6 +275,7 @@
     "topic": "Aggregate Safety Reporting",
     "mother": false,
     "words": 682,
+    "description": "Learn data-lock governance, dataset reconciliation, query validation and quality control for PBRER, PSUR and DSUR reports.",
     "source": "ClinixAI_Blogs_Topics_4_to_6/T5_Child3_Aggregate_Report_Data_Lock_QC.docx"
   },
   {
@@ -253,6 +284,7 @@
     "topic": "Aggregate Safety Reporting",
     "mother": true,
     "words": 1150,
+    "description": "A complete guide to aggregate safety reporting, including PBRER, PSUR, DSUR, data lock, signal integration and benefit–risk evaluation.",
     "source": "ClinixAI_Blogs_Topics_4_to_6/T5_Mother_Aggregate_Safety_Reporting.docx"
   },
   {
@@ -261,6 +293,7 @@
     "topic": "Risk Management & Benefit–Risk",
     "mother": false,
     "words": 688,
+    "description": "Learn RMP safety specifications, identified and potential risks, missing information and pharmacovigilance planning.",
     "source": "ClinixAI_Blogs_Topics_4_to_6/T6_Child1_RMP_Preparation_Safety_Specification.docx"
   },
   {
@@ -269,6 +302,7 @@
     "topic": "Risk Management & Benefit–Risk",
     "mother": false,
     "words": 639,
+    "description": "Learn routine and additional risk-minimisation measures, implementation metrics, outcome indicators and effectiveness evaluation.",
     "source": "ClinixAI_Blogs_Topics_4_to_6/T6_Child2_Risk_Minimisation_Effectiveness.docx"
   },
   {
@@ -277,6 +311,7 @@
     "topic": "Risk Management & Benefit–Risk",
     "mother": false,
     "words": 705,
+    "description": "A structured framework for benefit–risk evaluation covering therapeutic context, key benefits, key risks, uncertainty and regulatory action.",
     "source": "ClinixAI_Blogs_Topics_4_to_6/T6_Child3_Benefit_Risk_Evaluation_Framework.docx"
   },
   {
@@ -285,6 +320,7 @@
     "topic": "Risk Management & Benefit–Risk",
     "mother": true,
     "words": 993,
+    "description": "A complete guide to RMPs, safety specifications, pharmacovigilance plans, risk minimisation and benefit–risk evaluation.",
     "source": "ClinixAI_Blogs_Topics_4_to_6/T6_Mother_Risk_Management_Benefit_Risk.docx"
   },
   {
@@ -293,6 +329,7 @@
     "topic": "ICSR Quality, Medical Review & Submission",
     "mother": true,
     "words": 3475,
+    "description": "Learn how ICSR quality control and medical review ensure source fidelity, clinical coherence, correct reportability and submission-ready pharmacovigilance cases.",
     "source": "ClinixAI_Mother_Topic_3_QC_Medical_Review.docx"
   },
   {
@@ -301,6 +338,7 @@
     "topic": "ICSR Quality, Medical Review & Submission",
     "mother": false,
     "words": 1363,
+    "description": "A complete ICSR QC checklist covering source verification, coding, chronology, seriousness, narratives, reportability and submission readiness.",
     "source": "ClinixAI_Topic3_Child1_ICSR_Quality_Control.docx"
   },
   {
@@ -309,6 +347,7 @@
     "topic": "ICSR Quality, Medical Review & Submission",
     "mother": false,
     "words": 1287,
+    "description": "Understand ICSR medical review, including chronology, diagnosis, seriousness, expectedness, causality, follow-up and AI governance.",
     "source": "ClinixAI_Topic3_Child2_ICSR_Medical_Review.docx"
   },
   {
@@ -317,6 +356,7 @@
     "topic": "ICSR Quality, Medical Review & Submission",
     "mother": false,
     "words": 1454,
+    "description": "A complete guide to ICSR submission, E2B(R3), message validation, gateway acknowledgements, rejections, retransmission and compliance evidence.",
     "source": "ClinixAI_Topic3_Child3_ICSR_Regulatory_Submission.docx"
   }
 ]

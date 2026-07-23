@@ -83,31 +83,41 @@
     return tones[score % tones.length];
   };
 
+  const topicArtwork = {
+    'Clinical Trial Safety': 'clinical-trial-safety',
+    'PV Audits & CAPA': 'pv-audits-capa',
+    'Pharmacoepidemiology & Real-World Evidence': 'pharmacoepidemiology-rwe',
+    'PV Quality Management System': 'pv-qms',
+    'PV Agreements & Partner Governance': 'pv-agreements',
+    'Special Situations': 'special-situations',
+    'Signal Management': 'signal-management',
+    'Aggregate Safety Reporting': 'aggregate-reporting',
+    'Risk Management & Benefit–Risk': 'risk-benefit',
+    'ICSR Quality, Medical Review & Submission': 'icsr-quality'
+  };
+
   function renderClusterSlide(topic, articles, index) {
     const mother = articles.find((article) => article.mother) || articles[0];
     const children = articles.filter((article) => article !== mother).slice(0, 3);
     const tone = topicTone(topic);
+    const artwork = topicArtwork[topic] || 'signal-management';
     const childCards = children.map((child, childIndex) => `
       <a class="cluster-child-card cluster-tone-${tone}" href="/insights/${encodeURIComponent(child.slug || '')}">
-        <div class="cluster-card-visual" aria-hidden="true"><span>0${childIndex + 1}</span><i></i><i></i><i></i></div>
+        <div class="cluster-card-visual"><img src="/assets/media/insights/${artwork}-child-${childIndex + 1}.webp" alt="" loading="lazy" decoding="async"><span>0${childIndex + 1}</span></div>
         <div class="cluster-child-copy">
           <span class="cluster-card-label">SPECIALIST GUIDE · ${Number(child.words || 0).toLocaleString('en-IN')} WORDS</span>
           <h4>${escapeHtml(child.title || '')}</h4>
+          <p>${escapeHtml(child.description || 'Focused pharmacovigilance guidance for defensible operational decisions.')}</p>
           <strong>Read specialist guide <b>→</b></strong>
         </div>
       </a>`).join('');
     return `<section class="cluster-slide cluster-tone-${tone}" data-cluster-slide aria-label="${escapeHtml(topic)} topic cluster" ${index ? 'hidden' : ''}>
       <a class="cluster-mother-card" href="/insights/${encodeURIComponent(mother.slug || '')}">
-        <div class="cluster-mother-copy">
+        <img class="cluster-mother-image" src="/assets/media/insights/${artwork}-mother.webp" alt="" decoding="async">
+        <div class="cluster-mother-overlay">
           <span class="cluster-card-label">MOTHER GUIDE · TOPIC CLUSTER ${String(index + 1).padStart(2, '0')}</span>
           <h3>${escapeHtml(mother.title || '')}</h3>
-          <p>${Number(mother.words || 0).toLocaleString('en-IN')} words of scientific, operational and regulatory guidance.</p>
-          <strong>Enter the complete guide <b>→</b></strong>
-        </div>
-        <div class="cluster-mother-visual" aria-hidden="true">
-          <span>${String(index + 1).padStart(2, '0')}</span>
-          <div><i></i><i></i><i></i><i></i><i></i></div>
-          <small>${escapeHtml(topic)}</small>
+          <div><small>${Number(mother.words || 0).toLocaleString('en-IN')} words</small><strong>Read complete guide <b>→</b></strong></div>
         </div>
       </a>
       <div class="cluster-children">${childCards}</div>
@@ -212,9 +222,12 @@
 
   async function loadClusterShowcase(host) {
     try {
-      const response = await fetch('/insights/articles.json', { headers: { Accept: 'application/json' } });
-      if (!response.ok) throw new Error(`Local insight index ${response.status}`);
-      const articles = await response.json();
+      let articles = window.CLINIXAI_ARTICLES;
+      if (!Array.isArray(articles) || !articles.length) {
+        const response = await fetch('/insights/articles.json?v=20260723c', { headers: { Accept: 'application/json' }, cache: 'no-store' });
+        if (!response.ok) throw new Error(`Local insight index ${response.status}`);
+        articles = await response.json();
+      }
       if (!Array.isArray(articles) || !articles.length) throw new Error('Empty insight index');
       initialiseClusterShowcase(host, articles);
     } catch (error) {
