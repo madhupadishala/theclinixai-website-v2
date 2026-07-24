@@ -35,3 +35,10 @@ const box=document.querySelector('[data-word-limit]'),count=document.querySelect
 document.querySelectorAll('[data-modal-open]').forEach(b=>b.addEventListener('click',()=>document.getElementById(b.dataset.modalOpen)?.classList.add('open')));document.querySelectorAll('[data-modal-close]').forEach(b=>b.addEventListener('click',()=>b.closest('.modal')?.classList.remove('open')));document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.modal.open').forEach(m=>m.classList.remove('open'))});
 
 if(!document.querySelector('script[data-clinixai-analytics]')){const analytics=document.createElement('script');analytics.src='/analytics.js?v=20260723a';analytics.defer=true;analytics.dataset.clinixaiAnalytics='true';document.head.appendChild(analytics)}
+
+/* GA4 START */
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments)}
+gtag('js',new Date());gtag('config','G-CVZZ0ZGPGQ',{send_page_view:false});
+const ga=document.createElement('script');ga.async=true;ga.src='https://www.googletagmanager.com/gtag/js?id=G-CVZZ0ZGPGQ';document.head.appendChild(ga);
+/* GA4 END */
