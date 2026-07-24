@@ -23,7 +23,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms; connect-src 'self' https://blogs.theclinixai.com https://www.google-analytics.com https://*.clarity.ms; frame-ancestors 'self'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests"
+          "value": "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms; connect-src 'self' https://blogs.theclinixai.com https://*.google-analytics.com https://*.clarity.ms; frame-ancestors 'self'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests"
         }
       ]
     },

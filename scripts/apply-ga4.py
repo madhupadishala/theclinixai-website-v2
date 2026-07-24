@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Add a verified GA4 measurement ID to the shared site loader."""
+"""Update the verified GA4 measurement ID in the consent-aware site loader."""
 
 from __future__ import annotations
 
@@ -19,16 +19,13 @@ def main() -> None:
         raise SystemExit("Expected a GA4 measurement ID such as G-XXXXXXXXXX.")
     path = ROOT / "site.js"
     source = path.read_text(encoding="utf-8")
-    source = re.sub(r"\n/\* GA4 START \*/.*?/\* GA4 END \*/\n", "\n", source, flags=re.S)
-    block = f"""
-/* GA4 START */
-window.dataLayer=window.dataLayer||[];
-function gtag(){{dataLayer.push(arguments)}}
-gtag('js',new Date());gtag('config','{args.measurement_id}',{{send_page_view:false}});
-const ga=document.createElement('script');ga.async=true;ga.src='https://www.googletagmanager.com/gtag/js?id={args.measurement_id}';document.head.appendChild(ga);
-/* GA4 END */
-"""
-    path.write_text(source + block, encoding="utf-8")
+    legacy_pattern = r"\n/\* GA4 START \*/.*?/\* GA4 END \*/\n"
+    source = re.sub(legacy_pattern, "\n", source, flags=re.S)
+    pattern = r"(const MEASUREMENT_ID = ')[A-Z0-9-]+(';)"
+    source, count = re.subn(pattern, rf"\g<1>{args.measurement_id}\g<2>", source, count=1)
+    if count != 1:
+        raise SystemExit("Consent-aware GA4 loader was not found in site.js.")
+    path.write_text(source, encoding="utf-8")
     print(f"GA4 {args.measurement_id} applied to site.js.")
 
 
