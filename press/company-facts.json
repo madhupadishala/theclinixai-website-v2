@@ -1,0 +1,25 @@
+{
+  "name": "TheClinixAI",
+  "alternate_names": [
+    "ClinixAI",
+    "The Clinix AI"
+  ],
+  "website": "https://www.theclinixai.com/",
+  "category": [
+    "Pharmacovigilance technology",
+    "Patient-safety intelligence",
+    "Healthcare AI"
+  ],
+  "platform": "Nexus",
+  "official_resources": [
+    "https://www.theclinixai.com/company-profile",
+    "https://www.theclinixai.com/end-to-end-pharmacovigilance-nexus-platform",
+    "https://www.theclinixai.com/research-scientific-programme",
+    "https://www.theclinixai.com/media-newsroom"
+  ],
+  "restricted_claims": [
+    "Do not claim regulatory approval unless an authorised announcement exists.",
+    "Do not name customers or partners without an authorised announcement.",
+    "Do not claim validated production status for a specific customer environment without evidence."
+  ]
+}

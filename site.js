@@ -33,3 +33,5 @@ document.querySelectorAll('[data-outcomes]').forEach(stack=>{const cards=[...sta
 const box=document.querySelector('[data-word-limit]'),count=document.querySelector('[data-word-count]');box?.addEventListener('input',()=>{let words=box.value.trim()?box.value.trim().split(/\s+/):[];if(words.length>300){box.value=words.slice(0,300).join(' ');words=words.slice(0,300)}if(count)count.textContent=`${words.length} / 300 words`});
 
 document.querySelectorAll('[data-modal-open]').forEach(b=>b.addEventListener('click',()=>document.getElementById(b.dataset.modalOpen)?.classList.add('open')));document.querySelectorAll('[data-modal-close]').forEach(b=>b.addEventListener('click',()=>b.closest('.modal')?.classList.remove('open')));document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.modal.open').forEach(m=>m.classList.remove('open'))});
+
+if(!document.querySelector('script[data-clinixai-analytics]')){const analytics=document.createElement('script');analytics.src='/analytics.js?v=20260723a';analytics.defer=true;analytics.dataset.clinixaiAnalytics='true';document.head.appendChild(analytics)}

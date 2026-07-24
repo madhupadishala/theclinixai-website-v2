@@ -1,72 +1,81 @@
 (() => {
   'use strict';
-  const config = window.CLINIXAI_ANALYTICS || {};
-  const consentKey = 'clinixai-analytics-consent-v1';
-  const getConsent = () => localStorage.getItem(consentKey);
-  const setConsent = (value) => localStorage.setItem(consentKey, value);
+  const endpoint = '/api/analytics-event';
+  const storageKey = 'clinixai_attribution_v1';
+  const sessionKey = 'clinixai_session_v1';
+  const allowedUtm = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+  const sessionId = sessionStorage.getItem(sessionKey) || (crypto.randomUUID?.() || `s-${Date.now()}-${Math.random().toString(16).slice(2)}`);
+  sessionStorage.setItem(sessionKey, sessionId);
 
-  function loadScript(src, id) {
-    if (document.getElementById(id)) return;
-    const script = document.createElement('script');
-    script.id = id; script.async = true; script.src = src;
-    document.head.appendChild(script);
+  const query = new URLSearchParams(location.search);
+  const incoming = Object.fromEntries(allowedUtm.filter(key => query.has(key)).map(key => [key, query.get(key).slice(0, 160)]));
+  let attribution = {};
+  try { attribution = JSON.parse(localStorage.getItem(storageKey) || '{}'); } catch {}
+  if (Object.keys(incoming).length) {
+    attribution = { first: attribution.first || incoming, last: incoming };
+    localStorage.setItem(storageKey, JSON.stringify(attribution));
   }
 
-  function enableAnalytics() {
-    if (!config.enabled) return;
-    if (config.googleMeasurementId) {
-      loadScript(`https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(config.googleMeasurementId)}`, 'clinixai-ga');
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
-      window.gtag('js', new Date());
-      window.gtag('config', config.googleMeasurementId, { anonymize_ip: true, send_page_view: true });
-    }
-    if (config.clarityProjectId) {
-      (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-      t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;
-      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,'clarity','script',config.clarityProjectId);
-    }
+  function emit(event, detail = {}) {
+    const payload = {
+      event,
+      path: location.pathname,
+      page_title: document.title.slice(0, 180),
+      session_id: sessionId,
+      timestamp: new Date().toISOString(),
+      attribution,
+      ...detail
+    };
+    const body = JSON.stringify(payload);
+    if (navigator.sendBeacon) navigator.sendBeacon(endpoint, new Blob([body], { type: 'application/json' }));
+    else fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body, keepalive: true }).catch(() => {});
+    if (typeof window.gtag === 'function') window.gtag('event', event, detail);
+    window.dispatchEvent(new CustomEvent('clinixai:analytics', { detail: payload }));
   }
 
-  function track(name, parameters = {}) {
-    if (getConsent() !== 'accepted') return;
-    if (typeof window.gtag === 'function') window.gtag('event', name, parameters);
-  }
+  emit('page_view', { referrer_host: document.referrer ? new URL(document.referrer).hostname : '' });
 
-  function bindEvents() {
-    document.addEventListener('click', (event) => {
-      const link = event.target.closest('a');
-      if (!link) return;
-      const href = link.getAttribute('href') || '';
-      if (href.includes('contact') || href.includes('#demo')) track('cta_click', { link_text: link.textContent.trim(), link_url: href });
-      if (/\.(pdf|docx?|xlsx?)($|\?)/i.test(href)) track('file_download', { file_url: href });
-      if (link.host && link.host !== location.host) track('outbound_click', { link_url: link.href });
+  document.addEventListener('click', event => {
+    const link = event.target.closest('a');
+    if (!link) return;
+    const href = link.getAttribute('href') || '';
+    const label = (link.textContent || link.getAttribute('aria-label') || '').trim().replace(/\s+/g, ' ').slice(0, 120);
+    if (href.startsWith('/contact') || /discovery|demo|contact|discuss/i.test(label)) emit('cta_click', { label, destination: href });
+    if (/\.(pdf|docx|zip)(?:$|\?)/i.test(href)) emit('resource_download', { label, destination: href.split('?')[0] });
+    if (/^https?:\/\//i.test(href) && new URL(href).hostname !== location.hostname) emit('outbound_click', { label, destination_host: new URL(href).hostname });
+  });
+
+  document.querySelectorAll('form').forEach(form => {
+    let started = false;
+    form.addEventListener('focusin', () => {
+      if (started) return;
+      started = true;
+      emit('form_start', { form_action: form.getAttribute('action') || location.pathname });
     });
-    document.addEventListener('submit', (event) => {
-      const form = event.target.closest('form');
-      if (form) track('form_submit', { form_name: form.getAttribute('name') || form.id || 'website_form' });
+    form.addEventListener('submit', () => emit('form_submit', { form_action: form.getAttribute('action') || location.pathname }));
+    const values = { ...(attribution.first || {}), ...(attribution.last || {}) };
+    Object.entries(values).forEach(([name, value]) => {
+      let input = form.querySelector(`input[name="${name}"]`);
+      if (!input) {
+        input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = name;
+        form.appendChild(input);
+      }
+      input.value = String(value);
     });
-  }
+  });
 
-  function createBanner() {
-    if (!config.enabled || !config.consentRequired || getConsent()) return;
-    const banner = document.createElement('section');
-    banner.className = 'consent-banner'; banner.setAttribute('role','dialog');
-    banner.setAttribute('aria-label','Analytics preferences');
-    banner.innerHTML = `<p>We use optional analytics to understand website performance. No analytics load until you accept.</p><div class="consent-actions"><button class="btn btn-light" type="button" data-consent="declined">Decline</button><button class="btn btn-primary" type="button" data-consent="accepted">Accept analytics</button></div>`;
-    banner.addEventListener('click', (event) => {
-      const button = event.target.closest('[data-consent]'); if (!button) return;
-      const value = button.dataset.consent; setConsent(value); banner.remove();
-      if (value === 'accepted') enableAnalytics();
+  const reached = new Set();
+  addEventListener('scroll', () => {
+    const available = document.documentElement.scrollHeight - innerHeight;
+    if (available <= 0) return;
+    const depth = Math.round((scrollY / available) * 100);
+    [25, 50, 75, 90].forEach(mark => {
+      if (depth >= mark && !reached.has(mark)) {
+        reached.add(mark);
+        emit('scroll_depth', { percent: mark });
+      }
     });
-    document.body.appendChild(banner);
-  }
-
-  function init() {
-    bindEvents();
-    if (getConsent() === 'accepted') enableAnalytics();
-    else createBanner();
-  }
-  window.clinixaiTrack = track;
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, {once:true}); else init();
+  }, { passive: true });
 })();

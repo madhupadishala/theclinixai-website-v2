@@ -94,6 +94,12 @@ def apply_page(path: Path, route: str, schema_type: str) -> None:
         flags=re.I,
     )
     source = re.sub(
+        r'<meta\s+name=["\']robots["\'][^>]*>',
+        "",
+        source,
+        flags=re.I,
+    )
+    source = re.sub(
         r'<script\s+type=["\']application/ld\+json["\']\s+data-site-schema>.*?</script>',
         "",
         source,
@@ -153,6 +159,7 @@ def apply_page(path: Path, route: str, schema_type: str) -> None:
         ],
     }
     metadata = (
+        '<meta name="robots" content="index,follow,max-image-preview:large">'
         f'<link rel="canonical" href="{canonical}">'
         f'<meta property="og:title" content="{html.escape(title, quote=True)}">'
         f'<meta property="og:description" content="{html.escape(description, quote=True)}">'

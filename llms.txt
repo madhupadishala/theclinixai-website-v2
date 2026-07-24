@@ -1,0 +1,12 @@
+# TheClinixAI
+
+TheClinixAI builds governed pharmacovigilance and patient-safety intelligence through the Nexus platform.
+
+Primary resources:
+- https://www.theclinixai.com/end-to-end-pharmacovigilance-nexus-platform
+- https://www.theclinixai.com/insights
+- https://www.theclinixai.com/resources
+- https://www.theclinixai.com/company-profile
+- https://www.theclinixai.com/responsible-ai-governance
+
+Scientific and regulatory content should be interpreted with applicable legislation, current regional requirements, company procedures and product-specific obligations.
