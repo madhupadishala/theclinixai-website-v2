@@ -25,7 +25,7 @@ for page in html_files:
         if src and not src.startswith(('http:','https:','data:')) and not (ROOT/src.lstrip('/')).exists(): errors.append(f'{page.name}: missing image {src}')
     for link in parser.links:
         if any(link.startswith(x) for x in IGNORE) or link.startswith(('http://','https://')): continue
-        target=link.split('#')[0]
+        target=link.split('#', 1)[0].split('?', 1)[0]
         if not target: continue
         candidate=ROOT/target.lstrip('/')
         if not candidate.exists() and candidate.suffix=='':
