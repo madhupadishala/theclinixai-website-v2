@@ -1,7 +1,7 @@
 from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import urlparse
-import re, sys
+import json, re, sys
 ROOT = Path(__file__).resolve().parents[1]
 IGNORE = {'mailto:', 'tel:', '#', 'javascript:'}
 class Parser(HTMLParser):
@@ -13,6 +13,34 @@ class Parser(HTMLParser):
         if tag=='h1': self.h1 += 1
         if tag=='img': self.images.append(a)
 errors=[]; warnings=[]
+vercel = json.loads((ROOT / 'vercel.json').read_text(encoding='utf-8'))
+redirects = {
+    item.get('source'): item
+    for item in vercel.get('redirects', [])
+}
+for legacy in ('/academy-individual.html', '/academy-individual'):
+    redirect = redirects.get(legacy)
+    if not redirect:
+        errors.append(f'vercel.json: missing legacy redirect {legacy}')
+    elif redirect.get('destination') != '/pharmacovigilance-internship-programme' or redirect.get('permanent') is not True:
+        errors.append(f'vercel.json: invalid legacy redirect {legacy}')
+
+contact_handler = (ROOT / 'api/contact.js').read_text(encoding='utf-8')
+if "https://api.resend.com/emails" not in contact_handler:
+    errors.append('api/contact.js: Resend delivery is not configured')
+if "console.log('CONTACT_ENQUIRY',body)" in contact_handler.replace(' ', ''):
+    errors.append('api/contact.js: legacy PII logging remains')
+if not (ROOT / 'contact-form.js').exists():
+    errors.append('contact-form.js: missing secure form client')
+
+indexnow_key_files = [
+    path for path in ROOT.glob('*.txt')
+    if re.fullmatch(r'[A-Za-z0-9-]{8,128}\.txt', path.name)
+    and path.read_text(encoding='utf-8').strip() == path.stem
+]
+if len(indexnow_key_files) != 1:
+    errors.append(f'IndexNow: expected one valid root key file, found {len(indexnow_key_files)}')
+
 html_files=[p for p in ROOT.rglob('*.html') if p.name not in {'components.html','product-ui-gallery.html','header.html','footer.html','training.html'}]
 for page in html_files:
     text=page.read_text(encoding='utf-8')

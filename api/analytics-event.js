@@ -3,6 +3,7 @@ const ALLOWED_EVENTS = new Set([
   'cta_click',
   'form_start',
   'form_submit',
+  'generate_lead',
   'resource_download',
   'outbound_click',
   'scroll_depth'
@@ -29,6 +30,8 @@ module.exports = async function handler(request, response) {
     destination: safeText(body.destination, 240),
     destination_host: safeText(body.destination_host, 160),
     form_action: safeText(body.form_action, 180),
+    form_id: safeText(body.form_id, 80),
+    delivery: safeText(body.delivery, 40),
     percent: Number.isFinite(Number(body.percent)) ? Number(body.percent) : undefined,
     attribution: body.attribution && typeof body.attribution === 'object' ? body.attribution : {}
   };

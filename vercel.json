@@ -1,6 +1,18 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/academy-individual.html",
+      "destination": "/pharmacovigilance-internship-programme",
+      "permanent": true
+    },
+    {
+      "source": "/academy-individual",
+      "destination": "/pharmacovigilance-internship-programme",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

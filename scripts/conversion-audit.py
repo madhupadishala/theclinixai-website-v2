@@ -17,12 +17,12 @@ def main() -> int:
     if "/analytics.js" not in site:
         errors.append("site.js does not load analytics.js")
     analytics = (ROOT / "analytics.js").read_text(encoding="utf-8")
-    for event in ("page_view", "cta_click", "form_start", "form_submit", "resource_download", "outbound_click", "scroll_depth"):
+    for event in ("page_view", "cta_click", "form_start", "form_submit", "generate_lead", "resource_download", "outbound_click", "scroll_depth"):
         if event not in analytics:
             errors.append(f"analytics.js missing {event}")
     report = {
         "instrumentation_files": required,
-        "events": ["page_view", "cta_click", "form_start", "form_submit", "resource_download", "outbound_click", "scroll_depth"],
+        "events": ["page_view", "cta_click", "form_start", "form_submit", "generate_lead", "resource_download", "outbound_click", "scroll_depth"],
         "privacy": "No form-field values are included in analytics events.",
         "errors": errors,
     }

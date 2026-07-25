@@ -40,6 +40,14 @@
       window.dispatchEvent(new CustomEvent('clinixai:analytics', { detail: payload }));
     }
 
+    window.ClinixAIAnalytics = { emit };
+    window.addEventListener('clinixai:leadconfirmed', event => {
+      emit('generate_lead', {
+        form_id: event.detail?.form_id === 'contact' ? 'contact' : 'website',
+        delivery: 'confirmed'
+      });
+    });
+
     emit('page_view', { referrer_host: document.referrer ? new URL(document.referrer).hostname : '' });
 
     document.addEventListener('click', event => {
