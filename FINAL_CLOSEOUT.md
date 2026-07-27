@@ -7,6 +7,7 @@ This release makes `/resources` the only knowledge-library index.
 - The Resources menu contains **White Papers**, **Insights**, and **Blogs**.
 - The sitemap no longer advertises the retired `/insights` index.
 - Existing Academy, Careers, enquiry delivery, consent-aware GA4, and IndexNow work already present on `main` is preserved.
+- The supplied logo has been cleaned into a true 4096-pixel transparent master, with optimised header/footer wordmarks and square favicon/app-icon assets.
 
 ## Release sequence
 
@@ -14,7 +15,7 @@ Extract this release at the repository root and replace matching files. Then run
 
 ```powershell
 python .\scripts\qa-site.py
-git add header.html footer.html resources.html style.css content-service.js site.js vercel.json sitemap.xml scripts\seo-foundation.py scripts\build-sitemap.py scripts\search-engine-audit.py scripts\qa-site.py FINAL_CLOSEOUT.md
+git add header.html footer.html resources.html style.css content-service.js site.js vercel.json sitemap.xml scripts\seo-foundation.py scripts\build-sitemap.py scripts\search-engine-audit.py scripts\qa-site.py assets\brand favicon.ico icon-32.png icon-192.png icon-512.png apple-touch-icon.png FINAL_CLOSEOUT.md
 git commit -m "Consolidate Resources and complete visibility closeout"
 git pull --rebase origin main
 git push origin main

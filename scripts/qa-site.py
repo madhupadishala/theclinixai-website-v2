@@ -59,6 +59,24 @@ for href in ('/resources#white-papers', '/resources#insights'):
         errors.append(f'header.html: missing Resources route {href}')
 if 'https://blogs.theclinixai.com' not in header:
     errors.append('header.html: missing Blogs route')
+for asset in (
+    'assets/brand/clinixai-logo-4096.png',
+    'assets/brand/clinixai-logo-light-4096.png',
+    'assets/brand/clinixai-logo-header.webp',
+    'assets/brand/clinixai-logo-footer.webp',
+    'assets/brand/clinixai-mark-512.png',
+    'favicon.ico',
+    'icon-32.png',
+    'icon-192.png',
+    'icon-512.png',
+    'apple-touch-icon.png',
+):
+    if not (ROOT / asset).exists():
+        errors.append(f'brand asset missing: {asset}')
+if '/assets/brand/clinixai-logo-header.webp' not in header:
+    errors.append('header.html: production wordmark is not installed')
+if '/assets/brand/clinixai-logo-footer.webp' not in footer:
+    errors.append('footer.html: light production wordmark is not installed')
 for anchor in ('id="white-papers"', 'id="insights"', 'id="blogs"'):
     if anchor not in resources:
         errors.append(f'resources.html: missing resource section {anchor}')
