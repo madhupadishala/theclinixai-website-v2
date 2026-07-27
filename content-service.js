@@ -218,7 +218,7 @@
         : '<article class="wp-card"><div class="wp-card__body"><span class="wp-card__meta">PUBLICATION</span><h3>Publishing starts soon.</h3><p>New ClinixAI articles will appear here automatically.</p></div></article>';
     } catch (error) {
       console.warn('ClinixAI content feed unavailable', error);
-      host.innerHTML = `<article class="wp-card"><div class="wp-card__body"><span class="wp-card__meta">CLINIXAI PUBLICATION</span><h3>The insight feed is temporarily unavailable.</h3><p>Continue to the knowledge centre for the complete article library.</p><a class="btn btn-link" href="/insights">Open Insights →</a></div></article>`;
+      host.innerHTML = `<article class="wp-card"><div class="wp-card__body"><span class="wp-card__meta">CLINIXAI PUBLICATION</span><h3>The blog feed is temporarily unavailable.</h3><p>Continue to the resource library for the complete article collection.</p><a class="btn btn-link" href="/resources#insights">Open PV insights →</a></div></article>`;
     }
   }
 
@@ -239,7 +239,7 @@
     } catch (error) {
       console.warn('ClinixAI cluster showcase unavailable', error);
       const stage = host.querySelector('[data-cluster-stage]');
-      if (stage && !stage.querySelector('[data-cluster-slide]')) stage.innerHTML = '<article class="cluster-loading"><span>THECLINIXAI INSIGHTS</span><h3>The knowledge centre is temporarily unavailable.</h3><a href="/insights">Open all insights →</a></article>';
+      if (stage && !stage.querySelector('[data-cluster-slide]')) stage.innerHTML = '<article class="cluster-loading"><span>THECLINIXAI INSIGHTS</span><h3>The knowledge centre is temporarily unavailable.</h3><a href="/resources#insights">Open PV insights →</a></article>';
     }
   }
 

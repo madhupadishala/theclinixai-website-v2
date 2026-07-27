@@ -307,9 +307,8 @@
   radial-gradient(circle at 12% 14%,rgba(100,149,237,.2),transparent 24rem),
   radial-gradient(circle at 87% 76%,rgba(138,92,246,.18),transparent 26rem),
   linear-gradient(135deg,#f8f9ff 0%,#f2f5ff 46%,#f8f4ff 100%)}
-.resource-blogs .section-heading{position:relative;display:flex;justify-content:center;min-height:48px;margin:0 0 .75rem;text-align:center}
-.resource-blogs .section-heading>*{display:none}
-.resource-blogs .section-heading:after{content:"Blogs";display:block;font:800 clamp(2rem,3vw,3.15rem)/1 Manrope,sans-serif;letter-spacing:-.055em;color:#111a31}
+.resource-blogs .section-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;margin:0 0 .75rem;text-align:left}
+.resource-guide-count{display:inline-flex;align-items:center;min-height:2.35rem;padding:.55rem .85rem;border:1px solid rgba(100,149,237,.35);border-radius:999px;background:rgba(255,255,255,.72);box-shadow:0 8px 20px rgba(55,48,163,.08);color:#4f46c7;font:800 .67rem/1 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
 .cluster-mother-card{border:2px solid transparent;background:
   linear-gradient(#071426,#071426) padding-box,
   linear-gradient(112deg,#6495ed 0%,#818cf8 30%,#a855f7 62%,#22d3ee 100%) border-box;
@@ -340,7 +339,10 @@
 .cluster-progress button span{background:#d9ddf2}
 .cluster-progress button[aria-current=true] span{background:linear-gradient(90deg,#6495ed,#8b5cf6,#22d3ee)}
 .cluster-buttons .icon-button{background:linear-gradient(135deg,#3347a5,#7047c7);border:0;box-shadow:0 8px 20px rgba(79,70,229,.25)}
-@media(max-width:820px){.resource-blogs{padding:1rem 0 1.25rem}.resource-blogs .section-heading{min-height:42px;margin-bottom:.6rem}}
+@media(max-width:820px){.resource-blogs{padding:1rem 0 1.25rem}.resource-blogs .section-heading{align-items:flex-start;flex-direction:column;margin-bottom:.6rem}.resource-guide-count{min-height:2.1rem}}
+
+/* Resources navigation: one knowledge entry point, with visible sub-routes. */
+.nav-resource-menu{position:relative}.nav-resource-menu>summary{position:relative;display:flex;align-items:center;gap:.38rem;padding:10px 0;list-style:none;cursor:pointer}.nav-resource-menu>summary::-webkit-details-marker{display:none}.nav-resource-menu>summary span{color:var(--blue);font-size:.78rem;transition:transform .2s ease}.nav-resource-menu[open]>summary span{transform:rotate(180deg)}.nav-resource-menu>summary:after{content:"";position:absolute;right:100%;bottom:5px;left:0;height:2px;background:var(--blue);transition:right .25s}.nav-resource-menu:hover>summary:after,.nav-resource-menu:focus-within>summary:after,.nav-resource-menu.is-current>summary:after{right:0}.nav-resource-menu__panel{display:grid;gap:2px}.nav-resource-menu__panel a{font-size:.89rem}@media(min-width:981px){.nav-resource-menu__panel{position:absolute;z-index:70;top:calc(100% + 9px);left:-14px;min-width:188px;padding:7px;border:1px solid rgba(18,49,93,.12);border-radius:15px;background:rgba(255,255,255,.98);box-shadow:0 18px 42px rgba(17,33,61,.16)}.nav-resource-menu__panel a{padding:10px 12px!important;border-radius:9px}.nav-resource-menu__panel a:hover,.nav-resource-menu__panel a:focus-visible{background:#eef4ff}.nav-resource-menu__panel a:after{display:none}}@media(max-width:980px){.nav-resource-menu{width:100%}.nav-resource-menu>summary{justify-content:space-between;padding:10px 0}.nav-resource-menu__panel{padding:5px 0 9px 12px}.nav-resource-menu__panel a{padding:8px 0!important}}
 
 /* === COMMERCIAL SOLUTION SYSTEM === */
 .solution-page{background:#fff;color:#0b172a}.solution-page .site-header{background:rgba(255,255,255,.92)}

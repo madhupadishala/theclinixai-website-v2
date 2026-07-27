@@ -10,7 +10,7 @@ from xml.etree import ElementTree as ET
 
 
 ROOT = Path(__file__).resolve().parents[1]
-EXCLUDED = {"404.html", "header.html", "footer.html"}
+EXCLUDED = {"404.html", "header.html", "footer.html", "insights/index.html"}
 CANONICAL_RE = re.compile(r'<link\s+rel="canonical"\s+href="([^"]+)"', re.I)
 
 

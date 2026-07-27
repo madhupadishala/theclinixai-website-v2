@@ -20,7 +20,6 @@ PAGES = {
     "nexus-platform.html": ("/nexus-platform", "WebPage"),
     "services.html": ("/services", "WebPage"),
     "resources.html": ("/resources", "CollectionPage"),
-    "insights/index.html": ("/insights", "CollectionPage"),
     "research-001-beyond-automation.html": (
         "/research-001-beyond-automation",
         "ScholarlyArticle",
