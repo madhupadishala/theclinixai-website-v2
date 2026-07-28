@@ -21,6 +21,21 @@
       "source": "/academy-individual",
       "destination": "/pharmacovigilance-internship-programme",
       "permanent": true
+    },
+    {
+      "source": "/icsr-case-processing-software.html",
+      "destination": "/icsr-case-processing-software",
+      "permanent": true
+    },
+    {
+      "source": "/pharmacovigilance-literature-monitoring-software.html",
+      "destination": "/pharmacovigilance-literature-monitoring-software",
+      "permanent": true
+    },
+    {
+      "source": "/end-to-end-pharmacovigilance-nexus-platform.html",
+      "destination": "/end-to-end-pharmacovigilance-nexus-platform",
+      "permanent": true
     }
   ],
   "headers": [
