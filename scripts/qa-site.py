@@ -25,12 +25,9 @@ for legacy in ('/academy-individual.html', '/academy-individual'):
     elif redirect.get('destination') != '/pharmacovigilance-internship-programme' or redirect.get('permanent') is not True:
         errors.append(f'vercel.json: invalid legacy redirect {legacy}')
 
-for legacy in ('/insights', '/insights/index.html'):
-    redirect = redirects.get(legacy)
-    if not redirect:
-        errors.append(f'vercel.json: missing retired insights-index redirect {legacy}')
-    elif redirect.get('destination') != '/resources' or redirect.get('permanent') is not True:
-        errors.append(f'vercel.json: invalid retired insights-index redirect {legacy}')
+for active_route in ('/insights', '/insights/index.html'):
+    if active_route in redirects:
+        errors.append(f'vercel.json: active insights directory must not redirect: {active_route}')
 
 contact_handler = (ROOT / 'api/contact.js').read_text(encoding='utf-8')
 if "https://api.resend.com/emails" not in contact_handler:
@@ -51,10 +48,9 @@ if len(indexnow_key_files) != 1:
 header = (ROOT / 'header.html').read_text(encoding='utf-8')
 footer = (ROOT / 'footer.html').read_text(encoding='utf-8')
 resources = (ROOT / 'resources.html').read_text(encoding='utf-8')
-for label, source in (('header.html', header), ('footer.html', footer)):
-    if 'href="/insights"' in source:
-        errors.append(f'{label}: links to retired /insights index')
-for href in ('/resources#white-papers', '/resources#insights'):
+if 'href="/insights"' not in header:
+    errors.append('header.html: missing active Insights directory route /insights')
+for href in ('/resources#white-papers',):
     if href not in header:
         errors.append(f'header.html: missing Resources route {href}')
 if 'https://blogs.theclinixai.com' not in header:
@@ -80,8 +76,10 @@ if '/assets/brand/clinixai-logo-footer.webp' not in footer:
 for anchor in ('id="white-papers"', 'id="insights"', 'id="blogs"'):
     if anchor not in resources:
         errors.append(f'resources.html: missing resource section {anchor}')
-if 'href="/insights"' in resources:
-    errors.append('resources.html: links to retired /insights index')
+if 'href="/insights"' not in resources:
+    errors.append('resources.html: missing link to active /insights directory')
+if not (ROOT / 'insights' / 'index.html').exists():
+    errors.append('insights/index.html: active insights directory is missing')
 
 html_files=[p for p in ROOT.rglob('*.html') if p.name not in {'components.html','product-ui-gallery.html','header.html','footer.html','training.html'}]
 for page in html_files:
@@ -105,8 +103,8 @@ for page in html_files:
         if not candidate.exists(): errors.append(f'{page.name}: broken link {link}')
 
 sitemap = (ROOT / 'sitemap.xml').read_text(encoding='utf-8')
-if 'https://www.theclinixai.com/insights</loc>' in sitemap:
-    errors.append('sitemap.xml: retired /insights index is still listed')
+if 'https://www.theclinixai.com/insights</loc>' not in sitemap:
+    errors.append('sitemap.xml: active /insights directory is missing')
 print(f'Pages checked: {len(html_files)}')
 print(f'Errors: {len(errors)}')
 for x in errors: print('ERROR',x)

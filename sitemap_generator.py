@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parent
 BASE_URL = "https://www.theclinixai.com"
 OUTPUT = ROOT / "sitemap.xml"
 EXCLUDED_DIRS = {".git", ".github", "node_modules", ".vercel"}
-EXCLUDED_FILES = {"404.html"}
+EXCLUDED_FILES = {"404.html", "header.html", "footer.html"}
 
 
 def html_files():

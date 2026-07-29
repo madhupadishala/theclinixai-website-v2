@@ -1,375 +1,663 @@
 <?xml version='1.0' encoding='utf-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.theclinixai.com/</loc>
-    <lastmod>2026-07-27</lastmod>
-  </url>
-  <url>
     <loc>https://www.theclinixai.com/about</loc>
     <lastmod>2026-07-27</lastmod>
-  </url>
-  <url>
-    <loc>https://www.theclinixai.com/academy</loc>
-    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/academy-corporate-training</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/academy</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/adr-reporting-system-hospitals</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/adverse-event-intake-healthcare-professionals</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/aggregate-safety-reporting-software</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/ai-literature-screening-pharmacovigilance</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/careers</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/clinixai-india</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/company-fact-sheet</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/company-profile</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/contact</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/cookie-policy</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/e2b-r3-regulatory-submission-management</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/end-to-end-pharmacovigilance-nexus-platform</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/graduate-pharmacovigilance-programme</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/hospital-drug-safety-committee</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/hospital-mah-safety-data-exchange</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/hospital-medication-safety-software</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/hospital-pharmacovigilance-programme</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/hospital-pharmacovigilance-training</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/icsr-case-processing-software</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/icsr-quality-control-automation</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.theclinixai.com/leadership</loc>
+    <loc>https://www.theclinixai.com/</loc>
     <lastmod>2026-07-27</lastmod>
-  </url>
-  <url>
-    <loc>https://www.theclinixai.com/media-newsroom</loc>
-    <lastmod>2026-07-27</lastmod>
-  </url>
-  <url>
-    <loc>https://www.theclinixai.com/medication-error-reporting-hospitals</loc>
-    <lastmod>2026-07-27</lastmod>
-  </url>
-  <url>
-    <loc>https://www.theclinixai.com/medication-safety-audit-capa-hospitals</loc>
-    <lastmod>2026-07-27</lastmod>
-  </url>
-  <url>
-    <loc>https://www.theclinixai.com/nexus-platform</loc>
-    <lastmod>2026-07-27</lastmod>
-  </url>
-  <url>
-    <loc>https://www.theclinixai.com/partner-with-clinixai</loc>
-    <lastmod>2026-07-27</lastmod>
-  </url>
-  <url>
-    <loc>https://www.theclinixai.com/patient-safety-incident-reporting-system</loc>
-    <lastmod>2026-07-27</lastmod>
-  </url>
-  <url>
-    <loc>https://www.theclinixai.com/patient-safety-mission</loc>
-    <lastmod>2026-07-27</lastmod>
-  </url>
-  <url>
-    <loc>https://www.theclinixai.com/pharmacovigilance-agreement-partner-governance-software</loc>
-    <lastmod>2026-07-27</lastmod>
-  </url>
-  <url>
-    <loc>https://www.theclinixai.com/pharmacovigilance-careers</loc>
-    <lastmod>2026-07-27</lastmod>
-  </url>
-  <url>
-    <loc>https://www.theclinixai.com/pharmacovigilance-case-intake-automation</loc>
-    <lastmod>2026-07-27</lastmod>
-  </url>
-  <url>
-    <loc>https://www.theclinixai.com/pharmacovigilance-expert-commentary</loc>
-    <lastmod>2026-07-27</lastmod>
-  </url>
-  <url>
-    <loc>https://www.theclinixai.com/pharmacovigilance-internship-programme</loc>
-    <lastmod>2026-07-27</lastmod>
-  </url>
-  <url>
-    <loc>https://www.theclinixai.com/pharmacovigilance-literature-monitoring-software</loc>
-    <lastmod>2026-07-27</lastmod>
-  </url>
-  <url>
-    <loc>https://www.theclinixai.com/pharmacovigilance-medical-review-software</loc>
-    <lastmod>2026-07-27</lastmod>
-  </url>
-  <url>
-    <loc>https://www.theclinixai.com/pharmacovigilance-quality-management-system-software</loc>
-    <lastmod>2026-07-27</lastmod>
-  </url>
-  <url>
-    <loc>https://www.theclinixai.com/pharmacovigilance-signal-management-software</loc>
-    <lastmod>2026-07-27</lastmod>
-  </url>
-  <url>
-    <loc>https://www.theclinixai.com/pharmacovigilance-technology</loc>
-    <lastmod>2026-07-27</lastmod>
-  </url>
-  <url>
-    <loc>https://www.theclinixai.com/press-kit</loc>
-    <lastmod>2026-07-27</lastmod>
-  </url>
-  <url>
-    <loc>https://www.theclinixai.com/privacy-policy</loc>
-    <lastmod>2026-07-27</lastmod>
-  </url>
-  <url>
-    <loc>https://www.theclinixai.com/quality-compliance</loc>
-    <lastmod>2026-07-27</lastmod>
-  </url>
-  <url>
-    <loc>https://www.theclinixai.com/research-001-beyond-automation</loc>
-    <lastmod>2026-07-27</lastmod>
-  </url>
-  <url>
-    <loc>https://www.theclinixai.com/research-002-compliant-ai-literature-screening</loc>
-    <lastmod>2026-07-27</lastmod>
-  </url>
-  <url>
-    <loc>https://www.theclinixai.com/research-003-ai-nexus-intake-engine</loc>
-    <lastmod>2026-07-27</lastmod>
-  </url>
-  <url>
-    <loc>https://www.theclinixai.com/research-scientific-programme</loc>
-    <lastmod>2026-07-27</lastmod>
-  </url>
-  <url>
-    <loc>https://www.theclinixai.com/resources</loc>
-    <lastmod>2026-07-27</lastmod>
-  </url>
-  <url>
-    <loc>https://www.theclinixai.com/responsible-ai-governance</loc>
-    <lastmod>2026-07-27</lastmod>
-  </url>
-  <url>
-    <loc>https://www.theclinixai.com/services</loc>
-    <lastmod>2026-07-27</lastmod>
-  </url>
-  <url>
-    <loc>https://www.theclinixai.com/whitepaper-search-to-safety</loc>
-    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/aggregate-report-data-lock-quality-control</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/aggregate-safety-reporting-pharmacovigilance</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/benefit-risk-evaluation-pharmacovigilance</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/capa-effectiveness-check-pharmacovigilance</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/clinical-trial-safety-pharmacovigilance</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/development-safety-update-report-dsur</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/disproportionality-analysis-pharmacovigilance</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/dsur-preparation-pharmacovigilance</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/icsr-medical-review-pharmacovigilance</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/icsr-quality-control-pharmacovigilance</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/icsr-regulatory-submission-e2b-r3</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/insights</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/lack-efficacy-off-label-occupational-exposure-pv</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/mah-manufacturer-distributor-pharmacovigilance-responsibilities</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/medication-errors-overdose-misuse-abuse-pharmacovigilance</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/pbrer-psur-preparation</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/pharmacoepidemiology-in-pharmacovigilance</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/pharmacoepidemiology-study-designs</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/pharmacovigilance-agreements-partner-governance</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/pharmacovigilance-audits-capa</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/pharmacovigilance-inspection-readiness</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/pharmacovigilance-kpis-compliance-metrics</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/pharmacovigilance-quality-management-system</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/pharmacovigilance-reconciliation</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/pharmacovigilance-signal-detection</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/pharmacovigilance-system-master-file-psmf</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/post-authorisation-safety-study-pass</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/pregnancy-breastfeeding-exposure-pharmacovigilance</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/quality-control-medical-review-pharmacovigilance</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/real-world-data-evidence-pharmacovigilance</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/risk-based-pharmacovigilance-audit-programme</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/risk-management-benefit-risk-pharmacovigilance</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/risk-management-plan-preparation</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/risk-minimisation-measures-effectiveness</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/root-cause-analysis-capa-pharmacovigilance</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/sae-reporting-clinical-trials</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/safety-data-exchange-agreement-sdea</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/signal-management-in-pharmacovigilance</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/signal-validation-prioritisation-pharmacovigilance</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/special-situations-in-pharmacovigilance</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.theclinixai.com/insights/susar-assessment-reporting-timelines</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/leadership</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/media-newsroom</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/medication-error-reporting-hospitals</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/medication-safety-audit-capa-hospitals</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/nexus-platform</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/partner-with-clinixai</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/patient-safety-incident-reporting-system</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/patient-safety-mission</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/pharmacovigilance-agreement-partner-governance-software</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/pharmacovigilance-careers</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/pharmacovigilance-case-intake-automation</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/pharmacovigilance-expert-commentary</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/pharmacovigilance-internship-programme</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/pharmacovigilance-literature-monitoring-software</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/pharmacovigilance-medical-review-software</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/pharmacovigilance-quality-management-system-software</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/pharmacovigilance-signal-management-software</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/pharmacovigilance-technology</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/press-kit</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/privacy-policy</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/quality-compliance</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/research-001-beyond-automation</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/research-002-compliant-ai-literature-screening</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/research-003-ai-nexus-intake-engine</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/research-scientific-programme</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/resources</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/responsible-ai-governance</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/services/aggregate-reporting</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/services/ai-strategy</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/services/icsr-processing</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/services/inspection-readiness</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/services/literature-monitoring</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/services/medical-review</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/services/oracle-argus-safety</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/services/psmf-management</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/services/pv-team-setup</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/services/quality-management</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/services/regulatory-submissions</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/services/signal-management</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/services/training-workforce</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/services/veeva-vault-safety</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/services/vendor-oversight</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/services</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/whitepaper-beyond-automation</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.theclinixai.com/whitepaper-search-to-safety</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>

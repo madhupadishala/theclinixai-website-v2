@@ -2,6 +2,7 @@
 """Execute the approved MASTER_SPEC against the static ClinixAI website."""
 from pathlib import Path
 from html import escape
+import json
 import re
 import subprocess
 
@@ -27,7 +28,25 @@ SERVICES = [
 
 
 def page_shell(title, description, canonical, body):
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{escape(title)} | TheClinixAI</title><meta name="description" content="{escape(description)}"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="{canonical}"><link rel="icon" href="/clinixai-favicon-v2.png"><link rel="stylesheet" href="/style.css?v=20260729-seo"></head><body><a class="skip" href="#main">Skip to content</a><div id="site-header"></div><main id="main">{body}</main><div id="site-footer"></div><script src="/site.js?v=20260729-seo" defer></script></body></html>'''
+    full_title = f"{title} | TheClinixAI"
+    schema = json.dumps({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": full_title,
+        "description": description,
+        "url": canonical,
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "TheClinixAI",
+            "url": "https://www.theclinixai.com/",
+        },
+        "about": {
+            "@type": "Organization",
+            "name": "TheClinixAI",
+            "url": "https://www.theclinixai.com/",
+        },
+    }, separators=(",", ":"))
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{escape(full_title)}</title><meta name="description" content="{escape(description)}"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="{canonical}"><meta property="og:title" content="{escape(full_title)}"><meta property="og:description" content="{escape(description)}"><meta property="og:url" content="{canonical}"><meta property="og:type" content="website"><meta property="og:image" content="https://www.theclinixai.com/icon-512.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{escape(full_title)}"><meta name="twitter:description" content="{escape(description)}"><script type="application/ld+json">{schema}</script><link rel="icon" href="/clinixai-favicon-v2.png"><link rel="stylesheet" href="/style.css?v=20260729-seo"></head><body><a class="skip" href="#main">Skip to content</a><div id="site-header"></div><main id="main">{body}</main><div id="site-footer"></div><script src="/site.js?v=20260729-seo" defer></script></body></html>'''
 
 
 def service_page(slug, title, focus, scope, alignment, deliverables):
@@ -94,11 +113,43 @@ def update_services_hub():
     path = ROOT / "services.html"
     raw = path.read_text(encoding="utf-8")
     raw = raw.replace('href="contact.html"', 'href="/contact"')
-    title_map = {title.lower(): slug for slug, title, *_ in SERVICES}
-    aliases = {"literature monitoring":"literature-monitoring", "icsr processing":"icsr-processing", "signal management":"signal-management", "aggregate reporting":"aggregate-reporting", "medical review":"medical-review", "regulatory submissions":"regulatory-submissions", "quality management systems":"quality-management", "psmf management":"psmf-management", "inspection readiness":"inspection-readiness", "oracle argus safety":"oracle-argus-safety", "veeva vault safety":"veeva-vault-safety", "pv team setup":"pv-team-setup", "ai strategy":"ai-strategy", "vendor oversight":"vendor-oversight"}
-    for label, slug in aliases.items():
-        pattern = re.compile(rf'(<article class="service-card"><h3>{re.escape(label)}</h3><p>.*?</p>)(?!<a)', re.I | re.S)
-        raw = pattern.sub(rf'\1<a class="text-link" href="/services/{slug}">Read more →</a>', raw)
+    aliases = {
+        "literature monitoring": "literature-monitoring",
+        "icsr processing": "icsr-processing",
+        "signal management": "signal-management",
+        "aggregate reporting": "aggregate-reporting",
+        "medical review": "medical-review",
+        "regulatory submissions": "regulatory-submissions",
+        "quality management systems": "quality-management",
+        "psmf management": "psmf-management",
+        "inspection readiness": "inspection-readiness",
+        "oracle argus safety": "oracle-argus-safety",
+        "veeva vault safety": "veeva-vault-safety",
+        "pv team setup": "pv-team-setup",
+        "competency assessment": "training-workforce",
+        "ai strategy": "ai-strategy",
+        "vendor oversight": "vendor-oversight",
+    }
+
+    def link_priority_card(match):
+        card = match.group(0)
+        heading = re.search(r"<h3>(.*?)</h3>", card, re.I | re.S)
+        if not heading or "<a " in card:
+            return card
+        slug = aliases.get(re.sub(r"\s+", " ", heading.group(1)).strip().lower())
+        if not slug:
+            return card
+        return card.replace(
+            "</article>",
+            f'<a class="text-link" href="/services/{slug}">Read more →</a></article>',
+        )
+
+    raw = re.sub(
+        r'<article class="service-card">.*?</article>',
+        link_priority_card,
+        raw,
+        flags=re.I | re.S,
+    )
     intro = '<section class="scene scene-soft"><div class="shell prose"><h2>Operational depth behind every service</h2><p>ClinixAI services are designed as governed pharmacovigilance capabilities, not isolated staffing tasks. Each engagement defines scope, accountable roles, source documents, quality controls, escalation pathways, metrics and inspection evidence before delivery begins. The detailed service pages below explain how priority capabilities are structured and controlled.</p><p><a class="button button-primary" href="/services/literature-monitoring">Explore detailed service capabilities</a></p></div></section>'
     if 'Operational depth behind every service' not in raw:
         raw = raw.replace('</section><section class="scene">', '</section>' + intro + '<section class="scene">', 1)

@@ -3,16 +3,6 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/insights",
-      "destination": "/resources",
-      "permanent": true
-    },
-    {
-      "source": "/insights/index.html",
-      "destination": "/resources",
-      "permanent": true
-    },
-    {
       "source": "/academy-individual.html",
       "destination": "/pharmacovigilance-internship-programme",
       "permanent": true
