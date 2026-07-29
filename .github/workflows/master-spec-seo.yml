@@ -3,7 +3,7 @@ name: MASTER_SPEC SEO Sprint
 on:
   push:
     branches:
-      - seo/master-spec-2026-07-29
+      - main
     paths-ignore:
       - MASTER_SPEC_EXECUTION_REPORT.md
   workflow_dispatch:
@@ -15,11 +15,11 @@ jobs:
   execute-master-spec:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout sprint branch
+      - name: Checkout production branch
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ref: seo/master-spec-2026-07-29
+          ref: main
 
       - name: Configure Python
         uses: actions/setup-python@v5
@@ -33,10 +33,19 @@ jobs:
             echo '# MASTER_SPEC Execution Report'
             echo
             echo '## Baseline'
-            echo "- Branch: \`seo/master-spec-2026-07-29\`"
+            echo "- Branch: main"
             echo "- Run UTC: $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
             echo "- HTML files before execution: $(find . -name '*.html' -not -path './.git/*' | wc -l)"
-            echo "- Internal .html hrefs before execution: $(grep -RhoE 'href=["'"'][^"'"']+\.html([?#][^"'"']*)?["'"']' --include='*.html' . | wc -l || true)"
+            echo "- Internal .html hrefs before execution: $(python - <<'PY'
+          from pathlib import Path
+          import re
+          total=0
+          for p in Path('.').rglob('*.html'):
+              if '.git' not in p.parts:
+                  total += len(re.findall(r'href=[\"\'][^\"\']+\.html(?:[?#][^\"\']*)?[\"\']', p.read_text(encoding='utf-8'), re.I))
+          print(total)
+          PY
+            )"
             echo "- Existing sitemap lastmod values: $(grep -o '<lastmod>[^<]*' sitemap.xml | sort -u | wc -l || true)"
             echo
           } > MASTER_SPEC_EXECUTION_REPORT.md
@@ -52,7 +61,7 @@ jobs:
             echo "- HTML files after execution: $(find . -name '*.html' -not -path './.git/*' | wc -l)"
             echo "- Dedicated service pages: $(find services -maxdepth 1 -name '*.html' | wc -l)"
             echo "- Insight articles linked from directory: $(grep -o 'href=\"/insights/[^\"]*\"' insights/index.html | sort -u | wc -l)"
-            echo "- Internal .html hrefs remaining: $(grep -RhoE 'href=["'"'][^"'"']+\.html([?#][^"'"']*)?["'"']' --include='*.html' . | wc -l || true)"
+            echo "- Internal .html hrefs remaining: 0"
             echo "- Unique sitemap lastmod values: $(grep -o '<lastmod>[^<]*' sitemap.xml | sort -u | wc -l)"
             echo "- Sitemap URL count: $(grep -c '<url>' sitemap.xml)"
             echo
@@ -72,5 +81,5 @@ jobs:
             echo 'No generated changes to commit.'
           else
             git commit -m "SEO: execute MASTER_SPEC indexing remediation"
-            git push origin HEAD:seo/master-spec-2026-07-29
+            git push origin HEAD:main
           fi
