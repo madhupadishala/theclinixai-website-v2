@@ -1,7 +1,14 @@
 #!/usr/bin/env python3
-"""Generate a canonical sitemap from deployable HTML files using real Git dates."""
+"""Generate a canonical sitemap from deployable HTML files using real Git dates.
+
+A page is left out of the sitemap if its own <link rel="canonical"> tag
+points somewhere other than its own URL — that's how a page marks itself
+as a duplicate of another page, so it shouldn't be submitted to Google
+as a separate indexable URL.
+"""
 from pathlib import Path
 from datetime import datetime, timezone
+import re
 import subprocess
 import xml.etree.ElementTree as ET
 
@@ -10,6 +17,7 @@ BASE_URL = "https://www.theclinixai.com"
 OUTPUT = ROOT / "sitemap.xml"
 EXCLUDED_DIRS = {".git", ".github", "node_modules", ".vercel"}
 EXCLUDED_FILES = {"404.html", "header.html", "footer.html"}
+CANONICAL_RE = re.compile(r'<link\s+rel="canonical"\s+href="([^"]+)"', re.I)
 
 
 def html_files():
@@ -17,6 +25,16 @@ def html_files():
         p for p in ROOT.rglob("*.html")
         if p.name not in EXCLUDED_FILES and not any(part in EXCLUDED_DIRS for part in p.parts)
     )
+
+
+def is_self_canonical(path: Path, url: str) -> bool:
+    """Return False if this page declares a canonical pointing elsewhere,
+    meaning another URL is the primary version and this one should be
+    left out of the sitemap."""
+    match = CANONICAL_RE.search(path.read_text(encoding="utf-8"))
+    if not match:
+        return True
+    return match.group(1).rstrip("/") == url.rstrip("/")
 
 
 def url_for(path: Path) -> str:
@@ -74,6 +92,8 @@ def generate():
     seen = set()
     for path in html_files():
         url = url_for(path)
+        if not is_self_canonical(path, url):
+            continue
         if url in seen:
             raise RuntimeError(f"Duplicate sitemap URL: {url}")
         seen.add(url)

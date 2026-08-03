@@ -1,35 +1,57 @@
-# TheClinixAI Website — Stage 1
+# TheClinixAI Website
 
-This repository contains the rebuilt UI and code foundation for the TheClinixAI public website.
+Public marketing site for TheClinixAI (theclinixai.com) — pharmacovigilance
+platform, services, academy and research content. Static HTML/CSS/JS,
+deployed on Vercel.
 
-## What changed
+## Stack
 
-- Rewritten global visual system using Manrope, Inter and IBM Plex Mono.
-- Replaced rigid 50/50 templates with editorial, asymmetric and scenario-aware layouts.
-- Rewritten human, professional copy across all public pages.
-- Removed repeated uppercase section labels and templated dash-led copy.
-- Added proof-shaped product fragments that show evidence, reasoning and auditability without exposing full product screens.
-- Retained the WordPress REST API content architecture for the Resources page.
-- Preserved analytics, API, PWA, robots and sitemap foundations.
+- Static HTML pages with a shared `header.html` / `footer.html` loaded via `fetch()`
+- `style.css` for global styles, `site.js` for shared behaviour
+- Vercel serverless functions in `api/` for the contact form, application form,
+  whitepaper requests and analytics event logging
+- Content for `/insights`, `/resources` and the blogs feed served from
+  `data/*.json`
+- `sitemap_generator.py` regenerates `sitemap.xml` from the live HTML files
+  (see below)
 
-## Local testing
-
-Open a terminal in this folder and run:
+## Running locally
 
 ```bash
 python -m http.server 8081
 ```
 
-Then open:
+Then open `http://localhost:8081`. Don't open the HTML files directly by
+double-clicking — the shared header/footer are loaded via `fetch()`, which
+needs an actual server.
 
-```text
-http://localhost:8081
+## Deploying
+
+Push to `main`. Vercel auto-deploys from this branch. Redirects, headers and
+clean-URL routing are configured in `vercel.json`.
+
+## Sitemap
+
+Run `python sitemap_generator.py` after adding, removing, or renaming pages.
+It walks every `.html` file, builds the corresponding clean URL, and skips
+any page whose own `<link rel="canonical">` points somewhere else (i.e. a
+page that's marked as a duplicate of another URL won't be submitted to
+Google as if it were separate). Commit the regenerated `sitemap.xml`.
+
+## Project structure
+
+```
+/               top-level pages (about, contact, services, etc.)
+/services/      individual PV service pages
+/insights/      pharmacovigilance guides and articles
+/api/           Vercel serverless functions
+/data/          JSON content for insights, blogs, press, whitepapers
+/scripts/       build and maintenance scripts — see scripts/README.md
+/assets/        images and media
 ```
 
-Do not open the HTML files by double-clicking because the shared header and footer are loaded through `fetch()`.
+## Notes
 
-## Three-stage delivery model
-
-1. **Stage 1 — UI, copy and code foundation:** complete in this package.
-2. **Stage 2 — Custom media production and placement:** product fragments, compliance visuals, social preview and responsive crops.
-3. **Stage 3 — Final QA and release package:** performance, browser/mobile QA, SEO validation and deployment-ready ZIP.
+- `63c00e...b7b2.txt` at the repo root is a search-console domain
+  verification file — required, don't delete it.
+- `llms.txt` describes the site for AI crawlers, separate from `robots.txt`.
