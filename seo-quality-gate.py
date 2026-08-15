@@ -80,7 +80,9 @@ def main() -> int:
     redirected_files = {
         item["source"].lstrip("/")
         for item in vercel.get("redirects", [])
-        if item.get("permanent") and item.get("source", "").endswith(".html")
+        if item.get("permanent")
+        and item.get("source", "").endswith(".html")
+        and item.get("destination") != item["source"].removesuffix(".html")
     }
     paths = [
         p for p in sorted(ROOT.rglob("*.html"))
