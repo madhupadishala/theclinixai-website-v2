@@ -1,72 +1,44 @@
-name: MASTER_SPEC SEO Sprint
+name: Sitewide SEO Quality Gate
 
 on:
+  pull_request:
   push:
     branches: [main]
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+
+concurrency:
+  group: seo-quality-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  execute:
-    if: github.actor != 'github-actions[bot]'
+  audit:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
-      - name: Execute and verify MASTER_SPEC
-        run: |
-          python master_spec_execute.py
-          python html_audit.py
+      - name: Validate site integrity
+        run: python scripts/qa-site.py
 
-      - name: Write evidence report
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          import re
-          import xml.etree.ElementTree as ET
-          html = [p for p in Path('.').rglob('*.html') if '.git' not in p.parts]
-          services = list(Path('services').glob('*.html'))
-          insight_index = Path('insights/index.html').read_text(encoding='utf-8')
-          linked = len(set(re.findall(r'href="/insights/([^"]+)"', insight_index)))
-          root = ET.parse('sitemap.xml').getroot()
-          ns = {'s':'http://www.sitemaps.org/schemas/sitemap/0.9'}
-          urls = root.findall('s:url', ns)
-          dates = {n.text for n in root.findall('s:url/s:lastmod', ns)}
-          report = f'''# MASTER_SPEC Execution Report
+      - name: Validate search-engine signals
+        run: python scripts/search-engine-audit.py
 
-## Production result
-- HTML pages: {len(html)}
-- Dedicated service pages created: {len(services)}
-- Insight articles linked from `/insights`: {linked}
-- Internal `.html` links remaining: 0
-- Sitemap URLs: {len(urls)}
-- Unique sitemap `lastmod` dates: {len(dates)}
+      - name: Validate advanced on-page SEO
+        run: python seo-quality-gate.py
 
-## Release gates
-- Clean-link audit: PASS
-- Metadata and canonical audit: PASS
-- Internal-link integrity audit: PASS
-- Insight orphan audit: PASS
-- Service-page word-count audit: PASS
-- Sitemap uniqueness audit: PASS
-'''
-          Path('MASTER_SPEC_EXECUTION_REPORT.md').write_text(report, encoding='utf-8')
-          PY
-
-      - name: Commit generated remediation
-        run: |
-          git config user.name "ClinixAI SEO Automation"
-          git config user.email "support@theclinixai.com"
-          git add .
-          if ! git diff --cached --quiet; then
-            git commit -m "SEO: execute MASTER_SPEC indexing remediation"
-            git push origin main
-          fi
+      - name: Upload audit reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: seo-quality-reports
+          path: |
+            search-engine-readiness-report.json
+            seo-quality-report.json
+          if-no-files-found: ignore
