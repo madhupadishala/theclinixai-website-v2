@@ -211,6 +211,9 @@ def main() -> int:
     for route in sorted(required_faq_routes):
         if f"'{route}': [" not in faq_script:
             errors.append(f"site.js: missing governed FAQ set for {route}")
+        page_source = routes[route].read_text(encoding="utf-8")
+        if '"@type":"FAQPage"' in page_source:
+            errors.append(f"{routes[route].name}: static FAQPage duplicates governed runtime FAQ")
     if "'@type': 'FAQPage'" not in faq_script:
         errors.append("site.js: FAQPage JSON-LD generation is missing")
     if "textContent = answer" not in faq_script or "data-search-faq" not in faq_script:
