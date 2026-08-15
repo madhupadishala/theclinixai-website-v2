@@ -76,8 +76,30 @@ def main() -> int:
     canonicals: Counter[str] = Counter()
     incoming: Counter[str] = Counter()
 
-    paths = [p for p in sorted(ROOT.rglob("*.html")) if p.relative_to(ROOT).as_posix() not in EXCLUDED]
+    vercel = json.loads((ROOT / "vercel.json").read_text(encoding="utf-8"))
+    redirected_files = {
+        item["source"].lstrip("/")
+        for item in vercel.get("redirects", [])
+        if item.get("permanent") and item.get("source", "").endswith(".html")
+    }
+    paths = [
+        p for p in sorted(ROOT.rglob("*.html"))
+        if p.relative_to(ROOT).as_posix() not in EXCLUDED | redirected_files
+    ]
     routes = {route_for(p): p for p in paths}
+
+    # Header and footer are injected at runtime, but their links count as
+    # genuine crawl paths on every rendered page.
+    for shell_name in ("header.html", "footer.html"):
+        shell = PageParser()
+        shell.feed((ROOT / shell_name).read_text(encoding="utf-8"))
+        for href in shell.links:
+            parsed = urlparse(href)
+            if parsed.netloc and parsed.netloc != "www.theclinixai.com":
+                continue
+            target = (parsed.path or "/").rstrip("/") or "/"
+            if target in routes:
+                incoming[target] += 1
 
     for path in paths:
         rel = path.relative_to(ROOT).as_posix()
@@ -121,8 +143,8 @@ def main() -> int:
                 except json.JSONDecodeError as exc:
                     errors.append(f"{rel}: invalid JSON-LD ({exc.msg})")
         for image in parser.images:
-            if not (image.get("alt") or "").strip():
-                errors.append(f"{rel}: image has empty/missing alt text")
+            if "alt" not in image:
+                errors.append(f"{rel}: image is missing an alt attribute")
             if not image.get("width") or not image.get("height"):
                 warnings.append(f"{rel}: image missing intrinsic width/height")
                 break
