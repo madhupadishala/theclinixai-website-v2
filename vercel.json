@@ -3,13 +3,38 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/academy-individual.html",
-      "destination": "/pharmacovigilance-internship-programme",
+      "destination": "/academy",
       "permanent": true
     },
     {
       "source": "/academy-individual",
-      "destination": "/pharmacovigilance-internship-programme",
+      "destination": "/academy",
+      "permanent": true
+    },
+    {
+      "source": "/pharmacovigilance-internship-programme.html",
+      "destination": "/academy",
+      "permanent": true
+    },
+    {
+      "source": "/pharmacovigilance-internship-programme",
+      "destination": "/academy",
+      "permanent": true
+    },
+    {
+      "source": "/end-to-end-pharmacovigilance-nexus-platform.html",
+      "destination": "/nexus-platform",
+      "permanent": true
+    },
+    {
+      "source": "/end-to-end-pharmacovigilance-nexus-platform",
+      "destination": "/nexus-platform",
       "permanent": true
     },
     {
@@ -20,11 +45,6 @@
     {
       "source": "/pharmacovigilance-literature-monitoring-software.html",
       "destination": "/pharmacovigilance-literature-monitoring-software",
-      "permanent": true
-    },
-    {
-      "source": "/end-to-end-pharmacovigilance-nexus-platform.html",
-      "destination": "/end-to-end-pharmacovigilance-nexus-platform",
       "permanent": true
     }
   ],
