@@ -193,6 +193,32 @@ def main() -> int:
         for url in sorted(submitted - expected_urls):
             errors.append(f"sitemap contains non-canonical/unknown URL {url}")
 
+    # Priority commercial pages use centrally governed, visible FAQs in site.js.
+    faq_script = (ROOT / "site.js").read_text(encoding="utf-8")
+    faq_styles = (ROOT / "style.css").read_text(encoding="utf-8")
+    required_faq_routes = {
+        "/ai-literature-screening-pharmacovigilance",
+        "/pharmacovigilance-literature-monitoring-software",
+        "/nexus-platform",
+        "/icsr-case-processing-software",
+        "/icsr-quality-control-automation",
+        "/aggregate-safety-reporting-software",
+        "/pharmacovigilance-signal-management-software",
+        "/hospital-medication-safety-software",
+        "/academy",
+        "/services",
+    }
+    for route in sorted(required_faq_routes):
+        if f"'{route}': [" not in faq_script:
+            errors.append(f"site.js: missing governed FAQ set for {route}")
+    if "'@type': 'FAQPage'" not in faq_script:
+        errors.append("site.js: FAQPage JSON-LD generation is missing")
+    if "textContent = answer" not in faq_script or "data-search-faq" not in faq_script:
+        errors.append("site.js: FAQ answers must be visibly rendered and safely inserted")
+    for selector in (".search-faq", ".search-faq__item", ".search-faq__list"):
+        if selector not in faq_styles:
+            errors.append(f"style.css: missing FAQ presentation selector {selector}")
+
     report = {"pages": len(records), "errors": errors, "warnings": warnings, "records": records}
     (ROOT / "seo-quality-report.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
     print(json.dumps({"pages": len(records), "errors": len(errors), "warnings": len(warnings)}, indent=2))
