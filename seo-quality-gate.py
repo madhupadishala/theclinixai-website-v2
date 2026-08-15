@@ -219,6 +219,25 @@ def main() -> int:
         if selector not in faq_styles:
             errors.append(f"style.css: missing FAQ presentation selector {selector}")
 
+    # Commercial trust controls: prevent expired campaigns, redirected internal links
+    # and unsupported homepage claims from returning.
+    academy_source = (ROOT / "academy.html").read_text(encoding="utf-8")
+    home_source = (ROOT / "index.html").read_text(encoding="utf-8")
+    nexus_source = (ROOT / "nexus-platform.html").read_text(encoding="utf-8")
+    literature_source = (ROOT / "pharmacovigilance-literature-monitoring-software.html").read_text(encoding="utf-8")
+    for stale in ("APPLICATIONS CLOSE 31 JULY", "APPLY BEFORE 31 JULY"):
+        if stale in academy_source:
+            errors.append(f"academy.html: expired campaign claim remains: {stale}")
+    if "365-day audit ready" in home_source:
+        errors.append("index.html: unsupported absolute audit-readiness claim")
+    if 'href="/end-to-end-pharmacovigilance-nexus-platform"' in nexus_source:
+        errors.append("nexus-platform.html: internal link points at redirected legacy platform URL")
+    for marker in ("IMPLEMENTATION EVIDENCE", "What is being measured", "What we do not claim"):
+        if marker not in literature_source:
+            errors.append(f"literature solution: missing commercial proof marker {marker}")
+    if "RELEASE CLARITY" not in nexus_source:
+        errors.append("nexus-platform.html: missing staged-release clarity")
+
     report = {"pages": len(records), "errors": errors, "warnings": warnings, "records": records}
     (ROOT / "seo-quality-report.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
     print(json.dumps({"pages": len(records), "errors": len(errors), "warnings": len(warnings)}, indent=2))
