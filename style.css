@@ -554,3 +554,19 @@
     font-size:clamp(2.75rem,13vw,3.5rem);
   }
 }
+
+
+/* CLINIXAI SEARCH-INTENT FAQ START */
+.search-faq{padding:clamp(72px,9vw,118px) 0;background:linear-gradient(180deg,#f7fafc 0%,#eef7fb 100%);border-top:1px solid var(--line)}
+.search-faq__eyebrow{margin:0 0 12px;font-family:'IBM Plex Mono',monospace;font-size:.75rem;font-weight:600;letter-spacing:.13em;color:var(--blue)}
+.search-faq h2{max-width:760px;margin:0 0 34px;font-family:Manrope,sans-serif;font-size:clamp(2.35rem,5vw,4.8rem);line-height:1;letter-spacing:-.055em}
+.search-faq__list{display:grid;gap:14px;max-width:980px}
+.search-faq__item{border:1px solid #cddbe8;border-radius:18px;background:#fff;box-shadow:0 12px 32px rgba(15,23,42,.045);overflow:hidden}
+.search-faq__item summary{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px 26px;cursor:pointer;list-style:none;font-family:Manrope,sans-serif;font-size:clamp(1rem,1.5vw,1.18rem);font-weight:750;line-height:1.35;color:var(--ink)}
+.search-faq__item summary::-webkit-details-marker{display:none}
+.search-faq__item summary:after{content:'+';flex:0 0 auto;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#e7f6fb;color:#087c91;font-size:1.35rem;font-weight:600;transition:transform .2s ease}
+.search-faq__item[open] summary:after{transform:rotate(45deg)}
+.search-faq__item p{max-width:78ch;margin:0;padding:0 26px 24px;color:var(--muted);font-size:1rem;line-height:1.72}
+.search-faq__item summary:focus-visible{outline:3px solid rgba(29,78,216,.28);outline-offset:-3px}
+@media(max-width:700px){.search-faq{padding:64px 0}.search-faq__item summary{padding:18px 19px}.search-faq__item p{padding:0 19px 20px}.search-faq__item summary:after{width:28px;height:28px}}
+/* CLINIXAI SEARCH-INTENT FAQ END */
