@@ -22,10 +22,10 @@ for legacy in ('/academy-individual.html', '/academy-individual'):
     redirect = redirects.get(legacy)
     if not redirect:
         errors.append(f'vercel.json: missing legacy redirect {legacy}')
-    elif redirect.get('destination') != '/pharmacovigilance-internship-programme' or redirect.get('permanent') is not True:
+    elif redirect.get('destination') != '/academy' or redirect.get('permanent') is not True:
         errors.append(f'vercel.json: invalid legacy redirect {legacy}')
 
-for active_route in ('/insights', '/insights/index.html'):
+for active_route in ('/insights', '/insights/index.html', '/academy', '/nexus-platform'):
     if active_route in redirects:
         errors.append(f'vercel.json: active insights directory must not redirect: {active_route}')
 
