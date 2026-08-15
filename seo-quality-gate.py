@@ -82,6 +82,7 @@ def main() -> int:
         for item in vercel.get("redirects", [])
         if item.get("permanent")
         and item.get("source", "").endswith(".html")
+        and item.get("source") != "/index.html"
         and item.get("destination") != item["source"].removesuffix(".html")
     }
     paths = [
