@@ -60,7 +60,7 @@ def main() -> int:
     # Redirect sources must never be submitted as indexable sitemap URLs.
     redirects = json.loads((ROOT / "vercel.json").read_text(encoding="utf-8")).get("redirects", [])
     redirected_urls = {
-        "https://www.theclinixai.com" + item["source"].removesuffix(".html")
+        "https://www.theclinixai.com" + item["source"]
         for item in redirects
         if item.get("permanent") and item.get("source", "").startswith("/")
     }
