@@ -570,3 +570,23 @@
 .search-faq__item summary:focus-visible{outline:3px solid rgba(29,78,216,.28);outline-offset:-3px}
 @media(max-width:700px){.search-faq{padding:64px 0}.search-faq__item summary{padding:18px 19px}.search-faq__item p{padding:0 19px 20px}.search-faq__item summary:after{width:28px;height:28px}}
 /* CLINIXAI SEARCH-INTENT FAQ END */
+
+
+/* Real-world SEO proof and release transparency */
+.proof-evidence{background:linear-gradient(180deg,#f4f9ff 0%,#fff 100%)}
+.proof-evidence-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);gap:32px;align-items:stretch;margin:38px 0}
+.proof-evidence-screen{margin:0;background:#07111f;border-radius:28px;padding:14px;box-shadow:0 28px 70px rgba(15,23,42,.16)}
+.proof-evidence-screen img{width:100%;height:auto;display:block;border-radius:18px}
+.proof-evidence-screen figcaption{color:#c5d4e6;font-size:.82rem;line-height:1.55;padding:15px 10px 6px}
+.proof-evidence-flow{display:grid;gap:12px}
+.proof-evidence-flow article{background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px;display:grid;grid-template-columns:42px 1fr;column-gap:12px}
+.proof-evidence-flow article span{grid-row:1/3;color:var(--blue);font-family:'IBM Plex Mono',monospace;font-weight:700}
+.proof-evidence-flow article strong{font-family:Manrope,sans-serif}
+.proof-evidence-flow article p{margin:5px 0 0;color:var(--muted);font-size:.9rem;line-height:1.55}
+.proof-evidence-controls{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0 0 28px}
+.proof-evidence-controls div{border-top:3px solid var(--cyan);background:#fff;border-radius:0 0 18px 18px;padding:20px;box-shadow:0 12px 34px rgba(15,23,42,.06)}
+.proof-evidence-controls strong,.proof-evidence-controls span{display:block}.proof-evidence-controls span{color:var(--muted);font-size:.88rem;line-height:1.55;margin-top:8px}
+.release-clarity{background:#eef7ff}.release-clarity-head{max-width:900px}.release-clarity-head h2{font-family:Manrope,sans-serif;font-size:clamp(2.8rem,5vw,5.4rem);line-height:.96;letter-spacing:-.06em;margin:0 0 18px}.release-clarity-head>p:last-child{color:var(--muted);font-size:1.05rem;line-height:1.7}
+.release-clarity-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:38px}.release-clarity-grid article{background:#fff;border:1px solid var(--line);border-radius:24px;padding:26px;min-height:270px;display:flex;flex-direction:column}.release-clarity-grid span{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.12em;color:var(--blue)}.release-clarity-grid h3{font-family:Manrope,sans-serif;font-size:1.45rem;margin:18px 0 10px}.release-clarity-grid p{color:var(--muted);line-height:1.65}.release-clarity-grid a{margin-top:auto;color:var(--blue);font-weight:700}
+.home-proof{background:#fff}
+@media(max-width:980px){.proof-evidence-grid{grid-template-columns:1fr}.proof-evidence-controls,.release-clarity-grid{grid-template-columns:1fr}.release-clarity-grid article{min-height:0}}
