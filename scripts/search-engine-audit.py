@@ -56,6 +56,17 @@ def main() -> int:
             canonical_urls.add(match.group(1))
     missing = sorted(canonical_urls - sitemap_urls)
     extra = sorted(sitemap_urls - canonical_urls)
+
+    # Redirect sources must never be submitted as indexable sitemap URLs.
+    redirects = json.loads((ROOT / "vercel.json").read_text(encoding="utf-8")).get("redirects", [])
+    redirected_urls = {
+        "https://www.theclinixai.com" + item["source"].removesuffix(".html")
+        for item in redirects
+        if item.get("permanent") and item.get("source", "").startswith("/")
+    }
+    redirected_in_sitemap = sorted(sitemap_urls & redirected_urls)
+    if redirected_in_sitemap:
+        errors.append(f"sitemap.xml: permanent redirect sources submitted: {redirected_in_sitemap}")
     if missing:
         errors.append(f"sitemap.xml: missing canonical URLs: {missing}")
     if extra:
