@@ -1,45 +1,12 @@
-<!DOCTYPE html>
+#!/usr/bin/env python3
+from pathlib import Path
+from bs4 import BeautifulSoup
 
-<html lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1" name="viewport"/>
-<title>ICSR Quality Control in Pharmacovigilance | ClinixAI</title>
-<meta content="A complete ICSR QC checklist covering source verification, coding, chronology, seriousness, narratives, reportability and submission readiness." name="description"/>
-<meta content="Dr. Harsha" name="author"/>
-<meta content="index,follow,max-image-preview:large" name="robots"/>
-<link href="https://www.theclinixai.com/insights/icsr-quality-control-pharmacovigilance" rel="canonical"/>
-<meta content="article" property="og:type"/>
-<meta content="ICSR Quality Control in Pharmacovigilance | ClinixAI" property="og:title"/>
-<meta content="A complete ICSR QC checklist covering source verification, coding, chronology, seriousness, narratives, reportability and submission readiness." property="og:description"/>
-<meta content="https://www.theclinixai.com/insights/icsr-quality-control-pharmacovigilance" property="og:url"/>
-<meta content="TheClinixAI" property="og:site_name"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<link href="/clinixai-favicon-v2.png" rel="icon"/>
-<link href="/style.css?v=20260724-consent" rel="stylesheet"/>
-<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "ICSR Quality Control in Pharmacovigilance: A Complete Case-QC Checklist", "description": "A complete ICSR QC checklist covering source verification, coding, chronology, seriousness, narratives, reportability and submission readiness.", "datePublished": "2026-07-23", "dateModified": "2026-07-23", "mainEntityOfPage": "https://www.theclinixai.com/insights/icsr-quality-control-pharmacovigilance", "author": {"@type": "Organization", "name": "TheClinixAI"}, "publisher": {"@type": "Organization", "name": "TheClinixAI", "url": "https://www.theclinixai.com"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.theclinixai.com"}, {"@type": "ListItem", "position": 2, "name": "Insights", "item": "https://www.theclinixai.com/insights"}, {"@type": "ListItem", "position": 3, "name": "ICSR Quality Control in Pharmacovigilance: A Complete Case-QC Checklist", "item": "https://www.theclinixai.com/insights/icsr-quality-control-pharmacovigilance"}]}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is ICSR quality control?", "acceptedAnswer": {"@type": "Answer", "text": "It is the systematic verification that a processed safety case accurately represents its source and is complete, consistent, traceable and procedurally compliant before submission."}}, {"@type": "Question", "name": "Is QC the same as medical review?", "acceptedAnswer": {"@type": "Answer", "text": "No. QC primarily confirms fidelity and consistency. Medical review evaluates clinical coherence and consequential medical assessments."}}, {"@type": "Question", "name": "Can the processor perform QC?", "acceptedAnswer": {"@type": "Answer", "text": "Models vary, but sufficient independence and compensating controls are needed to reduce confirmation bias and prove objective review."}}, {"@type": "Question", "name": "Does E2B validation prove case quality?", "acceptedAnswer": {"@type": "Answer", "text": "No. It proves technical or business-rule conformance; it does not prove that chronology, seriousness, coding or medical interpretation are correct."}}, {"@type": "Question", "name": "Can AI replace ICSR QC?", "acceptedAnswer": {"@type": "Answer", "text": "AI can support comparison and detection, but consequential findings require governed human accountability and validated performance."}}]}]</script>
-</head>
-<body class="article-page">
-<a class="skip" href="#article">Skip to article</a>
-<div id="site-header"></div>
-<main id="article">
-<header class="article-hero">
-<div class="article-shell">
-<nav aria-label="Breadcrumb" class="article-breadcrumb">
-<a href="/">Home</a><span>›</span><a href="/insights">Insights</a><span>›</span>
-<span>ICSR Quality, Medical Review &amp; Submission</span>
-</nav>
-<p class="article-kicker">ICSR Quality, Medical Review &amp; Submission</p>
-<h1>ICSR Quality Control in Pharmacovigilance: A Complete Case-QC Checklist</h1>
-<p class="article-deck">A complete ICSR QC checklist covering source verification, coding, chronology, seriousness, narratives, reportability and submission readiness.</p>
-<div class="article-meta">
-<span>By Dr. Harsha, Doctorate in Pharmacy</span>
-<span>2026-07-23</span><span>6 min read</span>
-</div>
-</div>
-</header>
-<div class="article-layout article-shell">
-<article class="article-content">
+INSIGHTS_DIR = Path(__file__).resolve().parent.parent / "insights"
+
+ARTICLES = {
+
+"icsr-quality-control-pharmacovigilance": """
 <p>A case can be fully populated, medically plausible, and still be wrong. The patient's age might have been calculated off an uncertain date. The event might be coded correctly but assigned to the wrong product. A hospitalization can show up in the narrative while the seriousness field still says non-serious. A submission can sail through technical validation and still fail the most basic quality test there is: does the case actually represent the source?</p>
 <p><strong>ICSR quality control isn't proofreading. It's controlled reconstruction of the evidence before the case becomes a regulatory record.</strong></p>
 <p>This is exactly why mature pharmacovigilance organizations don't measure quality by counting completed fields. They measure it by source fidelity, internal consistency, traceability, procedural compliance, and whether an independent reviewer could actually defend every material decision in the case.</p>
@@ -99,32 +66,85 @@
 <h2 id="authoritative-references">Authoritative references</h2>
 <ul><li><a href="https://www.ema.europa.eu/en/human-regulatory-overview/post-authorisation/pharmacovigilance-post-authorisation/good-pharmacovigilance-practices-gvp" rel="noopener noreferrer" target="_blank">EMA — Good Pharmacovigilance Practices</a></li><li><a href="https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-good-pharmacovigilance-practices-module-i-pharmacovigilance-systems-their-quality-systems_en.pdf" rel="noopener noreferrer" target="_blank">EMA — GVP Module I</a></li><li><a href="https://www.ema.europa.eu/en/documents/regulatory-procedural-guideline/guideline-good-pharmacovigilance-practices-gvp-module-vi-collection-management-submission-reports-suspected-adverse-reactions-medicinal-products-rev-2_en.pdf" rel="noopener noreferrer" target="_blank">EMA — GVP Module VI</a></li><li><a href="https://www.ich.org/page/e2br3-individual-case-safety-report-icsr-specification-and-related-files" rel="noopener noreferrer" target="_blank">ICH — E2B(R3)</a></li><li><a href="https://www.meddra.org/" rel="noopener noreferrer" target="_blank">MedDRA</a></li><li><a href="https://who-umc.org/whodrug/whodrug-global/" rel="noopener noreferrer" target="_blank">UMC — WHODrug Global</a></li></ul>
 <aside class="article-disclaimer"><strong>Professional scope:</strong> This article provides scientific and operational pharmacovigilance guidance. Applicable legislation, current regional requirements, company procedures and product-specific obligations must be assessed before regulatory action.</aside>
-</article>
-<aside class="article-sidebar">
-<div class="article-sidebar-card">
-<span>Primary subject</span>
-<strong>ICSR quality control in pharmacovigilance</strong>
-<a href="/contact">Discuss your PV workflow →</a>
-</div>
-</aside>
-</div>
-<section class="solution-bridge">
-<div>
-<span>FROM SCIENTIFIC GUIDANCE TO CONTROLLED EXECUTION</span>
-<h2>Operationalise this workflow in ICSR Quality Control Automation.</h2>
-<p>Connect source evidence, accountable review, governed decisions and inspection-ready traceability within the ClinixAI Nexus architecture.</p>
-</div>
-<a href="/icsr-quality-control-automation">Explore the solution →</a>
-</section>
-<section class="related-section">
-<div class="article-shell">
-<p class="article-kicker">CONTINUE THE CLUSTER</p>
-<h2>Related pharmacovigilance guidance</h2>
-<div class="related-grid"><a class="related-article" href="/insights/quality-control-medical-review-pharmacovigilance"><span>ICSR Quality, Medical Review &amp; Submission</span><strong>Quality Control and Medical Review in Pharmacovigilance: Ensuring ICSR Scientific Integrity Before Submission</strong></a><a class="related-article" href="/insights/icsr-medical-review-pharmacovigilance"><span>ICSR Quality, Medical Review &amp; Submission</span><strong>Medical Review of ICSRs: Seriousness, Causality, Expectedness and Clinical Coherence</strong></a><a class="related-article" href="/insights/icsr-regulatory-submission-e2b-r3"><span>ICSR Quality, Medical Review &amp; Submission</span><strong>ICSR Regulatory Submission: E2B(R3), Gateway Acknowledgements and Compliance Management</strong></a><a class="related-article" href="/insights/sae-reporting-clinical-trials"><span>Clinical Trial Safety</span><strong>SAE Reporting in Clinical Trials: Investigator and Sponsor Responsibilities</strong></a></div>
-</div>
-</section>
-</main>
-<div id="site-footer"></div>
-<script src="/site.js?v=20260724-consent"></script>
-</body>
-</html>
+""",
+
+"icsr-medical-review-pharmacovigilance": """
+<p>A medically fluent narrative can still describe a clinically incoherent case. The event might precede exposure. A positive dechallenge might get selected while treatment was still ongoing. An expected event might be assessed against the wrong reference document. A serious outcome might be sitting quietly behind a mild-looking term.</p>
+<p><strong>Medical review isn't the final signature on a processed case. It's the point where the organization takes scientific accountability for what the case actually means.</strong></p>
+<p>The reviewer has to hold two boundaries at once: never ignore a clinically important pattern, and never turn incomplete information into a diagnosis or causal conclusion the source can't actually support.</p>
+<p>The operational foundation is set out in <a href="https://www.ema.europa.eu/en/documents/regulatory-procedural-guideline/guideline-good-pharmacovigilance-practices-gvp-module-vi-collection-management-submission-reports-suspected-adverse-reactions-medicinal-products-rev-2_en.pdf" rel="noopener noreferrer" target="_blank">EMA GVP Module VI</a> and the harmonised post-approval safety guidance in the <a href="https://www.ich.org/page/efficacy-guidelines" rel="noopener noreferrer" target="_blank">ICH efficacy-guideline framework</a>. Medical judgment still has to follow effective company procedures, product information, and regional requirements on top of that.</p>
+<h2 id="what-medical-review-must-accomplish">What medical review must accomplish</h2>
+<p>Medical review determines whether the clinical story, the coding, and the assessments hold together — whether they're coherent, appropriately cautious, and defensible. It evaluates the whole case. It doesn't just rubber-stamp isolated database selections one at a time.</p>
+<ul><li>Reconstruct the chronology of exposure, onset, intervention, withdrawal, rechallenge and outcome.</li><li>Determine whether reported diagnoses and selected medical concepts are supported.</li><li>Assess seriousness and medical importance without confusing seriousness with intensity.</li><li>Evaluate expectedness against the correct effective reference safety information.</li><li>Evaluate causality while preserving reporter and company assessments separately.</li><li>Identify alternative explanations, missing evidence and medically meaningful follow-up.</li><li>Confirm that the narrative communicates the clinical course without inference beyond the source.</li></ul>
+<h2 id="clinical-coherence-begins-with-chronology">Clinical coherence begins with chronology</h2>
+<p>A temporal relationship matters for a lot of causal interpretations, but sequence alone doesn't prove anything. Verify first dose, last dose, dose changes, onset, worsening, treatment, dechallenge, rechallenge, and recovery. If a date's uncertain, leave it uncertain — don't quietly firm it up to make the timeline read cleaner.</p>
+<p>Chronology also surfaces errors the fields themselves hide. If liver-test abnormalities started before exposure, the case can still be valid if a reporter suspected the medicine — but the company's medical assessment shouldn't imply exposure started the event when the timeline says otherwise. If symptoms came back before re-exposure happened, that claimed positive rechallenge needs a hard look.</p>
+<h2 id="diagnosis-preserve-the-source-test-the-evidence">Diagnosis: preserve the source, test the evidence</h2>
+<p>A diagnosis might be explicitly reported, confirmed through investigations, provisionally suspected, or inferred from a pattern. These are four different states, and I don't treat them as equivalent. Preserve the source diagnosis, and let the coding and narrative wording make the actual level of certainty clear.</p>
+<p>Watch for medically important patterns — mucosal involvement with blistering, hepatic injury patterns, symptoms compatible with anaphylaxis — without turning a possibility into a confirmed diagnosis. The right move might be targeted follow-up, additional coding under controlled convention, or escalation. It's rarely "just write down the scarier diagnosis and move on."</p>
+<h2 id="seriousness-is-not-severity">Seriousness is not severity</h2>
+<p>Severity describes intensity. Seriousness is a regulatory classification tied to outcomes or interventions — death, life threat, hospitalization, disability, congenital anomaly, or another medically important condition. A severe migraine can stay non-serious. A clinically subtle arrhythmia can be serious.</p>
+<p>The <a href="https://www.ema.europa.eu/en/human-regulatory-overview/post-authorisation/pharmacovigilance-post-authorisation/eudravigilance/important-medical-event-terms-list-version-281" rel="noopener noreferrer" target="_blank">EMA Important Medical Events list</a> helps keep identification of these events consistent, but it doesn't replace case-specific judgment or prove seriousness on its own.</p>
+<h2 id="expectedness-requires-the-correct-reference">Expectedness requires the correct reference</h2>
+<p>Expectedness isn't decided by general medical knowledge, and it's not about whether the event is common. It comes down to the applicable, effective reference safety information for the product and reporting context. Term specificity, nature, severity, and outcome all factor into that decision.</p>
+<p>Know which version was actually effective at the relevant time. An event sitting in the current label might have been unlisted when the case became reportable. And a broad class statement might not cover a clinically distinct presentation, even if it looks related on the surface.</p>
+<h2 id="causality-is-structured-reasoning-not-a-score">Causality is structured reasoning — not a score</h2>
+<div class="article-table-wrap"><table><tr><th><strong>Evidence domain</strong></th><th><strong>Questions for medical review</strong></th></tr><tr><td>Temporality</td><td>Did exposure precede the event? Is latency compatible?</td></tr><tr><td>Dechallenge/rechallenge</td><td>Did the event change after withdrawal or re-exposure, and is that change documented?</td></tr><tr><td>Biological plausibility</td><td>Is the pattern compatible with pharmacology, mechanism or known class effects?</td></tr><tr><td>Alternative causes</td><td>Could disease, infection, procedures, concomitant therapy or background risk explain the event?</td></tr><tr><td>Objective evidence</td><td>Do tests, imaging, pathology or specialist assessments support the concept?</td></tr><tr><td>Prior knowledge</td><td>Is the association known, emerging, labelled or biologically unexpected?</td></tr></table></div>
+<p>Keep reporter causality and company causality distinguishable from each other. A company can disagree with the reporter, but the reporter's judgment doesn't get erased because of that disagreement. And an absent assessment shouldn't quietly turn into "not related" — silence isn't the same as a conclusion.</p>
+<h2 id="dechallenge-and-rechallenge-common-traps">Dechallenge and rechallenge: common traps</h2>
+<ul><li>Improvement after treatment discontinuation is not necessarily positive dechallenge if the natural disease course or treatment of the event explains recovery.</li><li>A medicine must actually be stopped or meaningfully reduced before a dechallenge conclusion is made.</li><li>Rechallenge requires documented re-exposure; persistence of symptoms is not rechallenge.</li><li>A negative rechallenge may be uninterpretable if dose, latency or concomitant treatments changed.</li><li>For long half-life products, improvement may not occur immediately after withdrawal.</li></ul>
+<h2 id="medical-follow-up-should-change-the-evidence">Medical follow-up should change the evidence</h2>
+<p>A generic follow-up form can collect a lot of fields without resolving the actual uncertainty. Aim follow-up at questions that could genuinely change validity, seriousness, expectedness, causality, diagnosis, outcome, or regulatory action — not just questions that are easy to ask.</p>
+<ul><li>Hepatic events: baseline and serial values, upper limits of normal, competing causes, imaging, viral studies, action taken and recovery.</li><li>Severe cutaneous reactions: morphology, body-surface involvement, mucosal involvement, biopsy, hospitalisation and treatment.</li><li>Pregnancy: exposure window, gestational age, prenatal testing, outcome and infant follow-up.</li><li>Death: date and cause, terminal course, relationship to the event and autopsy findings.</li><li>Medication error or overdose: circumstances, actual exposure, clinical consequences, intervention and preventability.</li></ul>
+<h2 id="narrative-review-the-clinical-story-must-remain-honest">Narrative review: the clinical story must remain honest</h2>
+<p>The narrative should pull together chronology, investigation, treatment, and outcome while still preserving uncertainty. It shouldn't imply a diagnosis, dechallenge, or causality that was never actually established. Conflicting dates should be described, or resolved through follow-up — not quietly smoothed over.</p>
+<p><strong>A polished narrative that hides uncertainty isn't high quality. It's high-confidence misrepresentation.</strong></p>
+<h2 id="medical-review-and-ai">Medical review and AI</h2>
+<p>AI can extract chronology, surface potential contradictions, suggest coding concepts, and identify gaps in follow-up. It can also produce a convincing diagnosis from incomplete symptoms, infer causality straight from sequence, and mix up severity with seriousness — all fluently enough that it's easy to miss.</p>
+<p>A safe model shows its source evidence, states its uncertainty, stays within approved knowledge, and escalates consequential decisions instead of resolving them silently. Medical accountability stays with qualified people. The system supports the reasoning. It doesn't get to manufacture it.</p>
+<h2 id="medical-review-checklist">Medical-review checklist</h2>
+<ul><li>Exposure and event chronology is clinically possible and internally consistent.</li><li>Diagnoses and codes reflect the level of evidence available.</li><li>Seriousness criteria and medical importance are supported.</li><li>Expectedness uses the correct effective reference safety information.</li><li>Reporter and company causality are separated.</li><li>Dechallenge and rechallenge conclusions are evidence-based.</li><li>Alternative explanations and concomitant therapies are considered.</li><li>Follow-up questions are medically targeted.</li><li>Narrative and structured assessments communicate the same clinical story.</li><li>Uncertainty, limitations and overrides are visible in the audit trail.</li></ul>
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+<h3 id="what-is-medical-review-in-pharmacovigilance">What is medical review in pharmacovigilance?</h3>
+<p>It is the qualified clinical evaluation of an ICSR's chronology, diagnosis, seriousness, expectedness, causality, alternative explanations, follow-up needs and narrative coherence.</p>
+<h3 id="is-every-severe-adverse-event-serious">Is every severe adverse event serious?</h3>
+<p>No. Severity describes intensity; seriousness is based on defined outcomes or medical importance.</p>
+<h3 id="does-a-positive-temporal-relationship-prove-causality">Does a positive temporal relationship prove causality?</h3>
+<p>No. It supports consideration but must be evaluated with plausibility, dechallenge, rechallenge, alternative causes and objective evidence.</p>
+<h3 id="can-a-company-change-reporter-causality">Can a company change reporter causality?</h3>
+<p>The company can record its own assessment, but the reporter's assessment should remain preserved and distinguishable.</p>
+<h3 id="can-ai-conduct-medical-review">Can AI conduct medical review?</h3>
+<p>It can assist with evidence extraction and consistency checks, but consequential medical conclusions require governed human accountability.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Medical review doesn't exist to make every case sound medically complete. It exists to make every conclusion proportionate to the evidence actually behind it. The reviewer's job isn't picking the strongest diagnosis or the safest regulatory answer — it's choosing the most defensible interpretation and keeping the uncertainty visible.</p>
+<p><strong>A pharmacovigilance decision is only strong when another competent reviewer can trace the same evidence and see exactly how the conclusion was reached.</strong></p>
+<h2 id="authoritative-references">Authoritative references</h2>
+<ul><li><a href="https://www.ema.europa.eu/en/documents/regulatory-procedural-guideline/guideline-good-pharmacovigilance-practices-gvp-module-vi-collection-management-submission-reports-suspected-adverse-reactions-medicinal-products-rev-2_en.pdf" rel="noopener noreferrer" target="_blank">EMA — GVP Module VI</a></li><li><a href="https://www.ich.org/page/efficacy-guidelines" rel="noopener noreferrer" target="_blank">ICH — Efficacy guidelines</a></li><li><a href="https://www.ema.europa.eu/en/human-regulatory-overview/post-authorisation/pharmacovigilance-post-authorisation/eudravigilance/important-medical-event-terms-list-version-281" rel="noopener noreferrer" target="_blank">EMA — Important Medical Events terms</a></li><li><a href="https://www.meddra.org/" rel="noopener noreferrer" target="_blank">MedDRA</a></li></ul>
+<aside class="article-disclaimer"><strong>Professional scope:</strong> This article provides scientific and operational pharmacovigilance guidance. Applicable legislation, current regional requirements, company procedures and product-specific obligations must be assessed before regulatory action.</aside>
+""",
+
+}
+
+
+def replace_article(slug, new_html):
+    path = INSIGHTS_DIR / f"{slug}.html"
+    html = path.read_text(encoding="utf-8")
+    soup = BeautifulSoup(html, "html.parser")
+    article = soup.select_one("article.article-content")
+    new_soup = BeautifulSoup(new_html, "html.parser")
+    article.clear()
+    for child in list(new_soup.children):
+        article.append(child)
+    path.write_text(str(soup), encoding="utf-8")
+    return True
+
+
+def main():
+    for slug, html in ARTICLES.items():
+        replace_article(slug, html)
+        print(f"OK: {slug}.html")
+    print(f"\\n{len(ARTICLES)}/{len(ARTICLES)} articles rewritten")
+
+
+if __name__ == "__main__":
+    main()
