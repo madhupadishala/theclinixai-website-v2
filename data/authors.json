@@ -1,0 +1,44 @@
+{
+  "madhu-padishala": {
+    "name": "Madhu Padishala",
+    "title": "Founder, ClinixAI",
+    "credentials": "",
+    "bio": "Madhu founded ClinixAI after 7+ years in pharmacovigilance across IQVIA, Cognizant, Orcimed and SafeVig Solutions, including team leadership, SOP and PSMF authorship, and PV automation tooling.",
+    "topics": ["Aggregate Safety Reporting", "Risk Management & Benefit-Risk"]
+  },
+  "gayathri-manager": {
+    "name": "Dr. Gayathri",
+    "title": "Manager, Literature Sciences",
+    "credentials": "BDS",
+    "bio": "Dr. Gayathri leads literature screening and evidence review at ClinixAI, overseeing case-relevant literature surveillance across therapeutic areas.",
+    "topics": ["Pharmacoepidemiology & Real-World Evidence", "Signal Management", "Special Situations", "PV Quality Management System", "PV Audits & CAPA"]
+  },
+  "wany-williams": {
+    "name": "Wany Williams",
+    "title": "PV Associate, Literature Screening",
+    "credentials": "BDS",
+    "bio": "Wany works end-to-end across pharmacovigilance literature screening under Dr. Gayathri's supervision, from search strategy through case-relevant article triage.",
+    "topics": ["Pharmacoepidemiology & Real-World Evidence", "Signal Management", "Special Situations", "PV Quality Management System", "PV Audits & CAPA"]
+  },
+  "dr-surya": {
+    "name": "Dr. Surya",
+    "title": "Lead, PV Agreements & Signal Management",
+    "credentials": "Doctorate in Pharmacy",
+    "bio": "Dr. Surya has 8+ years of pharmacovigilance experience focused on safety data exchange agreements, partner governance and signal management.",
+    "topics": ["PV Agreements & Partner Governance"]
+  },
+  "dr-harsha": {
+    "name": "Dr. Harsha",
+    "title": "Lead, Clinical Trial Safety & Regulatory Submissions",
+    "credentials": "Doctorate in Pharmacy",
+    "bio": "Dr. Harsha has 8+ years of pharmacovigilance experience spanning clinical trial safety, SUSAR/DSUR reporting and ICSR regulatory submissions.",
+    "topics": ["Clinical Trial Safety", "ICSR Quality, Medical Review & Submission"]
+  },
+  "divya-jagdish": {
+    "name": "Divya Jagdish",
+    "title": "Operations Lead",
+    "credentials": "B.Pharm",
+    "bio": "Divya moved into pharmacovigilance after 7+ years as a practicing pharmacist and has spent the last 5 years in PV operations, focused on quality systems, root cause analysis and CAPA closure.",
+    "topics": ["PV Audits & CAPA"]
+  }
+}

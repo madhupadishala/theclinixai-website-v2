@@ -1,48 +1,49 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Disproportionality Analysis in Pharmacovigilance | ClinixAI</title>
-  <meta name="description" content="Understand PRR, ROR, IC, spontaneous-reporting bias and the correct use of disproportionality analysis in pharmacovigilance.">
-  <meta name="author" content="TheClinixAI">
-  <meta name="robots" content="index,follow,max-image-preview:large">
-  <link rel="canonical" href="https://www.theclinixai.com/insights/disproportionality-analysis-pharmacovigilance">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="Disproportionality Analysis in Pharmacovigilance | ClinixAI">
-  <meta property="og:description" content="Understand PRR, ROR, IC, spontaneous-reporting bias and the correct use of disproportionality analysis in pharmacovigilance.">
-  <meta property="og:url" content="https://www.theclinixai.com/insights/disproportionality-analysis-pharmacovigilance">
-  <meta property="og:site_name" content="TheClinixAI">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="/clinixai-favicon-v2.png">
-  <link rel="stylesheet" href="/style.css?v=20260724-consent">
-  <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "Disproportionality Analysis in Pharmacovigilance: PRR, ROR and IC Explained", "description": "Understand PRR, ROR, IC, spontaneous-reporting bias and the correct use of disproportionality analysis in pharmacovigilance.", "datePublished": "2026-07-23", "dateModified": "2026-07-23", "mainEntityOfPage": "https://www.theclinixai.com/insights/disproportionality-analysis-pharmacovigilance", "author": {"@type": "Organization", "name": "TheClinixAI"}, "publisher": {"@type": "Organization", "name": "TheClinixAI", "url": "https://www.theclinixai.com"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.theclinixai.com"}, {"@type": "ListItem", "position": 2, "name": "Insights", "item": "https://www.theclinixai.com/insights"}, {"@type": "ListItem", "position": 3, "name": "Disproportionality Analysis in Pharmacovigilance: PRR, ROR and IC Explained", "item": "https://www.theclinixai.com/insights/disproportionality-analysis-pharmacovigilance"}]}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is PRR?", "acceptedAnswer": {"@type": "Answer", "text": "A measure comparing the proportion of a reported event for one product with the proportion for other products."}}, {"@type": "Question", "name": "What is ROR?", "acceptedAnswer": {"@type": "Answer", "text": "A reporting-odds measure derived from a two-by-two contingency table."}}, {"@type": "Question", "name": "What is IC?", "acceptedAnswer": {"@type": "Answer", "text": "A Bayesian disproportionality measure used in global signal-detection contexts such as VigiBase."}}, {"@type": "Question", "name": "Does a positive score confirm causality?", "acceptedAnswer": {"@type": "Answer", "text": "No. It generates or supports a hypothesis requiring medical and scientific assessment."}}]}]</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Disproportionality Analysis in Pharmacovigilance | ClinixAI</title>
+<meta content="Understand PRR, ROR, IC, spontaneous-reporting bias and the correct use of disproportionality analysis in pharmacovigilance." name="description"/>
+<meta content="Wany Williams" name="author"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<link href="https://www.theclinixai.com/insights/disproportionality-analysis-pharmacovigilance" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="Disproportionality Analysis in Pharmacovigilance | ClinixAI" property="og:title"/>
+<meta content="Understand PRR, ROR, IC, spontaneous-reporting bias and the correct use of disproportionality analysis in pharmacovigilance." property="og:description"/>
+<meta content="https://www.theclinixai.com/insights/disproportionality-analysis-pharmacovigilance" property="og:url"/>
+<meta content="TheClinixAI" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="/clinixai-favicon-v2.png" rel="icon"/>
+<link href="/style.css?v=20260724-consent" rel="stylesheet"/>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "Disproportionality Analysis in Pharmacovigilance: PRR, ROR and IC Explained", "description": "Understand PRR, ROR, IC, spontaneous-reporting bias and the correct use of disproportionality analysis in pharmacovigilance.", "datePublished": "2026-07-23", "dateModified": "2026-07-23", "mainEntityOfPage": "https://www.theclinixai.com/insights/disproportionality-analysis-pharmacovigilance", "author": {"@type": "Organization", "name": "TheClinixAI"}, "publisher": {"@type": "Organization", "name": "TheClinixAI", "url": "https://www.theclinixai.com"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.theclinixai.com"}, {"@type": "ListItem", "position": 2, "name": "Insights", "item": "https://www.theclinixai.com/insights"}, {"@type": "ListItem", "position": 3, "name": "Disproportionality Analysis in Pharmacovigilance: PRR, ROR and IC Explained", "item": "https://www.theclinixai.com/insights/disproportionality-analysis-pharmacovigilance"}]}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is PRR?", "acceptedAnswer": {"@type": "Answer", "text": "A measure comparing the proportion of a reported event for one product with the proportion for other products."}}, {"@type": "Question", "name": "What is ROR?", "acceptedAnswer": {"@type": "Answer", "text": "A reporting-odds measure derived from a two-by-two contingency table."}}, {"@type": "Question", "name": "What is IC?", "acceptedAnswer": {"@type": "Answer", "text": "A Bayesian disproportionality measure used in global signal-detection contexts such as VigiBase."}}, {"@type": "Question", "name": "Does a positive score confirm causality?", "acceptedAnswer": {"@type": "Answer", "text": "No. It generates or supports a hypothesis requiring medical and scientific assessment."}}]}]</script>
 </head>
 <body class="article-page">
-  <a class="skip" href="#article">Skip to article</a>
-  <div id="site-header"></div>
-  <main id="article">
-    <header class="article-hero">
-      <div class="article-shell">
-        <nav class="article-breadcrumb" aria-label="Breadcrumb">
-          <a href="/">Home</a><span>›</span><a href="/insights">Insights</a><span>›</span>
-          <span>Signal Management</span>
-        </nav>
-        <p class="article-kicker">Signal Management</p>
-        <h1>Disproportionality Analysis in Pharmacovigilance: PRR, ROR and IC Explained</h1>
-        <p class="article-deck">Understand PRR, ROR, IC, spontaneous-reporting bias and the correct use of disproportionality analysis in pharmacovigilance.</p>
-        <div class="article-meta">
-          <span>TheClinixAI PV Science &amp; Operations</span>
-          <span>2026-07-23</span><span>4 min read</span>
-        </div>
-      </div>
-    </header>
-    <div class="article-layout article-shell">
-      <article class="article-content">
-        <p>A disproportionality score can be mathematically correct and clinically meaningless. It can also reveal a pattern no individual reviewer would notice.</p>
+<a class="skip" href="#article">Skip to article</a>
+<div id="site-header"></div>
+<main id="article">
+<header class="article-hero">
+<div class="article-shell">
+<nav aria-label="Breadcrumb" class="article-breadcrumb">
+<a href="/">Home</a><span>›</span><a href="/insights">Insights</a><span>›</span>
+<span>Signal Management</span>
+</nav>
+<p class="article-kicker">Signal Management</p>
+<h1>Disproportionality Analysis in Pharmacovigilance: PRR, ROR and IC Explained</h1>
+<p class="article-deck">Understand PRR, ROR, IC, spontaneous-reporting bias and the correct use of disproportionality analysis in pharmacovigilance.</p>
+<div class="article-meta">
+<span>By Wany Williams, BDS</span>
+<span>2026-07-23</span><span>4 min read</span>
+</div>
+</div>
+</header>
+<div class="article-layout article-shell">
+<article class="article-content">
+<p>A disproportionality score can be mathematically correct and clinically meaningless. It can also reveal a pattern no individual reviewer would notice.</p>
 <p>The difference lies in how the result is interpreted.</p>
 <p><strong>Disproportionality measures reporting imbalance. It does not measure incidence, absolute risk or causality.</strong></p>
-<p>Regulatory foundation: <a href="https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-good-pharmacovigilance-practices-gvp-module-ix-addendum-i-methodological-aspects-signal-detection-spontaneous-reports-suspected-adverse-reactions_en.pdf" target="_blank" rel="noopener noreferrer">GVP IX Addendum</a>; <a href="https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-good-pharmacovigilance-practices-gvp-module-ix-signal-management-rev-1_en.pdf" target="_blank" rel="noopener noreferrer">GVP IX</a>; <a href="https://www.ema.europa.eu/en/human-regulatory-overview/research-development/pharmacovigilance-research-development/eudravigilance" target="_blank" rel="noopener noreferrer">EudraVigilance</a></p>
+<p>Regulatory foundation: <a href="https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-good-pharmacovigilance-practices-gvp-module-ix-addendum-i-methodological-aspects-signal-detection-spontaneous-reports-suspected-adverse-reactions_en.pdf" rel="noopener noreferrer" target="_blank">GVP IX Addendum</a>; <a href="https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-good-pharmacovigilance-practices-gvp-module-ix-signal-management-rev-1_en.pdf" rel="noopener noreferrer" target="_blank">GVP IX</a>; <a href="https://www.ema.europa.eu/en/human-regulatory-overview/research-development/pharmacovigilance-research-development/eudravigilance" rel="noopener noreferrer" target="_blank">EudraVigilance</a></p>
 <h2 id="what-disproportionality-analysis-measures">What disproportionality analysis measures</h2>
 <p>Disproportionality compares the reporting of a drug–event pair with reporting of other drug–event combinations in the same database. It is designed for hypothesis generation within spontaneous-report data.</p>
 <h2 id="prr-ror-and-ic">PRR, ROR and IC</h2>
@@ -55,7 +56,7 @@
 <p>Review case narratives, chronology, coding, duplicates, outcomes, alternative causes and product role. Compare with labels, literature, class effects, epidemiology and exposure.</p>
 <ul><li>Confirm the exact drug and event definitions.</li><li>Inspect the contributing cases.</li><li>Evaluate reporting context and biases.</li><li>Look for clinical coherence.</li><li>Define the safety question requiring validation.</li></ul>
 <h2 id="common-interpretation-errors">Common interpretation errors</h2>
-<p>Frequent errors include calling a signal &#x27;positive&#x27; solely because a threshold was crossed, comparing scores across databases as if equivalent, ignoring small cell counts and treating absence of disproportionality as absence of association.</p>
+<p>Frequent errors include calling a signal 'positive' solely because a threshold was crossed, comparing scores across databases as if equivalent, ignoring small cell counts and treating absence of disproportionality as absence of association.</p>
 <h2 id="ai-and-statistical-signal-detection">AI and statistical signal detection</h2>
 <p>AI can support semantic event grouping and case review but can amplify bias if trained on the same distorted reporting patterns. Statistical and AI outputs require transparent methods and medical oversight.</p>
 <h2 id="how-experienced-signal-teams-challenge-the-evidence">How experienced signal teams challenge the evidence</h2>
@@ -83,35 +84,34 @@
 <p>Disproportionality is powerful precisely because it is limited: it tells us where reporting looks unusual. The quality of signal management depends on what we do next.</p>
 <p><strong>Statistics can point to the door. Only clinical evidence can tell us whether there is a real safety problem behind it.</strong></p>
 <h2 id="authoritative-references">Authoritative references</h2>
-<ul><li><a href="https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-good-pharmacovigilance-practices-gvp-module-ix-addendum-i-methodological-aspects-signal-detection-spontaneous-reports-suspected-adverse-reactions_en.pdf" target="_blank" rel="noopener noreferrer">GVP IX Addendum</a></li><li><a href="https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-good-pharmacovigilance-practices-gvp-module-ix-signal-management-rev-1_en.pdf" target="_blank" rel="noopener noreferrer">GVP IX</a></li><li><a href="https://www.ema.europa.eu/en/human-regulatory-overview/research-development/pharmacovigilance-research-development/eudravigilance" target="_blank" rel="noopener noreferrer">EudraVigilance</a></li><li><a href="https://www.fda.gov/drugs/surveillance/fda-adverse-event-reporting-system-faers" target="_blank" rel="noopener noreferrer">FDA FAERS</a></li><li><a href="https://who-umc.org/vigibase/" target="_blank" rel="noopener noreferrer">WHO VigiBase</a></li></ul>
-        <aside class="article-disclaimer"><strong>Professional scope:</strong> This article provides scientific and operational pharmacovigilance guidance. Applicable legislation, current regional requirements, company procedures and product-specific obligations must be assessed before regulatory action.</aside>
-      </article>
-      <aside class="article-sidebar">
-        <div class="article-sidebar-card">
-          <span>Primary subject</span>
-          <strong>disproportionality analysis in pharmacovigilance</strong>
-          <a href="/contact">Discuss your PV workflow →</a>
-        </div>
-      </aside>
-    </div>
-
-    <section class="solution-bridge">
-      <div>
-        <span>FROM SCIENTIFIC GUIDANCE TO CONTROLLED EXECUTION</span>
-        <h2>Operationalise this workflow in Signal Management Software.</h2>
-        <p>Connect source evidence, accountable review, governed decisions and inspection-ready traceability within the ClinixAI Nexus architecture.</p>
-      </div>
-      <a href="/pharmacovigilance-signal-management-software">Explore the solution →</a>
-    </section>
-    <section class="related-section">
-      <div class="article-shell">
-        <p class="article-kicker">CONTINUE THE CLUSTER</p>
-        <h2>Related pharmacovigilance guidance</h2>
-        <div class="related-grid"><a class="related-article" href="/insights/pharmacovigilance-signal-detection"><span>Signal Management</span><strong>Signal Detection in Pharmacovigilance: Data Sources, Methods and Emerging Safety Patterns</strong></a><a class="related-article" href="/insights/signal-validation-prioritisation-pharmacovigilance"><span>Signal Management</span><strong>Signal Validation and Prioritisation in Pharmacovigilance</strong></a><a class="related-article" href="/insights/signal-management-in-pharmacovigilance"><span>Signal Management</span><strong>Signal Management in Pharmacovigilance: From Detection to Regulatory Action</strong></a><a class="related-article" href="/insights/sae-reporting-clinical-trials"><span>Clinical Trial Safety</span><strong>SAE Reporting in Clinical Trials: Investigator and Sponsor Responsibilities</strong></a></div>
-      </div>
-    </section>
-  </main>
-  <div id="site-footer"></div>
-  <script src="/site.js?v=20260724-consent"></script>
+<ul><li><a href="https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-good-pharmacovigilance-practices-gvp-module-ix-addendum-i-methodological-aspects-signal-detection-spontaneous-reports-suspected-adverse-reactions_en.pdf" rel="noopener noreferrer" target="_blank">GVP IX Addendum</a></li><li><a href="https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-good-pharmacovigilance-practices-gvp-module-ix-signal-management-rev-1_en.pdf" rel="noopener noreferrer" target="_blank">GVP IX</a></li><li><a href="https://www.ema.europa.eu/en/human-regulatory-overview/research-development/pharmacovigilance-research-development/eudravigilance" rel="noopener noreferrer" target="_blank">EudraVigilance</a></li><li><a href="https://www.fda.gov/drugs/surveillance/fda-adverse-event-reporting-system-faers" rel="noopener noreferrer" target="_blank">FDA FAERS</a></li><li><a href="https://who-umc.org/vigibase/" rel="noopener noreferrer" target="_blank">WHO VigiBase</a></li></ul>
+<aside class="article-disclaimer"><strong>Professional scope:</strong> This article provides scientific and operational pharmacovigilance guidance. Applicable legislation, current regional requirements, company procedures and product-specific obligations must be assessed before regulatory action.</aside>
+</article>
+<aside class="article-sidebar">
+<div class="article-sidebar-card">
+<span>Primary subject</span>
+<strong>disproportionality analysis in pharmacovigilance</strong>
+<a href="/contact">Discuss your PV workflow →</a>
+</div>
+</aside>
+</div>
+<section class="solution-bridge">
+<div>
+<span>FROM SCIENTIFIC GUIDANCE TO CONTROLLED EXECUTION</span>
+<h2>Operationalise this workflow in Signal Management Software.</h2>
+<p>Connect source evidence, accountable review, governed decisions and inspection-ready traceability within the ClinixAI Nexus architecture.</p>
+</div>
+<a href="/pharmacovigilance-signal-management-software">Explore the solution →</a>
+</section>
+<section class="related-section">
+<div class="article-shell">
+<p class="article-kicker">CONTINUE THE CLUSTER</p>
+<h2>Related pharmacovigilance guidance</h2>
+<div class="related-grid"><a class="related-article" href="/insights/pharmacovigilance-signal-detection"><span>Signal Management</span><strong>Signal Detection in Pharmacovigilance: Data Sources, Methods and Emerging Safety Patterns</strong></a><a class="related-article" href="/insights/signal-validation-prioritisation-pharmacovigilance"><span>Signal Management</span><strong>Signal Validation and Prioritisation in Pharmacovigilance</strong></a><a class="related-article" href="/insights/signal-management-in-pharmacovigilance"><span>Signal Management</span><strong>Signal Management in Pharmacovigilance: From Detection to Regulatory Action</strong></a><a class="related-article" href="/insights/sae-reporting-clinical-trials"><span>Clinical Trial Safety</span><strong>SAE Reporting in Clinical Trials: Investigator and Sponsor Responsibilities</strong></a></div>
+</div>
+</section>
+</main>
+<div id="site-footer"></div>
+<script src="/site.js?v=20260724-consent"></script>
 </body>
 </html>
