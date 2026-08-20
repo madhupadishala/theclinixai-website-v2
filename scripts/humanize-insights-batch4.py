@@ -1,45 +1,10 @@
-<!DOCTYPE html>
+#!/usr/bin/env python3
+from pathlib import Path
+from bs4 import BeautifulSoup
 
-<html lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1" name="viewport"/>
-<title>Quality Control and Medical Review | ClinixAI</title>
-<meta content="Learn how ICSR quality control and medical review ensure source fidelity, clinical coherence, correct reportability and submission-ready pharmacovigilance cases." name="description"/>
-<meta content="Dr. Harsha" name="author"/>
-<meta content="index,follow,max-image-preview:large" name="robots"/>
-<link href="https://www.theclinixai.com/insights/quality-control-medical-review-pharmacovigilance" rel="canonical"/>
-<meta content="article" property="og:type"/>
-<meta content="Quality Control and Medical Review | ClinixAI" property="og:title"/>
-<meta content="Learn how ICSR quality control and medical review ensure source fidelity, clinical coherence, correct reportability and submission-ready pharmacovigilance cases." property="og:description"/>
-<meta content="https://www.theclinixai.com/insights/quality-control-medical-review-pharmacovigilance" property="og:url"/>
-<meta content="TheClinixAI" property="og:site_name"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<link href="/clinixai-favicon-v2.png" rel="icon"/>
-<link href="/style.css?v=20260724-consent" rel="stylesheet"/>
-<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "Quality Control and Medical Review in Pharmacovigilance: Ensuring ICSR Scientific Integrity Before Submission", "description": "Learn how ICSR quality control and medical review ensure source fidelity, clinical coherence, correct reportability and submission-ready pharmacovigilance cases.", "datePublished": "2026-07-23", "dateModified": "2026-07-23", "mainEntityOfPage": "https://www.theclinixai.com/insights/quality-control-medical-review-pharmacovigilance", "author": {"@type": "Organization", "name": "TheClinixAI"}, "publisher": {"@type": "Organization", "name": "TheClinixAI", "url": "https://www.theclinixai.com"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.theclinixai.com"}, {"@type": "ListItem", "position": 2, "name": "Insights", "item": "https://www.theclinixai.com/insights"}, {"@type": "ListItem", "position": 3, "name": "Quality Control and Medical Review in Pharmacovigilance: Ensuring ICSR Scientific Integrity Before Submission", "item": "https://www.theclinixai.com/insights/quality-control-medical-review-pharmacovigilance"}]}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is ICSR quality control in pharmacovigilance?", "acceptedAnswer": {"@type": "Answer", "text": "ICSR QC is the structured verification that a processed case accurately represents its source, follows controlled procedures and remains complete, consistent, traceable and regulator-ready. It includes source-to-field comparison, coding checks, chronology review, narrative consistency and confirmation of critical regulatory data."}}, {"@type": "Question", "name": "Is medical review mandatory for every ICSR?", "acceptedAnswer": {"@type": "Answer", "text": "The exact workflow depends on applicable regulations, company procedures, case type and risk model. However, medical accountability must be defined for assessments that require clinical judgement. High-risk and medically complex cases should not depend solely on administrative or automated review."}}, {"@type": "Question", "name": "Can the same person perform case processing and QC?", "acceptedAnswer": {"@type": "Answer", "text": "Organisational models vary, but independence should be sufficient to control confirmation bias and detect errors objectively. Where staffing requires combined responsibilities, compensating controls, clear role separation and documented oversight become important."}}, {"@type": "Question", "name": "What is the difference between QC and medical review?", "acceptedAnswer": {"@type": "Answer", "text": "QC primarily tests fidelity, completeness, consistency and procedural compliance. Medical review evaluates clinical coherence, diagnosis, seriousness, causality, expectedness, alternative explanations and medically meaningful follow-up. Both are connected, but neither replaces the other."}}, {"@type": "Question", "name": "Does passing E2B validation mean the case is medically correct?", "acceptedAnswer": {"@type": "Answer", "text": "No. E2B validation confirms that a message meets technical or business rules. A technically valid message can still contain incorrect chronology, coding, seriousness, causality or medical interpretation."}}, {"@type": "Question", "name": "Can AI perform ICSR quality control?", "acceptedAnswer": {"@type": "Answer", "text": "AI can support extraction, comparison, contradiction detection, coding suggestions and review prioritisation. It should operate within a validated context of use, with traceable evidence and human accountability for consequential medical and regulatory decisions."}}]}]</script>
-</head>
-<body class="article-page">
-<a class="skip" href="#article">Skip to article</a>
-<div id="site-header"></div>
-<main id="article">
-<header class="article-hero">
-<div class="article-shell">
-<nav aria-label="Breadcrumb" class="article-breadcrumb">
-<a href="/">Home</a><span>›</span><a href="/insights">Insights</a><span>›</span>
-<span>ICSR Quality, Medical Review &amp; Submission</span>
-</nav>
-<p class="article-kicker">ICSR Quality, Medical Review &amp; Submission</p>
-<h1>Quality Control and Medical Review in Pharmacovigilance: Ensuring ICSR Scientific Integrity Before Submission</h1>
-<p class="article-deck">Learn how ICSR quality control and medical review ensure source fidelity, clinical coherence, correct reportability and submission-ready pharmacovigilance cases.</p>
-<div class="article-meta">
-<span>By Dr. Harsha, Doctorate in Pharmacy</span>
-<span>2026-07-23</span><span>16 min read</span>
-</div>
-</div>
-</header>
-<div class="article-layout article-shell">
-<article class="article-content">
+INSIGHTS_DIR = Path(__file__).resolve().parent.parent / "insights"
+
+ARTICLE = """
 <p>A serious case lands late on a Friday. The reporter writes "severe liver injury," the lab values are scattered across two follow-up emails, the suspect medicine was stopped, and the patient improved. The case processor enters everything, codes the event, marks the case complete. Every mandatory field is populated. The submission clock is running.</p>
 <p>The case isn't ready, though.</p>
 <p>Look closer at the chronology and the abnormal liver tests actually started before the suspect medicine did. The narrative implies improvement after withdrawal, but the source never actually establishes a true dechallenge. Someone picked the seriousness criterion off the word "severe," with no evidence of hospitalization, disability, life-threatening status, or another medically important condition behind it. The source documents hold facts the structured fields never captured.</p>
@@ -149,32 +114,21 @@
 <h2 id="authoritative-references">Authoritative references</h2>
 <ul><li><a href="https://www.ema.europa.eu/en/human-regulatory-overview/post-authorisation/pharmacovigilance-post-authorisation/good-pharmacovigilance-practices-gvp" rel="noopener noreferrer" target="_blank">EMA — Good Pharmacovigilance Practices overview</a></li><li><a href="https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-good-pharmacovigilance-practices-module-i-pharmacovigilance-systems-their-quality-systems_en.pdf" rel="noopener noreferrer" target="_blank">EMA — GVP Module I: Pharmacovigilance systems and quality systems</a></li><li><a href="https://www.ema.europa.eu/en/documents/regulatory-procedural-guideline/guideline-good-pharmacovigilance-practices-gvp-module-vi-collection-management-submission-reports-suspected-adverse-reactions-medicinal-products-rev-2_en.pdf" rel="noopener noreferrer" target="_blank">EMA — GVP Module VI: Collection, management and submission of suspected adverse-reaction reports</a></li><li><a href="https://www.ich.org/page/efficacy-guidelines" rel="noopener noreferrer" target="_blank">ICH — Efficacy guidelines, including E2 pharmacovigilance guidance</a></li><li><a href="https://www.ich.org/page/e2br3-individual-case-safety-report-icsr-specification-and-related-files" rel="noopener noreferrer" target="_blank">ICH — E2B(R3) ICSR specification and related files</a></li><li><a href="https://www.ema.europa.eu/en/human-regulatory-overview/research-development/pharmacovigilance-research-development/eudravigilance/electronic-reporting-suspected-adverse-reactions" rel="noopener noreferrer" target="_blank">EMA — Electronic reporting of suspected adverse reactions</a></li><li><a href="https://www.meddra.org/" rel="noopener noreferrer" target="_blank">MedDRA — official terminology resources</a></li><li><a href="https://who-umc.org/whodrug/whodrug-global/" rel="noopener noreferrer" target="_blank">Uppsala Monitoring Centre — WHODrug Global</a></li></ul>
 <aside class="article-disclaimer"><strong>Professional scope:</strong> This article provides scientific and operational pharmacovigilance guidance. Applicable legislation, current regional requirements, company procedures and product-specific obligations must be assessed before regulatory action.</aside>
-</article>
-<aside class="article-sidebar">
-<div class="article-sidebar-card">
-<span>Primary subject</span>
-<strong>quality control and medical review in pharmacovigilance</strong>
-<a href="/contact">Discuss your PV workflow →</a>
-</div>
-</aside>
-</div>
-<section class="solution-bridge">
-<div>
-<span>FROM SCIENTIFIC GUIDANCE TO CONTROLLED EXECUTION</span>
-<h2>Operationalise this workflow in ICSR Case Processing Software.</h2>
-<p>Connect source evidence, accountable review, governed decisions and inspection-ready traceability within the ClinixAI Nexus architecture.</p>
-</div>
-<a href="/icsr-case-processing-software">Explore the solution →</a>
-</section>
-<section class="related-section">
-<div class="article-shell">
-<p class="article-kicker">CONTINUE THE CLUSTER</p>
-<h2>Related pharmacovigilance guidance</h2>
-<div class="related-grid"><a class="related-article" href="/insights/icsr-quality-control-pharmacovigilance"><span>ICSR Quality, Medical Review &amp; Submission</span><strong>ICSR Quality Control in Pharmacovigilance: A Complete Case-QC Checklist</strong></a><a class="related-article" href="/insights/icsr-medical-review-pharmacovigilance"><span>ICSR Quality, Medical Review &amp; Submission</span><strong>Medical Review of ICSRs: Seriousness, Causality, Expectedness and Clinical Coherence</strong></a><a class="related-article" href="/insights/icsr-regulatory-submission-e2b-r3"><span>ICSR Quality, Medical Review &amp; Submission</span><strong>ICSR Regulatory Submission: E2B(R3), Gateway Acknowledgements and Compliance Management</strong></a><a class="related-article" href="/insights/sae-reporting-clinical-trials"><span>Clinical Trial Safety</span><strong>SAE Reporting in Clinical Trials: Investigator and Sponsor Responsibilities</strong></a></div>
-</div>
-</section>
-</main>
-<div id="site-footer"></div>
-<script src="/site.js?v=20260724-consent"></script>
-</body>
-</html>
+"""
+
+
+def main():
+    path = INSIGHTS_DIR / "quality-control-medical-review-pharmacovigilance.html"
+    html = path.read_text(encoding="utf-8")
+    soup = BeautifulSoup(html, "html.parser")
+    article = soup.select_one("article.article-content")
+    new_soup = BeautifulSoup(ARTICLE, "html.parser")
+    article.clear()
+    for child in list(new_soup.children):
+        article.append(child)
+    path.write_text(str(soup), encoding="utf-8")
+    print("OK: quality-control-medical-review-pharmacovigilance.html")
+
+
+if __name__ == "__main__":
+    main()
