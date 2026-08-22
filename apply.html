@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Apply | Careers at TheClinixAI</title>
+  <meta name="description" content="Apply for an open position at TheClinixAI. Submit your details and resume for consideration.">
+  <link rel="icon" href="/clinixai-favicon-v2.png">
+  <link rel="stylesheet" href="/style.css?v=20260822-careers">
+  <style>
+    .apply-hero{padding:72px 0 58px;background:linear-gradient(130deg,#fff 0%,#f5fbff 55%,#dff6ff 100%)}
+    .apply-kicker{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:var(--blue);font-weight:600;margin:0 0 14px}
+    .apply-hero h1{font-family:Manrope,sans-serif;font-size:clamp(3rem,6vw,5.8rem);line-height:.94;letter-spacing:-.065em;max-width:9ch;margin:0 0 20px}
+    .apply-hero p{color:var(--muted);max-width:680px;font-size:1.04rem;margin:0}
+    .apply-wrap{padding:70px 0 100px;background:var(--soft)}
+    .apply-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(260px,.55fr);gap:28px;align-items:start}
+    .apply-card{background:#fff;border:1px solid var(--line);border-radius:26px;padding:30px;box-shadow:var(--shadow)}
+    .apply-card h2{font-family:Manrope,sans-serif;letter-spacing:-.04em;margin:0 0 8px;font-size:1.6rem}
+    .apply-card .sub{color:var(--muted);font-size:.9rem;margin:0 0 26px}
+    .apply-form{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .apply-field{display:flex;flex-direction:column;gap:7px}
+    .apply-field.full{grid-column:1/-1}
+    .apply-field label{font-size:.82rem;font-weight:750;color:var(--ink)}
+    .apply-field label span{color:#e25555}
+    .apply-field input,.apply-field select{width:100%;height:50px;border:1px solid #c6d4e3;border-radius:14px;padding:0 14px;background:#fff;color:var(--ink);font:inherit}
+    .apply-field input:focus,.apply-field select:focus{outline:3px solid rgba(37,99,235,.12);border-color:var(--blue)}
+    .resume-box{border:1.5px dashed #b8c9dc;border-radius:16px;padding:18px;background:#f9fcff}
+    .resume-box input{height:auto;border:0;padding:0;background:transparent}
+    .resume-help{font-size:.75rem;color:var(--muted);margin:7px 0 0}
+    .apply-submit{grid-column:1/-1;margin-top:4px}
+    .apply-submit .button{width:100%;justify-content:center}
+    .apply-status{grid-column:1/-1;margin:0;padding:13px 15px;border-radius:12px;font-size:.84rem;background:#eff8f5;color:#087f60}
+    .apply-status.error{background:#fff2f2;color:#a33b3b}
+    .apply-side{background:var(--navy);color:#fff;border-radius:26px;padding:28px;position:sticky;top:24px}
+    .apply-side h3{font-family:Manrope;margin:0 0 15px;font-size:1.35rem;letter-spacing:-.035em}
+    .apply-side p{color:#c2cede;font-size:.86rem;margin:0 0 20px}
+    .apply-side ul{padding-left:18px;margin:0;color:#d4deea;font-size:.84rem}.apply-side li{margin:10px 0}
+    .role-note{display:inline-flex;gap:8px;align-items:center;background:#eef7ff;color:#1767b8;border-radius:999px;padding:7px 11px;font-size:.72rem;font-weight:800;margin-bottom:18px}
+    @media(max-width:850px){.apply-grid{grid-template-columns:1fr}.apply-side{position:static}.apply-form{grid-template-columns:1fr}.apply-field.full{grid-column:auto}.apply-submit,.apply-status{grid-column:auto}}
+  </style>
+</head>
+<body class="entity-page">
+  <a class="skip" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+  <main id="main">
+    <section class="apply-hero"><div class="shell"><p class="apply-kicker">CAREERS AT THECLINIXAI</p><h1>Apply for an open role.</h1><p>Tell us where you would like to contribute. Submit your details and resume and our team will review your application for the selected position.</p></div></section>
+    <section class="apply-wrap"><div class="shell apply-grid">
+      <div class="apply-card">
+        <div id="selected-role" class="role-note">SELECTED ROLE: <strong>Choose a role below</strong></div>
+        <h2>Your application</h2>
+        <p class="sub">Only the fields marked <strong>*</strong> are required.</p>
+        <form id="career-application" class="apply-form" novalidate>
+          <input type="hidden" name="formStartedAt" id="formStartedAt">
+          <div class="apply-field full"><label for="role">Role <span>*</span></label><select id="role" name="role" required><option value="">Select the position you are applying for</option><option>Drug Safety Associate I</option><option>Drug Safety Associate II</option><option>Independent Literature QC Specialist</option><option>QA Manager — Pharmacovigilance</option><option>Front End Developer</option><option>Web Developer</option><option>Performance Marketing Specialist</option><option>Senior HR &amp; Talent Acquisition Specialist</option><option>Finance Associate</option><option>Pharmacovigilance Internship</option><option>Drug Safety Associate Apprentice</option></select></div>
+          <div class="apply-field"><label for="firstName">First name <span>*</span></label><input id="firstName" name="firstName" autocomplete="given-name" maxlength="60" required></div>
+          <div class="apply-field"><label for="lastName">Second name <span>*</span></label><input id="lastName" name="lastName" autocomplete="family-name" maxlength="60" required></div>
+          <div class="apply-field"><label for="mobile">Mobile number <span>*</span></label><input id="mobile" name="mobile" type="tel" autocomplete="tel" maxlength="40" required placeholder="+91"></div>
+          <div class="apply-field"><label for="experience">Experience <span>(if applicable)</span></label><input id="experience" name="experience" maxlength="80" placeholder="e.g. 2 years / Fresher"></div>
+          <div class="apply-field"><label for="organization">Current organization <span>(if applicable)</span></label><input id="organization" name="currentOrganization" autocomplete="organization" maxlength="160"></div>
+          <div class="apply-field"><label for="noticePeriod">Notice period <span>(if applicable)</span></label><input id="noticePeriod" name="noticePeriod" maxlength="80" placeholder="e.g. Immediate / 30 days"></div>
+          <div class="apply-field full"><label for="resume">Upload resume <span>*</span></label><div class="resume-box"><input id="resume" name="resume" type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required><p class="resume-help">PDF, DOC or DOCX · Maximum 3 MB</p></div></div>
+          <div class="apply-submit"><button class="button button-primary" type="submit">Submit application</button></div>
+          <p id="apply-status" class="apply-status" role="status" aria-live="polite" hidden></p>
+        </form>
+      </div>
+      <aside class="apply-side"><h3>Before you apply</h3><p>We review applications on a rolling basis. Suitable candidates may proceed through the relevant selection and onboarding process.</p><ul><li>Work location: Hyderabad / Remote</li><li>Choose the role that best matches your experience.</li><li>Keep your resume current and easy to read.</li><li>Only the role, name, mobile number and resume are mandatory.</li></ul></aside>
+    </div></section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="/site.js?v=20260822-careers"></script>
+  <script>
+    const form=document.getElementById('career-application');
+    const role=document.getElementById('role');
+    const started=document.getElementById('formStartedAt');
+    const status=document.getElementById('apply-status');
+    const selected=document.getElementById('selected-role');
+    started.value=Date.now();
+    const params=new URLSearchParams(location.search); const requestedRole=params.get('role');
+    if(requestedRole){const option=[...role.options].find(o=>o.value===requestedRole);if(option){role.value=requestedRole;selected.innerHTML=`SELECTED ROLE: <strong>${option.textContent}</strong>`;}}
+    role.addEventListener('change',()=>{selected.innerHTML=role.value?`SELECTED ROLE: <strong>${role.options[role.selectedIndex].textContent}</strong>`:'SELECTED ROLE: <strong>Choose a role below</strong>';});
+    const fileToBase64=file=>new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(String(r.result).split(',')[1]||'');r.onerror=reject;r.readAsDataURL(file)});
+    form.addEventListener('submit',async e=>{e.preventDefault();status.hidden=true;status.className='apply-status';
+      if(!form.reportValidity()) return;
+      const file=document.getElementById('resume').files[0];
+      if(!file){return;} if(file.size>3*1024*1024){status.textContent='Please upload a resume smaller than 3 MB.';status.className='apply-status error';status.hidden=false;return;}
+      const allowed=['application/pdf','application/msword','application/vnd.openxmlformats-officedocument.wordprocessingml.document']; if(!allowed.includes(file.type)){status.textContent='Please upload your resume as PDF, DOC or DOCX.';status.className='apply-status error';status.hidden=false;return;}
+      const button=form.querySelector('button[type=submit]');button.disabled=true;button.textContent='Submitting application…';
+      try{const data={route:'careers',formStartedAt:started.value,website:'',role:role.value,firstName:document.getElementById('firstName').value.trim(),lastName:document.getElementById('lastName').value.trim(),mobile:document.getElementById('mobile').value.trim(),experience:document.getElementById('experience').value.trim(),currentOrganization:document.getElementById('organization').value.trim(),noticePeriod:document.getElementById('noticePeriod').value.trim(),resume:{name:file.name,type:file.type,content:await fileToBase64(file)}};const response=await fetch('/api/application',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});const result=await response.json().catch(()=>({}));if(!response.ok||!result.ok)throw new Error(result.error||'SUBMISSION_FAILED');status.textContent='Application submitted successfully. Our team will review your application.';status.hidden=false;form.reset();started.value=Date.now();selected.innerHTML='SELECTED ROLE: <strong>Choose a role below</strong>';window.scrollTo({top:status.getBoundingClientRect().top+window.scrollY-120,behavior:'smooth'});}catch(err){status.textContent='We could not submit the application right now. Please try again in a moment.';status.className='apply-status error';status.hidden=false;}finally{button.disabled=false;button.textContent='Submit application';}
+    });
+  </script>
+</body>
+</html>
