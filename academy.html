@@ -1,294 +1,83 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>TheClinixAI Academy | Pharmacovigilance Traineeship & Practical PV Training</title>
-  <meta name="description" content="Build practical pharmacovigilance capability through SOP-led learning, supervised OJT, PV Nexus practice, quality review and documented competency evidence at TheClinixAI Academy.">
-  <meta name="robots" content="index,follow,max-image-preview:large">
-  <link rel="canonical" href="https://www.theclinixai.com/academy">
-  <link rel="icon" href="/clinixai-favicon-v2.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:opsz,wght@10..100,500;10..100,600;10..100,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css?v=20260818-academy-enterprise">
-  <meta property="og:title" content="TheClinixAI Academy | Build Evidence of Pharmacovigilance Capability">
-  <meta property="og:description" content="The work starts where the certificate ends. Build practical PV capability through governed learning, supervised practice and documented review.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.theclinixai.com/academy">
-  <meta property="og:image" content="https://www.theclinixai.com/assets/media/academy/academy-hero-workbench.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@graph":[
-      {
-        "@type":"Organization",
-        "@id":"https://www.theclinixai.com/#organization",
-        "name":"TheClinixAI",
-        "alternateName":["ClinixAI","The Clinix AI"],
-        "url":"https://www.theclinixai.com/",
-        "email":"academy@theclinixai.com",
-        "telephone":"+91 9182950889"
-      },
-      {
-        "@type":"WebPage",
-        "@id":"https://www.theclinixai.com/academy#webpage",
-        "url":"https://www.theclinixai.com/academy",
-        "name":"TheClinixAI Academy | Pharmacovigilance Traineeship & Practical PV Training",
-        "description":"Practical pharmacovigilance development through SOP-led learning, supervised OJT, PV Nexus practice, quality review and documented competency evidence.",
-        "about":{"@id":"https://www.theclinixai.com/#organization"}
-      },
-      {
-        "@type":"FAQPage",
-        "mainEntity":[
-          {"@type":"Question","name":"Is TheClinixAI Academy a course or a traineeship?","acceptedAnswer":{"@type":"Answer","text":"The Academy includes different routes. The paid individual routes are structured as practical development and traineeship-style programmes using controlled internal learning scenarios, guided review, documented assignments and competency assessment. The exact terms applicable to each participant are stated in the written onboarding documents."}},
-          {"@type":"Question","name":"Why is there a fee for the paid Academy route?","acceptedAnswer":{"@type":"Answer","text":"The fee supports structured training delivery, instructor and reviewer time, assessment administration, controlled learning materials, platform access and programme operations. It is not a payment for a job or guaranteed placement."}},
-          {"@type":"Question","name":"Does paying the programme fee guarantee employment?","acceptedAnswer":{"@type":"Answer","text":"No. TheClinixAI Academy does not sell jobs or guarantee placement. Any future role depends on demonstrated competency, conduct, business need, open positions and the applicable selection process."}},
-          {"@type":"Question","name":"Will trainees work on confidential client cases?","acceptedAnswer":{"@type":"Answer","text":"No client casework is promised as part of the Academy. Practical work uses controlled internal, simulated, blinded or otherwise approved learning scenarios. Any access to confidential material would require separate authorisation and applicable confidentiality controls."}},
-          {"@type":"Question","name":"What is PV Nexus in the Academy?","acceptedAnswer":{"@type":"Answer","text":"PV Nexus is TheClinixAI's pharmacovigilance technology environment. Selected Academy activities use controlled training workflows to help participants understand structured intake, assessment, coding, evidence, quality review, auditability and modern PV operating discipline."}},
-          {"@type":"Question","name":"How is performance assessed?","acceptedAnswer":{"@type":"Answer","text":"Performance is assessed through knowledge checks, controlled assignments, case-based exercises, review feedback and defined quality expectations. Progression depends on the selected programme and demonstrated readiness rather than attendance alone."}},
-          {"@type":"Question","name":"What documentation can a participant receive?","acceptedAnswer":{"@type":"Answer","text":"Documentation depends on the selected route, successful completion, actual tenure and programme terms. Where applicable, maintained records may support training completion, traineeship or experience documentation and legitimate HR verification requests."}},
-          {"@type":"Question","name":"Is the programme suitable for freshers?","acceptedAnswer":{"@type":"Answer","text":"Yes. The free and paid fresher routes are designed to build practical PV foundations. Applicants are screened because the programme expects professional ownership, analytical thinking, remote-work discipline and willingness to work through feedback."}}
-        ]
-      }
-    ]
-  }
-  </script>
-  <style>
-    .academy-proofbar{background:#0f172a;color:#fff;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.08)}
-    .academy-proofbar__grid{display:grid;grid-template-columns:repeat(4,1fr)}
-    .academy-proofbar__item{padding:24px 26px;border-right:1px solid rgba(255,255,255,.12)}
-    .academy-proofbar__item:last-child{border-right:0}.academy-proofbar__item strong{display:block;font-family:Manrope,sans-serif;font-size:.98rem;color:#fff}.academy-proofbar__item span{display:block;margin-top:5px;color:#a9bdd3;font-size:.8rem;line-height:1.45}
-    .academy-enterprise{padding:104px 0;background:#fff}.academy-enterprise__head{display:grid;grid-template-columns:.72fr 1.28fr;gap:72px;align-items:end;margin-bottom:42px}.academy-enterprise__head h2,.academy-nexus__copy h2,.academy-faq__head h2{font-family:Manrope,sans-serif;font-size:clamp(2.7rem,5vw,5.25rem);line-height:.94;letter-spacing:-.06em;margin:0}.academy-enterprise__head>div>p:last-child{color:var(--muted);font-size:1.05rem;max-width:34rem;margin:18px 0 0}
-    .academy-pipeline{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.academy-stage{position:relative;min-height:300px;border:1px solid var(--line);border-radius:24px;padding:27px;background:linear-gradient(160deg,#fff 0%,#f7fbff 100%);overflow:hidden}.academy-stage:after{content:"";position:absolute;width:150px;height:150px;border-radius:50%;right:-75px;bottom:-85px;background:rgba(56,189,248,.12)}.academy-stage__num{font-family:'IBM Plex Mono',monospace;color:var(--blue);font-size:.72rem;letter-spacing:.12em;font-weight:700}.academy-stage h3{font-family:Manrope,sans-serif;font-size:1.32rem;letter-spacing:-.035em;margin:52px 0 10px;color:var(--ink)}.academy-stage p{font-size:.88rem;color:var(--muted);margin:0}.academy-stage small{display:block;margin-top:20px;font-weight:700;color:#334155;line-height:1.5}
-    .academy-nexus{padding:100px 0;background:#0b1628;color:#fff}.academy-nexus__grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:64px;align-items:center}.academy-nexus__copy h2{color:#fff;margin-top:12px}.academy-nexus__copy>p:last-of-type{color:#adbed1;max-width:31rem;font-size:1.03rem}.academy-nexus__tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:25px}.academy-nexus__tag{border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);border-radius:999px;padding:8px 11px;color:#dce8f5;font-size:.78rem;font-weight:650}.academy-workspace{background:#fff;color:#172033;border-radius:28px;padding:24px;box-shadow:0 35px 80px rgba(0,0,0,.25);transform:rotate(.6deg)}.academy-workspace__top{display:flex;justify-content:space-between;align-items:center;padding-bottom:17px;border-bottom:1px solid #e5edf5;font-family:Manrope,sans-serif;font-weight:800}.academy-workspace__status{background:#dcfce7;color:#166534;border-radius:999px;padding:6px 9px;font-size:.7rem}.academy-workspace__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-top:15px}.academy-workspace__field{background:#f6f9fc;border:1px solid #e5edf5;border-radius:12px;padding:13px}.academy-workspace__field b{display:block;font-size:.66rem;color:#718096;text-transform:uppercase;letter-spacing:.07em}.academy-workspace__field span{display:block;font-size:.85rem;font-weight:750;margin-top:3px}.academy-workspace__audit{margin-top:10px;border-radius:12px;padding:13px;background:#eef6ff;border:1px solid #cfe5ff;font-size:.78rem;color:#1e4f8f}
-    .academy-evidence{padding:100px 0;background:#f5f8fc}.academy-evidence__grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}.academy-evidence h2{font-family:Manrope,sans-serif;font-size:clamp(2.6rem,4.8vw,5rem);line-height:.95;letter-spacing:-.06em;margin:9px 0 18px}.academy-evidence__lead{color:var(--muted);max-width:31rem}.academy-evidence__cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}.academy-evidence__card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px}.academy-evidence__card span{display:inline-grid;place-items:center;width:29px;height:29px;border-radius:50%;background:#eaf4ff;color:var(--blue);font-weight:900;font-size:.8rem}.academy-evidence__card h3{font-family:Manrope,sans-serif;font-size:1.08rem;margin:14px 0 7px}.academy-evidence__card p{font-size:.83rem;color:var(--muted);margin:0}
-    .academy-transparency{padding:100px 0;background:#fff}.academy-transparency__grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:72px}.academy-transparency h2{font-family:Manrope,sans-serif;font-size:clamp(2.5rem,4.6vw,4.8rem);line-height:.95;letter-spacing:-.055em;margin:10px 0 18px}.academy-transparency__intro{color:var(--muted)}.academy-transparency__rules{display:grid;gap:12px}.academy-rule{display:grid;grid-template-columns:180px 1fr;gap:25px;border-top:1px solid var(--line);padding:21px 0}.academy-rule:first-child{border-top:0;padding-top:0}.academy-rule strong{font-family:Manrope,sans-serif}.academy-rule p{margin:0;color:var(--muted);font-size:.9rem}
-    .academy-faq{padding:100px 0;background:#f5f8fc}.academy-faq__head{max-width:760px;margin-bottom:37px}.academy-faq__head h2{margin-top:10px}.academy-faq__list{max-width:960px}.academy-faq details{background:#fff;border:1px solid var(--line);border-radius:16px;margin-bottom:11px;padding:0 22px}.academy-faq summary{cursor:pointer;list-style:none;font-family:Manrope,sans-serif;font-weight:750;padding:20px 42px 20px 0;position:relative}.academy-faq summary::-webkit-details-marker{display:none}.academy-faq summary:after{content:"+";position:absolute;right:3px;top:15px;font-size:1.5rem;color:var(--blue);font-weight:500}.academy-faq details[open] summary:after{content:"−"}.academy-faq details p{margin:-2px 0 21px;color:var(--muted);font-size:.91rem;max-width:800px}.academy-faq__note{max-width:960px;margin-top:19px;border-left:4px solid #eab308;background:#fffbea;padding:15px 17px;border-radius:0 12px 12px 0;color:#6d4c00;font-size:.82rem}
-    .academy-track-name{display:block;margin:10px 0 3px;font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.09em;color:var(--blue);font-weight:700;text-transform:uppercase}
-    @media(max-width:980px){.academy-proofbar__grid{grid-template-columns:1fr 1fr}.academy-proofbar__item:nth-child(2){border-right:0}.academy-proofbar__item:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.12)}.academy-enterprise__head,.academy-nexus__grid,.academy-evidence__grid,.academy-transparency__grid{grid-template-columns:1fr;gap:36px}.academy-pipeline{grid-template-columns:1fr 1fr}.academy-stage{min-height:260px}}
-    @media(max-width:640px){.academy-proofbar__grid,.academy-pipeline,.academy-evidence__cards{grid-template-columns:1fr}.academy-proofbar__item{border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}.academy-proofbar__item:last-child{border-bottom:0}.academy-enterprise,.academy-nexus,.academy-evidence,.academy-transparency,.academy-faq{padding:72px 0}.academy-stage{min-height:auto}.academy-stage h3{margin-top:38px}.academy-workspace{padding:17px}.academy-workspace__grid{grid-template-columns:1fr}.academy-rule{grid-template-columns:1fr;gap:6px}.academy-faq details{padding:0 17px}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TheClinixAI Academy | Pharmacovigilance Apprenticeship & Practical PV Training</title>
+<meta name="description" content="Build practical Pharmacovigilance capability through TheClinixAI Apprenticeship. Learn ICSR processing, MedDRA, narrative writing, QC, literature surveillance, signal management, aggregate safety and regulatory PV through structured practical development.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://www.theclinixai.com/academy">
+<link rel="stylesheet" href="/style.css?v=20260826-academy-final">
+<meta property="og:title" content="TheClinixAI Academy | Pharmacovigilance Apprenticeship">
+<meta property="og:description" content="The work starts where the certificate ends. Build evidence of practical Pharmacovigilance capability through structured apprenticeship and supervised development.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.theclinixai.com/academy">
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@graph":[
+  {"@type":"Organization","@id":"https://www.theclinixai.com/#organization","name":"TheClinixAI","url":"https://www.theclinixai.com/"},
+  {"@type":"WebPage","@id":"https://www.theclinixai.com/academy#webpage","url":"https://www.theclinixai.com/academy","name":"TheClinixAI Academy | Pharmacovigilance Apprenticeship & Practical PV Training","about":{"@id":"https://www.theclinixai.com/#organization"}},
+  {"@type":"EducationalOccupationalProgram","name":"TheClinixAI Pharmacovigilance Apprenticeship","provider":{"@id":"https://www.theclinixai.com/#organization"},"description":"Structured practical development covering core Pharmacovigilance workflows, quality expectations and career readiness.","educationalProgramMode":"Practical, supervised and assessment-led"},
+  {"@type":"FAQPage","mainEntity":[
+   {"@type":"Question","name":"Is TheClinixAI Academy a course or an apprenticeship?","acceptedAnswer":{"@type":"Answer","text":"The primary individual Academy offering is a structured Pharmacovigilance Apprenticeship. It is designed around practical development, guided learning, assignments, review and demonstrated competency rather than certificate-only learning."}},
+   {"@type":"Question","name":"Is this suitable for Pharmacovigilance freshers?","acceptedAnswer":{"@type":"Answer","text":"Yes. The programme is designed for suitable graduates, postgraduates, Pharm.D candidates and other life-science professionals who want to build practical Pharmacovigilance capability and understand how PV work is performed."}},
+   {"@type":"Question","name":"What will I learn in the Pharmacovigilance apprenticeship?","acceptedAnswer":{"@type":"Answer","text":"Coverage can include Pharmacovigilance foundations, ICSR processing, case intake and triage, seriousness, expectedness, causality, MedDRA, narrative writing, quality review, literature surveillance, signal management, aggregate safety reporting, regulatory concepts, medical review and AI-enabled PV workflows."}},
+   {"@type":"Question","name":"Does the apprenticeship guarantee a job?","acceptedAnswer":{"@type":"Answer","text":"No. TheClinixAI does not sell jobs or guarantee employment. Career outcomes depend on demonstrated capability, selection processes, vacancies, experience, conduct and employer requirements."}},
+   {"@type":"Question","name":"Is the free internship part of the Academy?","acceptedAnswer":{"@type":"Answer","text":"No. The Academy is positioned around the paid apprenticeship. Internship opportunities, when available, are handled separately through the TheClinixAI Careers channel."}},
+   {"@type":"Question","name":"Will I work on confidential client cases?","acceptedAnswer":{"@type":"Answer","text":"Client case access is not promised. Practical learning uses approved training scenarios, simulations, blinded or controlled material as applicable. Any confidential access requires separate authorization and appropriate controls."}}
+  ]}
+ ]
+}
+</script>
+<style>
+.academy-final{--af-ink:#172033;--af-muted:#64748b;--af-navy:#0b1628;--af-blue:#2563eb;--af-cyan:#06b6d4;--af-line:#dce5ef;--af-soft:#f5f8fc;font-family:Manrope,Inter,system-ui,sans-serif;color:var(--af-ink)}
+.af-shell{width:min(1340px,calc(100% - 48px));margin:auto}.af-kicker{font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:700;letter-spacing:.12em;color:var(--af-blue);text-transform:uppercase}.af-hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#f7fbff 0%,#fff 58%,#eef8ff 100%);border-bottom:1px solid var(--af-line)}.af-hero:after{content:"";position:absolute;width:620px;height:620px;border-radius:50%;right:-250px;top:-250px;background:radial-gradient(circle,rgba(6,182,212,.14),transparent 68%)}.af-hero-grid{position:relative;z-index:1;min-height:650px;display:grid;grid-template-columns:1.08fr .92fr;gap:70px;align-items:center;padding:90px 0}.af-hero h1{font-size:clamp(3.5rem,6.5vw,7rem);line-height:.9;letter-spacing:-.075em;margin:18px 0 25px;max-width:850px}.af-lead{font-size:1.18rem;line-height:1.65;color:var(--af-muted);max-width:700px}.af-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}.af-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 19px;border-radius:999px;text-decoration:none;font-weight:800;font-size:.88rem}.af-btn-primary{background:var(--af-blue);color:#fff;box-shadow:0 12px 30px rgba(37,99,235,.2)}.af-btn-secondary{border:1px solid var(--af-line);color:var(--af-ink);background:#fff}.af-hero-card{background:var(--af-navy);color:#fff;border-radius:30px;padding:32px;box-shadow:0 30px 70px rgba(15,23,42,.18)}.af-hero-card small{font-family:'IBM Plex Mono',monospace;color:#9fb4ca;letter-spacing:.1em}.af-hero-card h2{font-size:2rem;letter-spacing:-.04em;margin:13px 0 12px}.af-hero-card p{color:#afc0d3;line-height:1.65}.af-route{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:24px}.af-route div{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);border-radius:15px;padding:13px}.af-route b{display:block;font-size:.78rem}.af-route span{display:block;color:#a9bbce;font-size:.7rem;margin-top:3px}
+.af-proof{background:var(--af-navy);color:#fff}.af-proof-grid{display:grid;grid-template-columns:repeat(4,1fr)}.af-proof-item{padding:24px;border-right:1px solid rgba(255,255,255,.12)}.af-proof-item:last-child{border-right:0}.af-proof-item b{display:block;font-size:.9rem}.af-proof-item span{display:block;color:#9fb2c7;font-size:.76rem;margin-top:5px;line-height:1.45}
+.af-section{padding:105px 0}.af-section-soft{background:var(--af-soft)}.af-section h2{font-size:clamp(2.7rem,5vw,5.3rem);line-height:.93;letter-spacing:-.065em;margin:10px 0 18px}.af-section-intro{color:var(--af-muted);font-size:1.02rem;line-height:1.65;max-width:720px}.af-two{display:grid;grid-template-columns:.72fr 1.28fr;gap:80px;align-items:start}.af-copy{color:var(--af-muted);line-height:1.7}.af-list{display:grid;gap:10px;margin-top:26px}.af-list div{display:flex;gap:13px;align-items:flex-start}.af-list i{width:8px;height:8px;border-radius:50%;background:var(--af-cyan);margin-top:9px;flex:none}.af-list span{font-size:.91rem;color:#334155}
+.af-modules{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:44px}.af-module{background:#fff;border:1px solid var(--af-line);border-radius:22px;padding:24px;min-height:205px}.af-module-num{font-family:'IBM Plex Mono',monospace;color:var(--af-blue);font-size:.7rem;font-weight:700}.af-module h3{font-size:1.15rem;letter-spacing:-.03em;margin:38px 0 9px}.af-module p{font-size:.82rem;color:var(--af-muted);line-height:1.55;margin:0}.af-module small{display:block;margin-top:13px;color:#334155;font-weight:800;font-size:.7rem}
+.af-path{background:var(--af-navy);color:#fff}.af-path h2{color:#fff}.af-path .af-section-intro{color:#afc0d3}.af-path-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:42px}.af-step{border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.045);border-radius:20px;padding:20px;min-height:190px}.af-step strong{font-family:'IBM Plex Mono',monospace;color:#62d9ef;font-size:.7rem}.af-step h3{font-size:1rem;margin:37px 0 8px}.af-step p{color:#aabdd0;font-size:.76rem;line-height:1.5;margin:0}
+.af-alumni-head{display:flex;justify-content:space-between;gap:40px;align-items:end}.af-alumni-note{max-width:420px;color:var(--af-muted);font-size:.85rem;line-height:1.6}.af-testimonials{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:42px}.af-person{background:#fff;border:1px solid var(--af-line);border-radius:22px;overflow:hidden}.af-photo{height:230px;background:linear-gradient(145deg,#e9f2fb,#f8fafc);display:grid;place-items:center;color:#8ba0b6;font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.08em}.af-person-body{padding:18px}.af-person-body h3{margin:0;font-size:1rem}.af-role{display:block;color:var(--af-blue);font-size:.72rem;font-weight:800;margin-top:5px}.af-person-body p{font-size:.76rem;line-height:1.5;color:var(--af-muted);min-height:76px}.af-link{font-size:.72rem;font-weight:800;color:var(--af-blue);text-decoration:none}.af-consent{font-size:.63rem!important;min-height:0!important;margin-top:8px;color:#94a3b8!important}
+.af-diff{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:44px}.af-diff-card{border:1px solid var(--af-line);border-radius:22px;padding:28px;background:#fff}.af-diff-card.highlight{background:#eef7ff;border-color:#bcdcff}.af-diff-card h3{margin:0 0 14px;font-size:1.2rem}.af-diff-card p{font-size:.84rem;line-height:1.6;color:var(--af-muted)}.af-diff-card ul{padding-left:18px;color:#475569;font-size:.8rem;line-height:1.8}
+.af-search{border-top:1px solid var(--af-line);border-bottom:1px solid var(--af-line)}.af-search-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:70px}.af-search-cloud{display:flex;flex-wrap:wrap;gap:8px}.af-search-cloud span{border:1px solid var(--af-line);background:#fff;border-radius:999px;padding:8px 11px;font-size:.73rem;color:#475569}.af-cta{background:linear-gradient(135deg,#0b1628,#102743);color:#fff;text-align:center;padding:110px 0}.af-cta h2{max-width:800px;margin:10px auto 18px}.af-cta p{max-width:670px;margin:auto;color:#afc0d3;line-height:1.65}.af-cta .af-actions{justify-content:center}.af-faq{background:var(--af-soft)}.af-faq-list{max-width:980px;margin-top:38px}.af-faq details{background:#fff;border:1px solid var(--af-line);border-radius:16px;margin-bottom:10px;padding:0 21px}.af-faq summary{list-style:none;cursor:pointer;font-weight:800;padding:20px 35px 20px 0;position:relative}.af-faq summary::-webkit-details-marker{display:none}.af-faq summary:after{content:'+';position:absolute;right:0;color:var(--af-blue);font-size:1.4rem}.af-faq details[open] summary:after{content:'−'}.af-faq details p{color:var(--af-muted);font-size:.85rem;line-height:1.6;margin:0 0 21px}
+.af-disclaimer{font-size:.72rem;color:#94a3b8;line-height:1.6;margin-top:22px}.af-nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--af-line)}.af-nav-inner{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}.af-brand{font-weight:900;letter-spacing:-.04em;color:var(--af-ink);text-decoration:none}.af-brand em{font-style:normal;color:var(--af-blue)}.af-nav-links{display:flex;gap:20px;align-items:center}.af-nav-links a{font-size:.76rem;font-weight:750;color:#475569;text-decoration:none}.af-nav-links .af-nav-cta{background:var(--af-blue);color:#fff;padding:10px 14px;border-radius:999px}
+@media(max-width:1050px){.af-hero-grid,.af-two,.af-search-grid{grid-template-columns:1fr;gap:42px}.af-path-grid{grid-template-columns:repeat(3,1fr)}.af-testimonials{grid-template-columns:repeat(3,1fr)}.af-proof-grid{grid-template-columns:1fr 1fr}.af-proof-item:nth-child(2){border-right:0}.af-proof-item:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.12)}}
+@media(max-width:720px){.af-shell{width:min(100% - 30px,1340px)}.af-section{padding:72px 0}.af-hero-grid{padding:65px 0;min-height:auto}.af-hero h1{font-size:clamp(3rem,15vw,5rem)}.af-modules,.af-path-grid,.af-testimonials,.af-diff{grid-template-columns:1fr}.af-proof-grid{grid-template-columns:1fr}.af-proof-item{border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}.af-proof-item:last-child{border-bottom:0}.af-alumni-head{display:block}.af-nav-links a:not(.af-nav-cta){display:none}.af-photo{height:260px}}
+</style>
 </head>
-<body class="academy-page">
-  <a class="skip" href="#main">Skip to content</a>
-  <div id="site-header"></div>
-
-  <main id="main">
-    <section class="academy-hero">
-      <div class="academy-hero__art" aria-hidden="true">
-        <img src="/assets/media/academy/academy-hero-workbench.png" alt="" fetchpriority="high">
-      </div>
-      <div class="shell academy-hero__grid">
-        <div class="academy-hero__copy">
-          <p class="academy-eyebrow">THECLINIXAI ACADEMY · PROFESSIONAL FORMATION</p>
-          <h1>The work starts where the certificate ends.</h1>
-          <p class="academy-hero__statement">A degree gives you a vocabulary. Professional readiness requires evidence that you can make, document and defend a pharmacovigilance decision.</p>
-          <div class="academy-actions">
-            <a class="academy-button academy-button--primary" href="#programmes">Choose your route <span>→</span></a>
-            <a class="academy-button academy-button--quiet" href="#how-it-works">See how the traineeship works <span>→</span></a>
-          </div>
-        </div>
-        <aside class="academy-hero__note">
-          <span>THE THECLINIXAI DIFFERENCE</span>
-          <p>SOP-led learning. Controlled PV work. PV Nexus practice. Human review. Documented progression.</p>
-        </aside>
-      </div>
-    </section>
-
-    <section class="academy-proofbar" aria-label="Academy programme principles">
-      <div class="shell academy-proofbar__grid">
-        <div class="academy-proofbar__item"><strong>Controlled learning trail</strong><span>Training, assignments and review activity are structured and documented.</span></div>
-        <div class="academy-proofbar__item"><strong>Human review</strong><span>Practical work is challenged through instructor, mentor or quality feedback.</span></div>
-        <div class="academy-proofbar__item"><strong>PV Nexus exposure</strong><span>Selected activities use TheClinixAI's controlled PV technology environment.</span></div>
-        <div class="academy-proofbar__item"><strong>Transparent terms</strong><span>No job sale. No client-case promise. Programme terms are disclosed before onboarding.</span></div>
-      </div>
-    </section>
-
-    <section class="academy-programmes" id="programmes" aria-labelledby="academy-programmes-title">
-      <div class="shell">
-        <div class="academy-section-intro academy-section-intro--compact">
-          <p class="academy-eyebrow">SELECT YOUR ROUTE</p>
-          <h2 id="academy-programmes-title">Three ways to build professional proof.</h2>
-          <p>Start with core exposure or choose a structured paid route built around broader PV workflow capability, supervised practice and documented review.</p>
-        </div>
-        <div class="academy-urgency" role="status"><span>AUGUST 2026 INTAKE</span><strong>Cohort capacity is limited</strong><small>Eligibility review required for paid routes</small></div>
-        <div class="academy-price-grid" aria-label="Academy internship and traineeship options">
-          <article class="academy-price-card academy-price-card--starter">
-            <p class="academy-price-card__label">FREE INTERNSHIP</p><h3>The Starter<br>Launchpad</h3><strong class="academy-price-card__amount">₹0</strong><span class="academy-price-card__caption">For freshers · 3 months</span>
-            <ul><li>PV basics and compliance setup</li><li>Literature screening</li><li>Literature case processing</li></ul>
-            <p class="academy-card-detail">Group trainer and team-lead guidance · Fixed 9–6, five-day schedule</p>
-            <button class="academy-price-card__action" type="button" data-programme-select="Free Internship — Fresher">Apply for free internship <b>→</b></button>
-          </article>
-          <article class="academy-price-card academy-price-card--featured">
-            <p class="academy-price-card__label">MOST SELECTED · FRESHER ROUTE</p><h3>The Career<br>Accelerator</h3><span class="academy-track-name">Enterprise PV Analyst Traineeship</span><span class="academy-price-card__caption">Paid route · Fresher · 3 months</span>
-            <div class="academy-price"><span>AUGUST 2026 INTAKE</span><del>₹49,999</del><strong>₹19,999</strong><small>Eligibility review required</small></div>
-            <ul><li>End-to-end PV workflow capability</li><li>Supervised case-based OJT and quality feedback</li><li>Modern PV automation and PV Nexus exposure</li></ul>
-            <p class="academy-card-detail">Dedicated instructor with 7+ years’ PV experience · Flexible learning schedule</p>
-            <div class="academy-price-card__actions"><a class="academy-price-card__pay" href="https://rzp.io/rzp/5xvXbosv" target="_blank" rel="noopener noreferrer">Choose &amp; Pay ₹19,999 <b>→</b></a><button class="academy-price-card__action" type="button" data-programme-select="Paid Internship — Fresher">Apply</button></div>
-          </article>
-          <article class="academy-price-card academy-price-card--master">
-            <p class="academy-price-card__label">MOST COMPLETE ROUTE</p><h3>The PV<br>Master</h3><span class="academy-track-name">Advanced PV Capability Track</span><span class="academy-price-card__caption">Paid route · Experienced</span>
-            <div class="academy-price"><span>AUGUST 2026 INTAKE</span><del>₹49,999</del><strong>₹19,999</strong><small>3 months + 1-on-1 mentorship</small></div>
-            <ul><li>Advanced signal detection and aggregate reports</li><li>AI prototype and workflow optimisation</li><li>Governance, project management and mentorship</li></ul>
-            <p class="academy-card-detail">Dedicated instructor-led development · Flexible schedule for working professionals</p>
-            <div class="academy-price-card__actions"><a class="academy-price-card__pay" href="https://rzp.io/rzp/5xvXbosv" target="_blank" rel="noopener noreferrer">Choose &amp; Pay ₹19,999 <b>→</b></a><button class="academy-price-card__action" type="button" data-programme-select="Paid Internship — Experienced">Apply</button></div>
-          </article>
-        </div>
-
-        <div class="academy-comparison-wrap">
-          <div class="academy-comparison-intro"><p class="academy-eyebrow">WHAT YOU GET</p><h3>See exactly what each route includes.</h3></div>
-          <div class="academy-comparison-scroll"><table class="academy-comparison"><thead><tr><th>Free Internship<br><small>Fresher</small></th><th>What you get</th><th>Paid Route<br><small>Advanced · Fresher</small></th><th>Paid Route<br><small>Experienced</small></th></tr></thead><tbody><tr><td>✓</td><th>Duration: 3 months</th><td>✓</td><td>✓ <small>+ 1-on-1 mentorship</small></td></tr><tr><td>✓</td><th>PV Basics &amp; Compliance Setup</th><td>✓</td><td>✓</td></tr><tr><td>—</td><th>PV case scenarios: Intake &amp; Triage</th><td>✓</td><td>✓</td></tr><tr><td>—</td><th>Clinical-trial, solicited-source &amp; social-media cases</th><td>✓</td><td>✓</td></tr><tr><td>—</td><th>Global submissions &amp; E2B(R3) principles</th><td>✓</td><td>✓</td></tr><tr><td>—</td><th>Spontaneous &amp; regulatory-authority cases</th><td>✓</td><td>✓</td></tr><tr><td>—</td><th>Advanced signal detection</th><td>—</td><td>✓</td></tr><tr><td>—</td><th>Aggregate safety reports</th><td>—</td><td>✓</td></tr><tr><td>✓</td><th>Literature screening</th><td>✓</td><td>✓</td></tr><tr><td>✓</td><th>Literature case processing</th><td>✓</td><td>✓</td></tr><tr><td>—</td><th>Modern PV automation tools</th><td>✓</td><td>✓</td></tr><tr><td>—</td><th>PV Nexus training exposure</th><td>✓</td><td>✓</td></tr><tr><td>—</td><th>Build an AI prototype</th><td>—</td><td>✓</td></tr><tr><td>—</td><th>Spotting gaps &amp; optimising workflows</th><td>—</td><td>✓</td></tr><tr><td>—</td><th>SOP writing &amp; process governance</th><td>—</td><td>✓</td></tr><tr><td>—</td><th>PV project management &amp; tools</th><td>—</td><td>✓</td></tr><tr><td>—</td><th>Drafting safety agreements &amp; safety charters</th><td>—</td><td>✓</td></tr><tr><td>—</td><th>Six Sigma Green Belt principles for Pharma</th><td>—</td><td>✓</td></tr><tr><td>—</td><th>Standout resume crafting</th><td>✓</td><td>✓</td></tr><tr><td>—</td><th>LinkedIn growth &amp; makeover</th><td>✓</td><td>✓</td></tr></tbody></table></div>
-        </div>
-        <p class="academy-price-note">All practical work uses controlled internal learning scenarios. It does not promise client casework or regulatory submissions on behalf of a Marketing Authorisation Holder.<br>Minimum three-month engagement · Fees non-refundable · Not a job guarantee.</p>
-      </div>
-    </section>
-
-    <section class="academy-enterprise" id="how-it-works" aria-labelledby="academy-enterprise-title">
-      <div class="shell">
-        <div class="academy-enterprise__head">
-          <div><p class="academy-eyebrow">ENTERPRISE PV ANALYST TRAINEESHIP</p><h2 id="academy-enterprise-title">From knowing the rule to defending the decision.</h2></div>
-          <div><p>The paid fresher route follows a deliberate progression. Candidates first learn the governing logic, then apply it in controlled work, receive structured feedback and progress only when they can demonstrate consistent reasoning.</p></div>
-        </div>
-        <div class="academy-pipeline">
-          <article class="academy-stage"><span class="academy-stage__num">PHASE 01</span><h3>SOP &amp; PV readiness</h3><p>Build the regulatory and procedural foundation before operating inside a workflow.</p><small>PV fundamentals · ICH/GVP principles · validity · seriousness · chronology · controlled SOP assessment</small></article>
-          <article class="academy-stage"><span class="academy-stage__num">PHASE 02</span><h3>PV Nexus practice</h3><p>Translate concepts into structured fields, evidence, workflow states and traceable decisions.</p><small>Intake · coding logic · E2B(R3) orientation · evidence review · audit trail thinking</small></article>
-          <article class="academy-stage"><span class="academy-stage__num">PHASE 03</span><h3>Supervised OJT</h3><p>Complete controlled case-based exercises and work through quality observations with a reviewer.</p><small>Serious/non-serious scenarios · literature · correction cycles · mentor/QC feedback</small></article>
-          <article class="academy-stage"><span class="academy-stage__num">PHASE 04</span><h3>Readiness evidence</h3><p>Demonstrate that the final answer is not just correct—but documented and defensible.</p><small>Quality performance · reasoning · consistency · completion records · competency sign-off where applicable</small></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="academy-nexus" aria-labelledby="academy-nexus-title">
-      <div class="shell academy-nexus__grid">
-        <div class="academy-nexus__copy">
-          <p class="academy-eyebrow">THECLINIXAI TECHNOLOGY ENVIRONMENT</p>
-          <h2 id="academy-nexus-title">Practice the discipline of PV inside PV Nexus.</h2>
-          <p>The Academy is not designed around slides alone. Selected activities use controlled PV Nexus workflows to help participants understand how modern safety work connects source evidence, structured data, human judgement, quality review and auditability.</p>
-          <div class="academy-nexus__tags"><span class="academy-nexus__tag">ICSR intake</span><span class="academy-nexus__tag">Literature screening</span><span class="academy-nexus__tag">MedDRA logic</span><span class="academy-nexus__tag">E2B(R3) structure</span><span class="academy-nexus__tag">QC feedback</span><span class="academy-nexus__tag">Audit trail</span><span class="academy-nexus__tag">Human-in-the-loop AI</span></div>
-        </div>
-        <div class="academy-workspace" aria-label="Illustrative PV Nexus training workspace">
-          <div class="academy-workspace__top"><span>PV Nexus · Training Workspace</span><span class="academy-workspace__status">Controlled environment</span></div>
-          <div class="academy-workspace__grid">
-            <div class="academy-workspace__field"><b>Source</b><span>Literature article</span></div>
-            <div class="academy-workspace__field"><b>Validity</b><span>Assessment required</span></div>
-            <div class="academy-workspace__field"><b>Product</b><span>Suspect review</span></div>
-            <div class="academy-workspace__field"><b>Event</b><span>MedDRA reasoning</span></div>
-            <div class="academy-workspace__field"><b>Reviewer</b><span>Human QC</span></div>
-            <div class="academy-workspace__field"><b>Decision</b><span>Evidence linked</span></div>
-          </div>
-          <div class="academy-workspace__audit"><strong>Audit principle:</strong> the trainee should be able to explain what evidence was used, which rule applied and why the final decision is defensible.</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="academy-evidence" aria-labelledby="academy-evidence-title">
-      <div class="shell academy-evidence__grid">
-        <div><p class="academy-eyebrow">BUILD EVIDENCE, NOT CLAIMS</p><h2 id="academy-evidence-title">What makes the learning reviewable.</h2><p class="academy-evidence__lead">A certificate can show completion. Professional evidence should also show what you were asked to do, how your work was reviewed and whether you improved.</p></div>
-        <div class="academy-evidence__cards">
-          <article class="academy-evidence__card"><span>01</span><h3>Controlled curriculum</h3><p>Defined learning areas, SOP orientation and assessment checkpoints.</p></article>
-          <article class="academy-evidence__card"><span>02</span><h3>Case-based exercises</h3><p>Practical PV scenarios requiring chronology, validity, seriousness and evidence-based judgement.</p></article>
-          <article class="academy-evidence__card"><span>03</span><h3>Review feedback</h3><p>Corrections and observations that require the participant to revise and defend the work.</p></article>
-          <article class="academy-evidence__card"><span>04</span><h3>OJT / performance records</h3><p>Where applicable, quality and progression can be captured against defined expectations.</p></article>
-          <article class="academy-evidence__card"><span>05</span><h3>Platform evidence</h3><p>Controlled PV Nexus activities reinforce structured workflow and audit-trail thinking.</p></article>
-          <article class="academy-evidence__card"><span>06</span><h3>Completion documentation</h3><p>Documentation reflects the actual route, completed tenure and programme terms—not an inflated job claim.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="application-section" id="academy-application" aria-labelledby="academy-application-title">
-      <div class="shell application-section__grid">
-        <div><p class="academy-eyebrow">ACADEMY APPLICATION</p><h2 id="academy-application-title">Apply first. Enrol after eligibility review.</h2><p>Share only the information needed for an initial Academy review. For paid routes, applicants are expected to understand the programme model before making a payment decision.</p></div>
-        <form class="application-form" data-application-form data-route="academy" novalidate>
-          <input name="formStartedAt" type="hidden" value=""><input name="website" type="text" tabindex="-1" autocomplete="off" class="contact-honeypot" aria-hidden="true">
-          <div class="application-field"><label for="academy-first-name">First name</label><input id="academy-first-name" name="firstName" autocomplete="given-name" required maxlength="60"></div>
-          <div class="application-field"><label for="academy-last-name">Last name</label><input id="academy-last-name" name="lastName" autocomplete="family-name" required maxlength="60"></div>
-          <div class="application-field"><label for="academy-whatsapp">WhatsApp number</label><input id="academy-whatsapp" name="whatsapp" autocomplete="tel" inputmode="tel" required placeholder="+91 …"></div>
-          <div class="application-field"><label for="academy-email">Email address</label><input id="academy-email" name="email" type="email" autocomplete="email" required></div>
-          <div class="application-field"><label for="academy-experience">Experience</label><select id="academy-experience" name="experience" required><option value="">Select experience</option><option>Fresher</option><option>Less than 1 year</option><option>1–3 years</option><option>3–5 years</option><option>5+ years</option></select></div>
-          <div class="application-field"><label for="academy-type">Programme route</label><select id="academy-type" name="internshipType" required><option value="">Select programme route</option><option>Free Internship — Fresher</option><option>Paid Internship — Fresher</option><option>Paid Internship — Experienced</option></select></div>
-          <div class="application-field application-field--full"><label for="academy-resume">Resume <small>PDF, DOC or DOCX · maximum 3 MB</small></label><input id="academy-resume" name="resume" type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required></div>
-          <div class="application-field application-field--full application-form__submit"><button class="academy-button academy-button--primary" type="submit">Submit Academy application <span>→</span></button><p class="application-status" data-application-status role="status" aria-live="polite"></p></div>
-        </form>
-      </div>
-    </section>
-
-    <section class="academy-work" aria-labelledby="academy-work-title">
-      <div class="shell">
-        <div class="academy-section-intro"><p class="academy-eyebrow">BUILD THE WORK, NOT THE PROMISE</p><h2 id="academy-work-title">Every learning area should end in something a reviewer can challenge.</h2></div>
-        <div class="academy-work-grid">
-          <article class="academy-work-card academy-work-card--lead"><span>01 / SAFETY EVIDENCE</span><h3>Search, read and classify literature with a defensible reason for every inclusion or exclusion.</h3><p>Move from vague “research skills” to traceable safety-information judgement.</p></article>
-          <article class="academy-work-card"><span>02 / CASE THINKING</span><h3>Assess ICSR validity, seriousness, chronology and follow-up requirements.</h3></article>
-          <article class="academy-work-card"><span>03 / QUALITY</span><h3>Review coding, narratives, source evidence and data consistency.</h3></article>
-          <article class="academy-work-card"><span>04 / MEDICAL REASONING</span><h3>Separate severity, seriousness, expectedness and causality.</h3></article>
-          <article class="academy-work-card"><span>05 / SIGNAL THINKING</span><h3>Recognise when a pattern needs escalation—not just a label.</h3></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="academy-method" aria-labelledby="academy-method-title">
-      <div class="shell academy-method__grid">
-        <div><p class="academy-eyebrow">HOW THE WORK IS FORMED</p><h2 id="academy-method-title">You are not left alone with a video library.</h2><p>Guidance, deliberate assignments, platform practice and professional feedback turn exposure into a working habit.</p></div>
-        <ol class="academy-method-list">
-          <li><div><strong>Learn the decision</strong><span>Understand the regulatory and scientific reason before opening a tool.</span></div></li>
-          <li><div><strong>Build the evidence</strong><span>Complete a controlled internal task with traceable inputs and outputs.</span></div></li>
-          <li><div><strong>Receive review</strong><span>Have your logic, terminology and documentation challenged constructively.</span></div></li>
-          <li><div><strong>Revise and defend</strong><span>Improve the work and explain why the final decision is defensible.</span></div></li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="academy-transparency" aria-labelledby="academy-transparency-title">
-      <div class="shell academy-transparency__grid">
-        <div><p class="academy-eyebrow">PROGRAMME TRANSPARENCY</p><h2 id="academy-transparency-title">Know what you are paying for—and what you are not.</h2><p class="academy-transparency__intro">TheClinixAI would rather lose an enrolment than create the wrong expectation. Written onboarding terms remain the source of truth.</p></div>
-        <div class="academy-transparency__rules">
-          <div class="academy-rule"><strong>Paid route fee</strong><p>Supports structured training delivery, instructor/reviewer time, assessment administration, controlled learning materials, platform access and programme operations.</p></div>
-          <div class="academy-rule"><strong>Not a job purchase</strong><p>Payment does not guarantee employment, placement or conversion. Future opportunities, if any, depend on merit, business need and the applicable hiring process.</p></div>
-          <div class="academy-rule"><strong>Controlled work</strong><p>Academy practicals use internal, simulated, blinded or otherwise approved learning scenarios. Client casework is not sold as part of the programme.</p></div>
-          <div class="academy-rule"><strong>Experience language</strong><p>Any documentation must reflect the actual traineeship, internship, project exposure or tenure completed. It should not be represented as permanent employment unless separately employed in such a role.</p></div>
-          <div class="academy-rule"><strong>BGV / HR support</strong><p>Where a participant is formally onboarded under an applicable arrangement, legitimate verification can be answered from maintained records according to the issued terms and actual tenure.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="academy-faq" id="faq" aria-labelledby="academy-faq-title">
-      <div class="shell">
-        <div class="academy-faq__head"><p class="academy-eyebrow">FREQUENTLY ASKED QUESTIONS</p><h2 id="academy-faq-title">Questions a serious applicant should ask before enrolling.</h2></div>
-        <div class="academy-faq__list">
-          <details><summary>Is TheClinixAI Academy a course or a traineeship?</summary><p>The Academy includes different routes. The paid individual routes are structured as practical development and traineeship-style programmes using controlled internal learning scenarios, guided review, documented assignments and competency assessment. The exact terms applicable to you are stated in your written onboarding documents.</p></details>
-          <details><summary>Why is there a fee for the paid route?</summary><p>The fee supports structured training delivery, instructor and reviewer time, assessment administration, controlled learning materials, platform access and programme operations. It is not a payment for a job, an experience letter or guaranteed placement.</p></details>
-          <details><summary>Does paying ₹19,999 guarantee a job or placement?</summary><p>No. TheClinixAI Academy does not sell jobs or guarantee placement. Any future role depends on demonstrated competency, professional conduct, business need, open positions and the applicable selection process.</p></details>
-          <details><summary>Will I work on live client cases?</summary><p>No live client casework is promised as part of Academy enrolment. Practical work uses controlled internal, simulated, blinded or otherwise approved learning scenarios. Any future access to confidential material would require separate authorisation, role need and confidentiality controls.</p></details>
-          <details><summary>What exactly is PV Nexus exposure?</summary><p>PV Nexus is TheClinixAI's pharmacovigilance technology environment. Selected Academy activities use controlled training workflows to teach structured intake, literature review, evidence linking, coding logic, quality feedback, audit trails and responsible human-in-the-loop use of automation.</p></details>
-          <details><summary>How will my performance be assessed?</summary><p>Depending on the route, assessment can include knowledge checks, controlled assignments, case-based exercises, quality feedback, correction cycles and defined readiness expectations. Progression is based on demonstrated capability rather than attendance alone.</p></details>
-          <details><summary>Will I receive an internship, traineeship or experience document?</summary><p>Documentation depends on your selected route, successful completion, actual tenure and the written programme terms. Any issued document should accurately describe the engagement completed and must not be used to misrepresent permanent employment.</p></details>
-          <details><summary>How does background verification work?</summary><p>Where you are formally onboarded under an applicable arrangement and records are maintained, legitimate future verification requests can be answered according to those records, including the actual tenure and designation stated in the formal documents.</p></details>
-          <details><summary>Is this suitable for someone with no pharmacovigilance experience?</summary><p>Yes. The fresher routes begin with foundational PV and compliance concepts. However, applicants are screened because the programme expects analytical thinking, professional ownership, remote-work discipline and willingness to accept and act on feedback.</p></details>
-          <details><summary>Can I join only to obtain a certificate?</summary><p>If your primary goal is simply to collect a certificate, this programme may not be the right fit. The Academy is designed around practical work, review, revision and evidence of capability.</p></details>
-          <details><summary>What should I rely on if marketing copy and my offer terms differ?</summary><p>Your formal written offer, onboarding terms and programme policy govern your engagement. Website content explains the model but does not override the documents issued specifically to you.</p></details>
-        </div>
-        <div class="academy-faq__note"><strong>Candidate protection:</strong> Ask questions before you pay. The Academy team should be able to explain the route, fee, schedule, assessment model, documentation and limitations applicable to your intake.</div>
-      </div>
-    </section>
-
-    <section class="academy-corporate" aria-labelledby="academy-corporate-title">
-      <div class="shell academy-corporate__grid">
-        <div><p class="academy-eyebrow">FOR PV LEADERS</p><h2 id="academy-corporate-title">Future-ready teams need more than an AI demonstration.</h2></div>
-        <div><p>ClinixAI Academy helps organisations develop role-based confidence around intended use, evidence verification, escalation, override, data handling, validation and change governance.</p><a class="academy-button academy-button--dark" href="/academy-corporate-training">Explore corporate capability <span>→</span></a></div>
-      </div>
-    </section>
-
-    <section class="academy-close" aria-labelledby="academy-close-title">
-      <div class="shell academy-close__grid">
-        <div><p class="academy-eyebrow">SERIOUS APPLICANTS ONLY</p><h2 id="academy-close-title">Start building the evidence behind your next opportunity.</h2></div>
-        <div><p>Individual applicants are screened before onboarding. Choose the route that matches your current level, understand the terms and come prepared to do the work.</p><div class="academy-actions"><a class="academy-button academy-button--primary" href="#academy-application">Apply to Academy <span>→</span></a><a class="academy-button academy-button--quiet" href="#faq">Read the FAQ <span>→</span></a><span class="academy-contact-list"><a href="mailto:academy@theclinixai.com">academy@theclinixai.com</a><a href="tel:+919182950889">+91 9182950889</a></span></div></div>
-      </div>
-    </section>
-  </main>
-
-  <div id="site-footer"></div>
-  <script src="/site.js?v=20260724-consent"></script>
-  <script src="/application-form.js?v=20260726"></script>
+<body class="academy-page academy-final">
+<header class="af-nav"><div class="af-shell af-nav-inner"><a class="af-brand" href="/"><span>TheClinix</span><em>AI</em></a><nav class="af-nav-links" aria-label="Academy"><a href="#programme">Programme</a><a href="#curriculum">What you learn</a><a href="#alumni">Alumni</a><a href="/academy-pharmacovigilance-career-hub">Career guide</a><a class="af-nav-cta" href="/contact">Apply / Enquire</a></nav></div></header>
+<main>
+<section class="af-hero"><div class="af-shell af-hero-grid"><div><div class="af-kicker">THECLINIXAI ACADEMY · PHARMACOVIGILANCE APPRENTICESHIP</div><h1>The work starts where the certificate ends.</h1><p class="af-lead">A degree can give you the vocabulary. Professional readiness requires evidence that you can understand a Pharmacovigilance workflow, make a reasoned assessment, document it clearly, respond to review and improve your work.</p><div class="af-actions"><a class="af-btn af-btn-primary" href="#programme">Explore the apprenticeship <span>→</span></a><a class="af-btn af-btn-secondary" href="/academy-pharmacovigilance-career-hub">Explore the PV career guide <span>→</span></a></div></div><aside class="af-hero-card"><small>WHAT THIS IS BUILT TO DEVELOP</small><h2>Capability, not certificate collection.</h2><p>A structured path for people who want to understand how Pharmacovigilance work is actually performed and what professional quality looks like.</p><div class="af-route"><div><b>Learn</b><span>PV concepts & workflow</span></div><div><b>Practice</b><span>Controlled exercises</span></div><div><b>Review</b><span>Feedback & QC thinking</span></div><div><b>Demonstrate</b><span>Competency evidence</span></div></div></aside></div></section>
+<section class="af-proof"><div class="af-shell af-proof-grid"><div class="af-proof-item"><b>Pharmacovigilance-first</b><span>Built around Drug Safety workflows rather than generic classroom theory.</span></div><div class="af-proof-item"><b>Practical development</b><span>Exercises, assignments, review and progressive responsibility.</span></div><div class="af-proof-item"><b>Quality-minded</b><span>Learn why accuracy, traceability, consistency and documentation matter.</span></div><div class="af-proof-item"><b>Career-oriented</b><span>Build understanding that can support real PV career conversations.</span></div></div></section>
+<section id="programme" class="af-section"><div class="af-shell af-two"><div><div class="af-kicker">THE APPRENTICESHIP</div><h2>Built for people who want to become useful in PV.</h2><p class="af-section-intro">TheClinixAI Apprenticeship is our primary individual Academy route. It is designed around structured learning, practical exercises, guided review and competency development.</p></div><div><p class="af-copy">We do not believe that completing a list of modules automatically makes someone ready for a Pharmacovigilance role. The programme therefore connects concepts to workflows and workflows to decisions.</p><div class="af-list"><div><i></i><span>Understand the purpose behind each major PV activity.</span></div><div><i></i><span>Work through controlled case-based and workflow exercises.</span></div><div><i></i><span>Receive feedback and learn how professional QC changes the quality of work.</span></div><div><i></i><span>Develop the ability to explain what you did, why you did it and what evidence supports it.</span></div><div><i></i><span>Build career readiness without promising a job as the product.</span></div></div></div></div></section>
+<section id="curriculum" class="af-section af-section-soft"><div class="af-shell"><div class="af-kicker">WHAT YOU LEARN</div><h2>More than ICSR and MedDRA.</h2><p class="af-section-intro">Students searching for Pharmacovigilance training are often shown a list of topics. We go one level deeper: what the topic means, where it appears in the workflow, why it matters and what professional judgement is expected.</p><div class="af-modules">
+<div class="af-module"><span class="af-module-num">01 · FOUNDATION</span><h3>Pharmacovigilance fundamentals</h3><p>PV purpose, safety lifecycle, stakeholders, sources of safety information and core terminology.</p><small>Concept → workflow → responsibility</small></div>
+<div class="af-module"><span class="af-module-num">02 · ICSR</span><h3>Individual Case Safety Reports</h3><p>Intake, triage, validity, duplicates, seriousness, expectedness, causality, follow-up and case closure.</p><small>Understand the end-to-end case journey</small></div>
+<div class="af-module"><span class="af-module-num">03 · MEDDRA</span><h3>MedDRA & medical coding</h3><p>Hierarchy, terminology selection, coding logic and practical thinking around consistent medical terminology.</p><small>LLT · PT · HLT · HLGT · SOC</small></div>
+<div class="af-module"><span class="af-module-num">04 · NARRATIVE</span><h3>Safety narrative writing</h3><p>How to turn case information into a clear, chronological and clinically meaningful narrative.</p><small>Accuracy · chronology · completeness</small></div>
+<div class="af-module"><span class="af-module-num">05 · QUALITY</span><h3>QC & review mindset</h3><p>Identify omissions, inconsistencies, documentation gaps and quality issues before work moves forward.</p><small>Review → correct → learn</small></div>
+<div class="af-module"><span class="af-module-num">06 · LITERATURE</span><h3>Literature surveillance</h3><p>Search, screening, relevance assessment, full-text thinking and the relationship between literature and ICSR processing.</p><small>Evidence → screening → decision</small></div>
+<div class="af-module"><span class="af-module-num">07 · SIGNAL</span><h3>Signal detection & management</h3><p>Safety signals, validation, assessment, case series, trends and the role of structured evidence in safety decisions.</p><small>From observation to safety assessment</small></div>
+<div class="af-module"><span class="af-module-num">08 · AGGREGATE</span><h3>Aggregate safety reporting</h3><p>PSUR, PBRER, PADER, DSUR concepts, periodic review and benefit-risk thinking.</p><small>Periodic evidence → safety narrative</small></div>
+<div class="af-module"><span class="af-module-num">09 · REGULATORY</span><h3>Regulatory Pharmacovigilance</h3><p>Core reporting concepts, timelines, GVP/ICH/FDA/EMA/CDSCO context and compliance thinking.</p><small>Know the framework behind the workflow</small></div>
+<div class="af-module"><span class="af-module-num">10 · CLINICAL</span><h3>Clinical-trial safety</h3><p>SAE, SUSAR, clinical-trial ICSRs, expedited reporting and DSUR context.</p><small>Clinical safety vs post-marketing PV</small></div>
+<div class="af-module"><span class="af-module-num">11 · MEDICAL</span><h3>Medical review & assessment</h3><p>Clinical assessment, causality reasoning, case quality and the relationship between medical judgement and PV operations.</p><small>Evidence before opinion</small></div>
+<div class="af-module"><span class="af-module-num">12 · AI + PV</span><h3>Modern AI-enabled PV</h3><p>Human-in-the-loop automation, evidence traceability, review controls and where AI can responsibly support PV work.</p><small>Automation with expert oversight</small></div>
+</div></div></section>
+<section class="af-section af-path"><div class="af-shell"><div class="af-kicker" style="color:#62d9ef">HOW THE DEVELOPMENT WORKS</div><h2>A progression, not a playlist.</h2><p class="af-section-intro">The programme is structured to move from understanding to application, then from application to review and professional communication.</p><div class="af-path-grid"><div class="af-step"><strong>01 · ORIENT</strong><h3>Build the foundation</h3><p>Understand PV language, purpose, roles, safety sources and the operating environment.</p></div><div class="af-step"><strong>02 · LEARN</strong><h3>Study the workflow</h3><p>Connect ICSR, coding, narratives, literature, signals, aggregate safety and regulatory concepts.</p></div><div class="af-step"><strong>03 · PRACTICE</strong><h3>Work through exercises</h3><p>Apply concepts to controlled cases, scenarios and assignments rather than only watching lessons.</p></div><div class="af-step"><strong>04 · REVIEW</strong><h3>Receive feedback</h3><p>Understand what is wrong, why it is wrong and how a professional would improve it.</p></div><div class="af-step"><strong>05 · DEMONSTRATE</strong><h3>Build evidence</h3><p>Show what you can do through assessed work, documented progress and career-ready communication.</p></div></div></div></section>
+<section id="alumni" class="af-section af-section-soft"><div class="af-shell"><div class="af-alumni-head"><div><div class="af-kicker">REAL CAREER JOURNEYS</div><h2>People I have trained went on to build PV careers.</h2></div><p class="af-alumni-note">We are preparing five alumni profiles from people previously trained by the founder. Each profile will be published only with the person's consent and will link to their LinkedIn profile.</p></div><div class="af-testimonials">
+<div class="af-person"><div class="af-photo">PHOTO TO BE ADDED</div><div class="af-person-body"><h3>Alumni profile 01</h3><span class="af-role">Role / organisation to be added</span><p>Testimonial will be published in the alumnus's own words after final approval.</p><a class="af-link" href="#" aria-label="LinkedIn profile placeholder">LinkedIn profile →</a><p class="af-consent">Shared with permission.</p></div></div>
+<div class="af-person"><div class="af-photo">PHOTO TO BE ADDED</div><div class="af-person-body"><h3>Alumni profile 02</h3><span class="af-role">Role / organisation to be added</span><p>Testimonial will be published in the alumnus's own words after final approval.</p><a class="af-link" href="#" aria-label="LinkedIn profile placeholder">LinkedIn profile →</a><p class="af-consent">Shared with permission.</p></div></div>
+<div class="af-person"><div class="af-photo">PHOTO TO BE ADDED</div><div class="af-person-body"><h3>Alumni profile 03</h3><span class="af-role">Role / organisation to be added</span><p>Testimonial will be published in the alumnus's own words after final approval.</p><a class="af-link" href="#" aria-label="LinkedIn profile placeholder">LinkedIn profile →</a><p class="af-consent">Shared with permission.</p></div></div>
+<div class="af-person"><div class="af-photo">PHOTO TO BE ADDED</div><div class="af-person-body"><h3>Alumni profile 04</h3><span class="af-role">Role / organisation to be added</span><p>Testimonial will be published in the alumnus's own words after final approval.</p><a class="af-link" href="#" aria-label="LinkedIn profile placeholder">LinkedIn profile →</a><p class="af-consent">Shared with permission.</p></div></div>
+<div class="af-person"><div class="af-photo">PHOTO TO BE ADDED</div><div class="af-person-body"><h3>Alumni profile 05</h3><span class="af-role">Role / organisation to be added</span><p>Testimonial will be published in the alumnus's own words after final approval.</p><a class="af-link" href="#" aria-label="LinkedIn profile placeholder">LinkedIn profile →</a><p class="af-consent">Shared with permission.</p></div></div>
+</div><p class="af-disclaimer">Alumni outcomes are individual career histories and are not a promise of placement or employment through the Academy. Company names and roles will be published only as factually verified and approved by the respective alumni.</p></div></section>
+<section class="af-section"><div class="af-shell"><div class="af-kicker">WHY THE APPRENTICESHIP</div><h2>We do not compete on the size of a module list.</h2><div class="af-diff"><div class="af-diff-card"><h3>Traditional course model</h3><p>Often organised around lectures, modules, completion certificates and topic coverage.</p><ul><li>Learn the terminology</li><li>Watch or attend sessions</li><li>Complete assessments</li><li>Receive course documentation</li></ul></div><div class="af-diff-card highlight"><h3>TheClinixAI apprenticeship model</h3><p>Designed around capability development and the discipline required to perform PV work with quality.</p><ul><li>Understand the workflow</li><li>Apply concepts to controlled work</li><li>Receive structured review</li><li>Improve through feedback</li><li>Build evidence of capability</li></ul></div></div></div></section>
+<section class="af-section af-section-soft af-search"><div class="af-shell af-search-grid"><div><div class="af-kicker">FOR STUDENTS & CAREER ASPIRANTS</div><h2>Start with the question you are actually asking.</h2><p class="af-section-intro">Our Academy knowledge layer is designed to answer the questions people search before choosing a Pharmacovigilance career path or training programme.</p></div><div class="af-search-cloud"><span>Pharmacovigilance career</span><span>PV jobs for freshers</span><span>PV training</span><span>PV institute</span><span>PV internship</span><span>PV apprenticeship</span><span>ICSR processing</span><span>MedDRA</span><span>Safety database</span><span>Argus</span><span>Literature surveillance</span><span>Signal detection</span><span>Aggregate safety</span><span>PSUR</span><span>PBRER</span><span>DSUR</span><span>Regulatory PV</span><span>Medical review</span><span>PV interview questions</span><span>AI in Pharmacovigilance</span><span>Career progression</span><span>PV skills</span></div></div></section>
+<section class="af-section af-faq"><div class="af-shell"><div class="af-kicker">ACADEMY QUESTIONS</div><h2>Before you apply.</h2><div class="af-faq-list"><details><summary>Is TheClinixAI Academy a course or an apprenticeship?</summary><p>The primary individual offering is a structured Pharmacovigilance Apprenticeship. It is built around practical development, guided learning, assignments, review and demonstrated competency rather than certificate-only learning.</p></details><details><summary>Is it suitable for freshers?</summary><p>Yes. Suitable graduates, postgraduates, Pharm.D candidates and other life-science professionals can apply. The programme expects professional ownership, analytical thinking, willingness to receive feedback and consistent participation.</p></details><details><summary>What will I learn?</summary><p>Coverage can include PV fundamentals, ICSR processing, case intake and triage, seriousness, expectedness, causality, MedDRA, narrative writing, QC, literature surveillance, signal management, aggregate safety, regulatory PV, clinical-trial safety, medical review and AI-enabled PV workflows.</p></details><details><summary>Does the programme guarantee a job?</summary><p>No. TheClinixAI does not sell jobs or guarantee employment. Career outcomes depend on demonstrated capability, selection processes, vacancies, experience, conduct and employer requirements.</p></details><details><summary>Where is the free internship?</summary><p>The free internship is intentionally not part of the Academy positioning. Internship opportunities, when available, are handled separately through TheClinixAI Careers channel so that the Academy remains focused on the apprenticeship.</p></details><details><summary>Will I work on confidential client cases?</summary><p>Client case access is not promised. Practical learning uses approved training scenarios, simulations, blinded or controlled material as applicable. Any confidential access requires separate authorization and appropriate controls.</p></details></div></div></section>
+<section class="af-cta"><div class="af-shell"><div class="af-kicker" style="color:#62d9ef">READY TO BUILD CAPABILITY?</div><h2>Do not choose a programme only because it gives you a certificate.</h2><p>Understand what you will actually learn, what you will practice, how your work will be reviewed and whether the apprenticeship is the right fit for your career goal.</p><div class="af-actions"><a class="af-btn af-btn-primary" href="/contact">Apply / enquire about the apprenticeship →</a><a class="af-btn af-btn-secondary" href="/academy-pharmacovigilance-career-hub">Explore the Pharmacovigilance career guide →</a></div></div></section>
+</main>
+<footer style="background:#07111f;color:#9fb2c7;padding:45px 0"><div class="af-shell" style="display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap"><div><strong style="color:#fff;font-size:1.1rem">TheClinixAI</strong><p style="margin:8px 0 0;font-size:.78rem">AI-powered Pharmacovigilance · Consulting · Academy</p></div><div style="font-size:.76rem"><a href="/" style="color:#cbd8e5;text-decoration:none">Home</a> · <a href="/careers" style="color:#cbd8e5;text-decoration:none">Careers</a> · <a href="/resources" style="color:#cbd8e5;text-decoration:none">Resources</a> · <a href="/contact" style="color:#cbd8e5;text-decoration:none">Contact</a></div></div></footer>
 </body>
 </html>
