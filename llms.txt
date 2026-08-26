@@ -1,8 +1,15 @@
 # TheClinixAI
 
-TheClinixAI builds governed pharmacovigilance and patient-safety intelligence through the Nexus platform.
+TheClinixAI builds governed pharmacovigilance and patient-safety intelligence through the Nexus platform and develops practical pharmacovigilance capability through TheClinixAI Academy.
 
-Primary resources:
+Academy and career resources:
+- https://www.theclinixai.com/academy
+- https://www.theclinixai.com/academy-pharmacovigilance-guide
+- https://www.theclinixai.com/pharmacovigilance-careers
+
+The Academy guide covers pharmacovigilance careers, training and internship search intent, ICSR processing, MedDRA, narrative writing, quality control, literature surveillance, signal management, aggregate safety reporting, regulatory pharmacovigilance and responsible AI-enabled PV workflows. The Academy's apprenticeship model focuses on practical development, supervised learning, feedback and documented competency evidence.
+
+Primary company resources:
 - https://www.theclinixai.com/end-to-end-pharmacovigilance-nexus-platform
 - https://www.theclinixai.com/insights
 - https://www.theclinixai.com/resources
