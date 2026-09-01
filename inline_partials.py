@@ -24,17 +24,42 @@ def load_partial(name):
     return (ROOT / name).read_text(encoding="utf-8").strip()
 
 def inline_into(html, header_html, footer_html):
-    html, n_header = re.subn(
+    # Handles both the empty placeholder (first run on a page) and an
+    # already-baked header/footer from a previous run (re-bake after
+    # header.html/footer.html changes). The closing "</header></div>" and
+    # "</footer></div>" sequences are unique per page since each page has
+    # exactly one header and one footer.
+    html, n_header_empty = re.subn(
         r'<div id="site-header"></div>',
         f'<div id="site-header">{header_html}</div>',
         html,
     )
-    html, n_footer = re.subn(
+    if not n_header_empty:
+        html, n_header_baked = re.subn(
+            r'<div id="site-header">.*?</header></div>',
+            f'<div id="site-header">{header_html}</div>',
+            html,
+            flags=re.S,
+        )
+    else:
+        n_header_baked = 0
+
+    html, n_footer_empty = re.subn(
         r'<div id="site-footer"></div>',
         f'<div id="site-footer">{footer_html}</div>',
         html,
     )
-    return html, n_header, n_footer
+    if not n_footer_empty:
+        html, n_footer_baked = re.subn(
+            r'<div id="site-footer">.*?</footer></div>',
+            f'<div id="site-footer">{footer_html}</div>',
+            html,
+            flags=re.S,
+        )
+    else:
+        n_footer_baked = 0
+
+    return html, (n_header_empty or n_header_baked), (n_footer_empty or n_footer_baked)
 
 def find_html_files():
     for path in ROOT.rglob("*.html"):
@@ -50,28 +75,28 @@ def main():
     footer_html = load_partial("footer.html")
 
     changed = 0
-    already_inlined = 0
-    no_placeholder = 0
+    unchanged = 0
+    skipped_no_match = 0
 
     for path in find_html_files():
         original = path.read_text(encoding="utf-8")
 
-        if 'id="site-header">' in original and '<div id="site-header"></div>' not in original:
-            already_inlined += 1
-            continue
-
-        if '<div id="site-header"></div>' not in original:
-            no_placeholder += 1
+        if 'id="site-header"' not in original:
+            skipped_no_match += 1
             continue
 
         updated, n_header, n_footer = inline_into(original, header_html, footer_html)
-        if n_header or n_footer:
+        if not (n_header or n_footer):
+            skipped_no_match += 1
+        elif updated == original:
+            unchanged += 1
+        else:
             path.write_text(updated, encoding="utf-8")
             changed += 1
 
-    print(f"Inlined header/footer into {changed} pages.")
-    print(f"Already inlined (skipped): {already_inlined}")
-    print(f"No placeholder found (skipped): {no_placeholder}")
+    print(f"Updated header/footer in {changed} pages.")
+    print(f"Already up to date (skipped): {unchanged}")
+    print(f"No site-header/site-footer match found (skipped): {skipped_no_match}")
 
 if __name__ == "__main__":
     sys.exit(main())
